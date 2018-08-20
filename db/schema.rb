@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2018_08_20_133506) do
 
   # These are extensions that must be enabled in order to support this database
@@ -48,8 +49,6 @@ ActiveRecord::Schema.define(version: 2018_08_20_133506) do
   create_table "tours", force: :cascade do |t|
     t.datetime "start_time"
     t.datetime "end_time"
-    t.date "start_date"
-    t.date "end_date"
     t.string "name"
     t.bigint "user_id"
     t.bigint "group_id"
