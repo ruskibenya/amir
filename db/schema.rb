@@ -10,10 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_091813) do
+ActiveRecord::Schema.define(version: 2018_08_20_101453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "city"
+    t.float "longitude"
+    t.float "latitude"
+    t.boolean "meeting_point"
+    t.string "category"
+    t.bigint "tour_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tour_id"], name: "index_activities_on_tour_id"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "invitations", force: :cascade do |t|
+    t.string "email"
+    t.integer "status"
+    t.bigint "group_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_invitations_on_group_id"
+    t.index ["user_id"], name: "index_invitations_on_user_id"
+  end
+
+  create_table "tours", force: :cascade do |t|
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.date "start_date"
+    t.date "end_date"
+    t.string "name"
+    t.bigint "user_id"
+    t.bigint "group_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_tours_on_group_id"
+    t.index ["user_id"], name: "index_tours_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +68,15 @@ ActiveRecord::Schema.define(version: 2018_08_20_091813) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "profile_picture"
+    t.string "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "activities", "tours"
+  add_foreign_key "invitations", "groups"
+  add_foreign_key "invitations", "users"
+  add_foreign_key "tours", "groups"
+  add_foreign_key "tours", "users"
 end
