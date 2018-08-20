@@ -36,32 +36,6 @@ cyrille = User.find_by(name: "Cyrille")
 bryan = User.find_by(name: "Bryan")
 kevin = User.find_by(name: "Kevin")
 
-# Group seeds
-## Clear old groups
-Group.destroy_all
-
-# set group seed info
-groups_attributes = [
-  {
-    name: "Le Wagon: Tel Aviv"
-  },
-  {
-    name: "Big Backpacks of America"
-  },
-  {
-    name: "Tunisian Thiefs"
-  },
-  {
-    name: "Ephraims of the World"
-  },
-  {
-    name: "Geeks from Martinique"
-  }
-]
-
-## generate group seeds for all groups seed info
-Group.create!(groups_attributes)
-
 
 # Tour seeds
 ## Clear old tours
@@ -94,6 +68,36 @@ tours_attributes = [
 
 #generate tour seeds for all tour seed info
 Tour.create!(tours_attributes)
+
+
+
+# Group seeds
+## Clear old groups
+Group.destroy_all
+
+# set group seed info
+groups_attributes = [
+  {
+    name: "Le Wagon: Tel Aviv"
+  },
+  {
+    name: "Big Backpacks of America"
+  },
+  {
+    name: "Tunisian Thiefs"
+  },
+  {
+    name: "Ephraims of the World"
+  },
+  {
+    name: "Geeks from Martinique"
+  }
+]
+
+## generate group seeds for all groups seed info
+Group.create!(groups_attributes)
+
+
 
 # Activity seeds
 ## Clear old activities
