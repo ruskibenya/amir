@@ -102,14 +102,14 @@ Activity.destroy_all
 #set activity seed info
 activities_attributes = [
   {
-    name: "Buy ingredients at Carmel Shuk",
-    address: "HaCarmel St 11 Street",
-    city: "Tel Aviv-Yafo",
-    longitude: "#",
-    latitude: "#",
-    meeting_point: true,
-    category: "Food & Drink",
-    tour_id: 1
+  name: "Buy ingredients at Carmel Shuk",
+  address: "HaCarmel St 11 Street",
+  city: "Tel Aviv-Yafo",
+  longitude: "#",
+  latitude: "#",
+  meeting_point: true,
+  category: "Food & Drink",
+  tour_id: 1
   },
   {
   name: "Cooking lesson with French Star Chef",
