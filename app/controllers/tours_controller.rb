@@ -1,8 +1,10 @@
 class ToursController < ApplicationController
   def create
+    @tour = Tour.new(tours_params)
   end
 
   def new
+    @tour = Tour.new
   end
 
   def edit
@@ -15,11 +17,18 @@ class ToursController < ApplicationController
   end
 
   def index
+    @tours = Tour.all
   end
 
   def destroy
   end
 
   def selectgroup
+  end
+
+  private
+
+  def tour_params
+    params.require(:tour).permit(:name)
   end
 end

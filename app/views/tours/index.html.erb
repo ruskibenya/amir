@@ -1,2 +1,8 @@
-<h1>Tours#index</h1>
-<p>Find me in app/views/tours/index.html.erb</p>
+<h3>Create</h3>
+<p><%= @tours.each do |tour| %></p>
+  <p><%= tour.name %></p>
+  <p><%= tour.start_date %></p>
+  <p><%= tour.end_date %></p>
+<% end %>
+
+<%= link_to 'create a new tour', new_tour_path(@tour) %>
