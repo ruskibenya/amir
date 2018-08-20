@@ -72,21 +72,21 @@ tours_attributes = [
   {
     user: cyrille,
     start_time: DateTime.new(2018, 8, 21.25),
-    end_time: Date.new(2018, 8, 24, 22, 0, 0),
+    end_time: DateTime.new(2018, 8, 24, 22, 0, 0),
     name: "How to eat like a rabbit in Tel Aviv",
     group_id: Group.ids.sample
   },
   {
     user: bryan,
-    start_time: Date.new(2018, 9, 15, 10, 30, 0),
-    end_time: Date.new(2018, 9, 16, 5, 0, 0),
+    start_time: DateTime.new(2018, 9, 15, 10, 30, 0),
+    end_time: DateTime.new(2018, 9, 16, 5, 0, 0),
     name: "Swing dancing in the Sea",
     group_id: Group.ids.sample
   },
   {
     user: kevin,
-    start_time: Date.new(2018, 10, 5, 11, 0, 0),
-    end_time: Date.new(2018, 10, 15, 23, 0, 0),
+    start_time: DateTime.new(2018, 10, 5, 11, 0, 0),
+    end_time: DateTime.new(2018, 10, 15, 23, 0, 0),
     name: "Be the coolest kid in school",
     group_id: Group.ids.sample
   }
@@ -190,7 +190,7 @@ activities_attributes = [
   meeting_point: true,
   category: "Religious",
   tour_id: 3
-  },
+  }
 ]
 #generate activity seeds for all activity seed info
 Activity.create!(activities_attributes)
