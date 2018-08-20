@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_101453) do
+ActiveRecord::Schema.define(version: 2018_08_20_133506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 2018_08_20_101453) do
   end
 
   create_table "invitations", force: :cascade do |t|
-    t.string "email"
     t.integer "status"
     t.bigint "group_id"
     t.bigint "user_id"
@@ -56,6 +55,7 @@ ActiveRecord::Schema.define(version: 2018_08_20_101453) do
     t.bigint "group_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["group_id"], name: "index_tours_on_group_id"
     t.index ["user_id"], name: "index_tours_on_user_id"
   end
