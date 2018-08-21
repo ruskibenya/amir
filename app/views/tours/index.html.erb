@@ -2,9 +2,8 @@
 <h3>Your tours</h3>
 <p><% @tours.each do |tour| %></p>
   <p><%= tour.name %></p>
-  <p><%= tour.start_time %></p>
-  <p><%= tour.end_time %></p>
+  <p><%= tour.start_date %></p>
+  <p><%= tour.end_date %></p>
 <% end %>
-
 <%= link_to 'create a new tour', new_tour_path(@tour) %>
 

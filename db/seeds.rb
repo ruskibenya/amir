@@ -81,22 +81,22 @@ Group.create!(groups_attributes)
 tours_attributes = [
   {
     user: cyrille,
-    start_time: DateTime.new(2018, 8, 21.25),
-    end_time: DateTime.new(2018, 8, 24, 22, 0, 0),
+    start_date: Date.new(2018, 8, 21),
+    end_date: Date.new(2018, 8, 24),
     name: "How to eat like a rabbit in Tel Aviv",
     group_id: Group.ids.sample
   },
   {
     user: bryan,
-    start_time: DateTime.new(2018, 9, 15, 10, 30, 0),
-    end_time: DateTime.new(2018, 9, 16, 5, 0, 0),
+    start_date: Date.new(2018, 9, 15),
+    end_date: Date.new(2018, 9, 16),
     name: "Swing dancing in the Sea",
     group_id: Group.ids.sample
   },
   {
     user: kevin,
-    start_time: DateTime.new(2018, 10, 5, 11, 0, 0),
-    end_time: DateTime.new(2018, 10, 15, 23, 0, 0),
+    start_date: Date.new(2018, 10, 5),
+    end_date: Date.new(2018, 10, 15),
     name: "Be the coolest kid in school",
     group_id: Group.ids.sample
   }
