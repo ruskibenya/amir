@@ -6,23 +6,21 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.invitation.subject
   #
 
-  # TODO pass in group so for each group sends an invitation
   def invitation(tour, invitation)
     # set link_url that email recipient will click on, points to this tour_id
-    @link = "localhost:3000/tours/tour.id"
+    @link = "rollcall.fun/tours/#{tour.id}"
 
     # set sender of email
     # from = "#{tour.user.name}@amir.com"
-    from = "benjamin@benyas.com"
 
-    # just their name
+
+    # tour organizer name
     @sender = tour.user.name
-    # iterate over each email in the invitation
-    # send email to each member address
-    # mail to: invitation.email, from: from
 
+    #test cases
     # to send to christophe
     # mail to: "christophe.ridarch@gmail.com", from: from
+    from = "amir@rollcall.fun"
     mail to: "benjamin@benyas.com", from: from
   end
 end

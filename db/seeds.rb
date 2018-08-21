@@ -52,20 +52,20 @@ kevin = User.find_by(name: "Kevin")
 tours_attributes = [
   {
     user: cyrille,
-    start_time: DateTime.new(2018, 8, 21.25),
-    end_time: DateTime.new(2018, 8, 24, 22, 0, 0),
+    start_date: Date.new(2018, 8, 21.25),
+    end_date: Date.new(2018, 8, 24, 22),
     name: "How to eat like a rabbit in Tel Aviv"
   },
   {
     user: bryan,
-    start_time: DateTime.new(2018, 9, 15, 10, 30, 0),
-    end_time: DateTime.new(2018, 9, 16, 5, 0, 0),
+    start_date: Date.new(2018, 9, 15),
+    end_date: Date.new(2018, 9, 16),
     name: "Swing dancing in the Sea"
   },
   {
     user: kevin,
-    start_time: DateTime.new(2018, 10, 5, 11, 0, 0),
-    end_time: DateTime.new(2018, 10, 15, 23, 0, 0),
+    start_date: Date.new(2018, 10, 5),
+    end_date: Date.new(2018, 10, 15),
     name: "Be the coolest kid in school"
   }
 ]
@@ -80,15 +80,15 @@ Tour.create!(tours_attributes)
 groups_attributes = [
   {
     name: "Tunisian Thiefs",
-    tour: Tour.find_by(name: "How to eat like a rabbit in Tel Aviv")
+    tours: [] << Tour.find_by(name: "How to eat like a rabbit in Tel Aviv")
   },
   {
     name: "Ephraims of the World",
-    tour: Tour.find_by(name: "Swing dancing in the Sea")
+    tours: [] << Tour.find_by(name: "Swing dancing in the Sea")
   },
   {
     name: "Freaks from Martinique",
-    tour: Tour.find_by(name: "Be the coolest kid in school")
+    tours: [] << Tour.find_by(name: "Be the coolest kid in school")
   }
 ]
 
@@ -219,3 +219,4 @@ invitations_attributes = [
 
 #generate invitations seeds for all invitations seed info
 Invitation.create!(invitations_attributes)
+
