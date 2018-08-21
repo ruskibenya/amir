@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
   resources :groups
   resources :invitations, only: [:new, :create ]
+  resources :users, only: [:show]
 end
