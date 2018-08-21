@@ -1,2 +1,5 @@
 <h1>Tours#show</h1>
 <p>Find me in app/views/tours/show.html.erb</p>
+
+<!-- Button to send invitations to group -->
+<%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %>
