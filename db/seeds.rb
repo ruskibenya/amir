@@ -1,8 +1,5 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-
-
-
 ## Clear old activities
 Activity.destroy_all
 ## Clear old tours_attributes
@@ -11,6 +8,8 @@ Tour.destroy_all
 Group.destroy_all
 ## clear old users
 User.destroy_all
+## clear old invitations
+Invitation.destroy_all
 
 
 # User seeds
@@ -47,35 +46,7 @@ bryan = User.find_by(name: "Bryan")
 kevin = User.find_by(name: "Kevin")
 
 
-# Group seeds
-
-
-# set group seed info
-groups_attributes = [
-  {
-    name: "Le Wagon: Tel Aviv"
-  },
-  {
-    name: "Big Backpacks of America"
-  },
-  {
-    name: "Tunisian Thiefs"
-  },
-  {
-    name: "Ephraims of the World"
-  },
-  {
-    name: "Freaks from Martinique"
-  }
-]
-
-## generate group seeds for all groups seed info
-Group.create!(groups_attributes)
-
-
-
 # Tour seeds
-
 
 # set tour seed info
 tours_attributes = [
@@ -83,22 +54,19 @@ tours_attributes = [
     user: cyrille,
     start_date: Date.new(2018, 8, 21),
     end_date: Date.new(2018, 8, 24),
-    name: "How to eat like a rabbit in Tel Aviv",
-    group_id: Group.ids.sample
+    name: "How to eat like a rabbit in Tel Aviv"
   },
   {
     user: bryan,
     start_date: Date.new(2018, 9, 15),
     end_date: Date.new(2018, 9, 16),
-    name: "Swing dancing in the Sea",
-    group_id: Group.ids.sample
+    name: "Swing dancing in the Sea"
   },
   {
     user: kevin,
     start_date: Date.new(2018, 10, 5),
     end_date: Date.new(2018, 10, 15),
-    name: "Be the coolest kid in school",
-    group_id: Group.ids.sample
+    name: "Be the coolest kid in school"
   }
 ]
 
@@ -106,7 +74,26 @@ tours_attributes = [
 Tour.create!(tours_attributes)
 
 
+# Group seeds
 
+# set group seed info
+groups_attributes = [
+  {
+    name: "Tunisian Thiefs",
+    tours: [] << Tour.find_by(name: "How to eat like a rabbit in Tel Aviv")
+  },
+  {
+    name: "Ephraims of the World",
+    tours: [] << Tour.find_by(name: "Swing dancing in the Sea")
+  },
+  {
+    name: "Freaks from Martinique",
+    tours: [] << Tour.find_by(name: "Be the coolest kid in school")
+  }
+]
+
+## generate group seeds for all groups seed info
+Group.create!(groups_attributes)
 
 
 
@@ -208,3 +195,28 @@ activities_attributes = [
 ]
 #generate activity seeds for all activity seed info
 Activity.create!(activities_attributes)
+
+
+# set invitation seed info
+invitations_attributes = [
+  {
+    group: Group.find_by(name: "Tunisian Thiefs"),
+    email: "joy@lwtlv.il"
+  },
+  {
+    group: Group.find_by(name: "Ephraims of the World"),
+    email: "roman@lwtlv.il"
+  },
+  {
+    group: Group.find_by(name: "Tunisian Thiefs"),
+    email: "yohav@lwtlv.il"
+  },
+  {
+    group: Group.find_by(name: "Ephraims of the World"),
+    email: "yohav@lwtlv.il"
+  }
+]
+
+#generate invitations seeds for all invitations seed info
+Invitation.create!(invitations_attributes)
+

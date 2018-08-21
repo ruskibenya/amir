@@ -1,3 +1,7 @@
+
+<!-- Button to send invitations to group -->
+<%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %>
+
 <h1> '<%=  @tour.name  %>'</h1>
 
 <% step = 0 %>
@@ -24,3 +28,4 @@
   <% end %>
 
 <p> <%= @tour.end_date %> </p>
+

@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2018_08_21_154035) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
     t.index ["group_id"], name: "index_invitations_on_group_id"
     t.index ["user_id"], name: "index_invitations_on_user_id"
   end

@@ -25,6 +25,9 @@ class ToursController < ApplicationController
     end
   end
 
+  def show
+    @tour = Tour.find(params[:id])
+
   def edit
   end
 
