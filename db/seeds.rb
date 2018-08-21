@@ -214,6 +214,14 @@ invitations_attributes = [
   {
     group: Group.find_by(name: "Ephraims of the World"),
     email: "yohav@lwtlv.il"
+  },
+  {
+    group: Group.find_by(name: "Freaks from Martinique"),
+    email: "arbi@lwtlv.il"
+  },
+  {
+    group: Group.find_by(name: "Freaks from Martinique"),
+    email: "roxane@lwtlv.il"
   }
 ]
 
