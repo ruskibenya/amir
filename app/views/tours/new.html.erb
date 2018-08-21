@@ -1,2 +1,16 @@
-<h1>Tours#new</h1>
-<p>Find me in app/views/tours/new.html.erb</p>
+<h2>Create a new tour</h2>
+<%= simple_form_for @tour do |f| %>
+  <%= f.input :name %>
+  <%= f.input :start_time, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year + 2, discard_day: false,
+                              order: [:day, :month, :year] %>
+  <%= f.input :end_time, as: :date, start_year: Date.today.year,
+                              end_year: Date.today.year + 2, discard_day: false,
+                              order: [:day, :month, :year] %>
+  <%= f.input :group_id, collection: @groups, prompt: "Choose a Group" %>
+
+  <%= f.submit %>
+<% end %>
+
+
+

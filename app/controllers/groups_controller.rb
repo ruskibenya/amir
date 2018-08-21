@@ -1,4 +1,7 @@
 class GroupsController < ApplicationController
+
+  # GROUPS = Group.all
+
   def new
   end
 
