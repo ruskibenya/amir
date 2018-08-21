@@ -5,7 +5,9 @@
   padding: 40px;
   background-image: linear-gradient(rgba($orange-rub, 0.5), rgba($pink-rub, 0.5)),
                   url("home_background.jpg");
-  background-size: 100% 430px;
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 100%;
   width: 100vw;
   background-repeat: no-repeat;
