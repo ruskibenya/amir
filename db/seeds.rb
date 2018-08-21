@@ -1,9 +1,19 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 
-# User seeds
+
+
+## Clear old activities
+Activity.destroy_all
+## Clear old tours_attributes
+Tour.destroy_all
+## Clear old groups
+Group.destroy_all
 ## clear old users
 User.destroy_all
+
+
+# User seeds
 
 ## set user seed info
 users_attributes = [
@@ -37,9 +47,35 @@ bryan = User.find_by(name: "Bryan")
 kevin = User.find_by(name: "Kevin")
 
 
+# Group seeds
+
+
+# set group seed info
+groups_attributes = [
+  {
+    name: "Le Wagon: Tel Aviv"
+  },
+  {
+    name: "Big Backpacks of America"
+  },
+  {
+    name: "Tunisian Thiefs"
+  },
+  {
+    name: "Ephraims of the World"
+  },
+  {
+    name: "Freaks from Martinique"
+  }
+]
+
+## generate group seeds for all groups seed info
+Group.create!(groups_attributes)
+
+
+
 # Tour seeds
-## Clear old tours
-Tour.destroy_all
+
 
 # set tour seed info
 tours_attributes = [
@@ -71,37 +107,11 @@ Tour.create!(tours_attributes)
 
 
 
-# Group seeds
-## Clear old groups
-Group.destroy_all
-
-# set group seed info
-groups_attributes = [
-  {
-    name: "Le Wagon: Tel Aviv"
-  },
-  {
-    name: "Big Backpacks of America"
-  },
-  {
-    name: "Tunisian Thiefs"
-  },
-  {
-    name: "Ephraims of the World"
-  },
-  {
-    name: "Geeks from Martinique"
-  }
-]
-
-## generate group seeds for all groups seed info
-Group.create!(groups_attributes)
 
 
 
 # Activity seeds
-## Clear old activities
-Activity.destroy_all
+
 
 #set activity seed info
 activities_attributes = [
@@ -113,7 +123,7 @@ activities_attributes = [
   latitude: "#",
   meeting_point: true,
   category: "Food & Drink",
-  tour_id: 1
+  tour_id: Tour.find_by(name: "How to eat like a rabbit in Tel Aviv")
   },
   {
   name: "Cooking lesson with French Star Chef",
@@ -123,7 +133,7 @@ activities_attributes = [
   latitude: "#",
   meeting_point: false,
   category: "Lecture",
-  tour_id: 1
+  tour_id: Tour.find_by(name: "How to eat like a rabbit in Tel Aviv")
   },
   {
   name: "French picnic at Bograshov Beach",
@@ -133,7 +143,7 @@ activities_attributes = [
   latitude: "#",
   meeting_point: true,
   category: "Travel & Outdoor",
-  tour_id: 1
+  tour_id: Tour.find_by(name: "How to eat like a rabbit in Tel Aviv")
   },
   {
   name: "Technical Singing Skills by Netta",
@@ -143,7 +153,7 @@ activities_attributes = [
   latitude: "#",
   meeting_point: false,
   category: "Travel & Outdoor",
-  tour_id: 2
+  tour_id: Tour.find_by(name: "Swing dancing in the Sea")
   },
   {
   name: "Burekas and Balkan Beat Box",
@@ -153,7 +163,7 @@ activities_attributes = [
   latitude: "#",
   meeting_point: true,
   category: "Food & Drink",
-  tour_id: 2
+  tour_id: Tour.find_by(name: "Swing dancing in the Sea")
   },
   {
   name: "Gagarin Club Swing Dance",
@@ -163,7 +173,7 @@ activities_attributes = [
   latitude: "#",
   meeting_point: true,
   category: "Cultural",
-  tour_id: 2
+  tour_id: Tour.find_by(name: "Swing dancing in the Sea")
   },
   {
   name: "Being a French Man named Kevin",
@@ -173,7 +183,7 @@ activities_attributes = [
   latitude: "#",
   meeting_point: true,
   category: "Lecture",
-  tour_id: 3
+  tour_id: Tour.find_by(name: "Be the coolest kid in school")
   },
   {
   name: "French Lunch @Hotel Montefiore",
@@ -183,7 +193,7 @@ activities_attributes = [
   latitude: "#",
   meeting_point: true,
   category: "Food & Drink",
-  tour_id: 3
+  tour_id: Tour.find_by(name: "Be the coolest kid in school")
   },
     {
   name: "'My life is a joke by Kevin' @Camel Comedy Club",
@@ -193,7 +203,7 @@ activities_attributes = [
   latitude: "#",
   meeting_point: true,
   category: "Religious",
-  tour_id: 3
+  tour_id: Tour.find_by(name: "Be the coolest kid in school")
   }
 ]
 #generate activity seeds for all activity seed info
