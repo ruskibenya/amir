@@ -10,13 +10,15 @@ class ToursController < ApplicationController
 
   def new
     @groups = Group.all
+    @activities = Activity.all
     @tour = Tour.new
   end
 
   def create
-    @tour = Tour.new(tours_params)
+    activity_ids = tours_params[:activities].reject(&:empty?)
+    @tour = Tour.new(tours_params.except(:activities))
+    @tour.activity_ids = activity_ids
     @tour.user = current_user
-    # @tour.group = Group.find_by(name: "Le Wagon: Tel Aviv")
     if @tour.save
       redirect_to tour_path(@tour)
     else
@@ -40,6 +42,6 @@ class ToursController < ApplicationController
   private
 
   def tours_params
-    params.require(:tour).permit(:name, :start_date, :end_date)
+    params.require(:tour).permit(:name, :start_date, :end_date, :activities => [])
   end
 end

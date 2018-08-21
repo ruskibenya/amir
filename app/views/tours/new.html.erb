@@ -3,7 +3,14 @@
   <%= f.input :name %>
   <%= f.input :start_date, as: :string, input_html: { class: "flatpickr-input"} %>
   <%= f.input :end_date, as: :string, input_html: { class: "flatpickr-input-two"} %>
-  <%= f.input :group_id, collection: @groups, prompt: "Choose a Group" %>
+  <%= f.input :group_id, collection: @groups %>
+
+  <%#= f.button  %>
+  <%#= f.input :activity_id, collection: @activities, prompt: "Choose an activity" %>
+  <%= f.input :activities, collection: @activities,
+:input_html => { :multiple => true } %>
+  <%#= f.input "activity" %>
+
   <%= f.submit %>
 <% end %>
 
@@ -19,3 +26,6 @@
   </script>
 
 <% end %>
+
+
+<!-- :label_method => lambda{ |activity| "#{activity.name} - #{activity.address} "  -->

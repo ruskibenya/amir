@@ -1,5 +1,5 @@
 class Activity < ApplicationRecord
-  # belongs_to :tour
+  belongs_to :tour, optional: true
   validates :name, uniqueness: true, presence: true
   validates :address, presence: true
   validates :city, presence: true

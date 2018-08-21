@@ -15,12 +15,12 @@
   text-align: center;
 }
 
-h1 {
+.banner h1 {
   font-size: 30px;
   color : white;
 }
 
-p {
+.banner p {
   font-size: 18px;
   color : white;
   padding-top: 40px;
@@ -35,7 +35,7 @@ p {
   margin-top: 120px;
 }
 
-.form .btn {
+.banner .form .btn {
   background-color: $pink-rub !important;
   border-style: none;
 }
