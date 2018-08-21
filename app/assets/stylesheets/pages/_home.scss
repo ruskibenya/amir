@@ -1,7 +1,8 @@
 // Specific CSS for your home-page
 .banner {
-  display: flex;
   align-items: center;
+  display: flex;
+  justify-content: center;
   padding: 40px;
   background-image: linear-gradient(rgba($orange-rub, 0.5), rgba($pink-rub, 0.5)),
                   url("home_background.jpg");
@@ -26,7 +27,7 @@ p {
 }
 
 .banner .form {
-  flex: 0 0 40%;
+  flex: 0 0 auto;
 }
 
 .banner .text {
