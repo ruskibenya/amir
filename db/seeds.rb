@@ -52,8 +52,8 @@ kevin = User.find_by(name: "Kevin")
 tours_attributes = [
   {
     user: cyrille,
-    start_date: Date.new(2018, 8, 21.25),
-    end_date: Date.new(2018, 8, 24, 22),
+    start_date: Date.new(2018, 8, 21),
+    end_date: Date.new(2018, 8, 24),
     name: "How to eat like a rabbit in Tel Aviv"
   },
   {

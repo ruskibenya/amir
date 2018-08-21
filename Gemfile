@@ -16,7 +16,10 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+
 gem 'postmark-rails'
+gem 'flatpickr_rails'
+gem 'pry-byebug'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

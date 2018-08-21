@@ -1,5 +1,31 @@
-<h1>Tours#show</h1>
-<p>Find me in app/views/tours/show.html.erb</p>
 
 <!-- Button to send invitations to group -->
 <%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %>
+
+<h1> '<%=  @tour.name  %>'</h1>
+
+<% step = 0 %>
+<p> <%= @tour.start_date %> </p>
+<% Activity.where("tour_id = ?", @tour.id).each do |activity|  %>
+  <% step += 1 %>
+  <%= step %>
+  <p>
+    <% if activity.start_date != tour.start_date then %>
+      <%= activity.start_date %>
+    <% end %>
+
+  </p>
+  <p> <%= activity.starting_time %> to <%= activity.ending_time %> </p>
+  <p> <%= activity.category %> </p>
+  <p> <%= activity.name %> </p>
+  <p> <%= activity.address %> </p>
+  <p> <%= activity.city %> </p>
+  <p>
+    <% if activity.meeting_point then %>
+      <%=  meeting point 🏁  %>
+    <% end %>
+  </p>
+  <% end %>
+
+<p> <%= @tour.end_date %> </p>
+
