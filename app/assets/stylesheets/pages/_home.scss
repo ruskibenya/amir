@@ -1,1 +1,39 @@
 // Specific CSS for your home-page
+.banner {
+  display: flex;
+  align-items: center;
+  padding: 40px;
+  background-image: linear-gradient(rgba($orange-rub, 0.5), rgba($pink-rub, 0.5)),
+                  url("home_background.jpg");
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100vw;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+h1 {
+  font-size: 30px;
+  color : white;
+}
+
+p {
+  font-size: 18px;
+  color : white;
+  padding-top: 40px;
+}
+
+.banner .form {
+  flex: 0 0 40%;
+}
+
+.banner .text {
+  flex: 1 1 auto;
+}
+
+.form .btn {
+  background-color: $pink-rub !important;
+  border-style: none;
+}
