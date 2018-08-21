@@ -11,16 +11,17 @@ class UserMailer < ApplicationMailer
     @link = "rollcall.fun/tours/#{tour.id}"
 
     # set sender of email
-    # from = "#{tour.user.name}@amir.com"
+    from = "#{tour.user.name}@amir.com"
 
 
     # tour organizer name
     @sender = tour.user.name
 
+    mail to: invitation.email, from: from
     #test cases
     # to send to christophe
     # mail to: "christophe.ridarch@gmail.com", from: from
-    from = "amir@rollcall.fun"
-    mail to: "benjamin@benyas.com", from: from
+    #from = "amir@rollcall.fun"
+    # mail to: "benjamin@benyas.com", from: from
   end
 end

@@ -27,6 +27,7 @@ class ToursController < ApplicationController
 
   def show
     @tour = Tour.find(params[:id])
+  end
 
   def edit
   end
@@ -43,6 +44,6 @@ class ToursController < ApplicationController
   private
 
   def tours_params
-    params.require(:tour).permit(:name, :start_date, :end_date)
+    params.require(:tour).permit(:name, :start_date, :end_date, :group_id)
   end
 end
