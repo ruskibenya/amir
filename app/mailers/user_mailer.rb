@@ -7,21 +7,26 @@ class UserMailer < ApplicationMailer
   #
 
   def invitation(tour, invitation)
+
     # set link_url that email recipient will click on, points to this tour_id
-    @link = "rollcall.fun/tours/#{tour.id}"
+    @link = accept_invitation_url(invitation_id: invitation.id, tour_id: tour.id)
 
     # set sender of email
     from = "#{tour.user.name}@amir.com"
 
+    raise
 
     # tour organizer name
     @sender = tour.user.name
 
-    mail to: invitation.email, from: from
+    # if we end up using invitation status
+    # invitation.status = "sent"
+
+    # mail to: invitation.email, from: from
     #test cases
     # to send to christophe
     # mail to: "christophe.ridarch@gmail.com", from: from
     #from = "amir@rollcall.fun"
-    # mail to: "benjamin@benyas.com", from: from
+    mail to: "ruskibear31@gmail.com", from: from
   end
 end

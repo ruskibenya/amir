@@ -25,10 +25,6 @@ class ToursController < ApplicationController
     end
   end
 
-  def show
-    @tour = Tour.find(params[:id])
-  end
-
   def edit
   end
 
@@ -39,6 +35,11 @@ class ToursController < ApplicationController
   end
 
   def selectgroup
+  end
+
+  def visitor_show
+    @invitation = Invitation.find(params[:invitation_id])
+    @tour = Tour.find(params[:tour_id])
   end
 
   private
