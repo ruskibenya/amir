@@ -20,7 +20,7 @@ class ToursController < ApplicationController
     @tour.activity_ids = activity_ids
     @tour.user = current_user
     if @tour.save
-      redirect_to tour_path(@tour)
+      redirect_to tours_path
     else
       @groups = Group.all
       render :new
@@ -42,6 +42,6 @@ class ToursController < ApplicationController
   private
 
   def tours_params
-    params.require(:tour).permit(:name, :start_date, :end_date, :activities => [])
+    params.require(:tour).permit(:name, :start_date, :group_id, :end_date, :activities => [])
   end
 end

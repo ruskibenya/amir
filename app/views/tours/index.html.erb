@@ -4,6 +4,9 @@
   <p><%= tour.name %></p>
   <p><%= tour.start_date %></p>
   <p><%= tour.end_date %></p>
+  <% tour.activities.each do |activity| %>
+    <p><%= activity.name %></p>
+  <% end %>
 <% end %>
 <%= link_to 'create a new tour', new_tour_path(@tour) %>
 
