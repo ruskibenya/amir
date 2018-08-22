@@ -6,6 +6,13 @@ class ToursController < ApplicationController
 
   def show
     @tour = Tour.find(params[:id])
+    # @activities = Activity.where(tour_id: @tour.id).not(latitude: nil, longitude: nil)
+    # @markers = @activities.map do |activity|
+    #   {
+    #     lat: activity.latitude,
+    #     lng: activity.longitude,
+    #   }
+    # end
   end
 
   def new
