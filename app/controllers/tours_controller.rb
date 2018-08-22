@@ -6,18 +6,21 @@ class ToursController < ApplicationController
 
   def show
     @tour = Tour.find(params[:id])
+    @activities = Activity.all
   end
 
   def new
-    @groups = Group.all
-    @activities = Activity.all
     @tour = Tour.new
+    @groups = Group.all
+    #@activities = Activity.all
+    #@tour.activities.build
   end
 
   def create
-    activity_ids = tours_params[:activities].reject(&:empty?)
-    @tour = Tour.new(tours_params.except(:activities))
-    @tour.activity_ids = activity_ids
+    #activities = tours_params[:activities]
+    @tour = Tour.new(tours_params)
+    # @tour.activity_ids = activity_ids
+    # raise
     @tour.user = current_user
     if @tour.save
       redirect_to tours_path
@@ -42,6 +45,10 @@ class ToursController < ApplicationController
   private
 
   def tours_params
-    params.require(:tour).permit(:name, :start_date, :group_id, :end_date, :activities => [])
+    params.require(:tour).permit(:name, :start_date, :group_id, :end_date)
   end
+
+  # def activities_params
+  #   params.require(:tour).permit(activities_attributes: [:start_time])
+  # end
 end

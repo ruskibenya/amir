@@ -1,2 +1,32 @@
-<h1>Tours#show</h1>
+<h1><%= @tour.name %></h1>
 <p>Find me in app/views/tours/show.html.erb</p>
+
+  <% @tour.activities.each do |activity| %>
+    <div style="background-color: white">
+      <p><%= activity.name %></p>
+      <p><%= activity.start_time %></p>
+      <p><%= activity.end_time %></p>
+  </div>
+  <% end %>
+  <% @activities.each do |activity| %>
+      <%= simple_form_for [@tour, activity] do |f| %>
+      <%= activity.name %>
+      <input type="text" name="start_time" class="flatpickr-time" style="height: 30px;">
+      <input type="text" name="end_time" class="flatpickr-time" style="height: 30px;">
+      <%#= f.input :start_time, input_html: { class: "flatpickr-time"} %>
+      <%#= f.input :end_time, input_html: { class: "flatpickr-time"} %>
+      <%= f.submit %>
+    <% end %>
+  <% end %>
+
+
+
+<% content_for :after_js do %>
+<script type="text/javascript">
+    document.querySelectorAll('.flatpickr-time').flatpickr({
+    enableTime: true,
+    minTime: "16:00",
+    maxTime: "22:00"
+    });
+</script>
+<% end %>
