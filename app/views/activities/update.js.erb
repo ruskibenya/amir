@@ -1,0 +1,29 @@
+// app/views/activities/update.js.erb
+// Here you generate *JavaScript* that would be executed in the browser
+// function refreshForm(innerHTML) {
+//   const newActivityForm = document.getElementById('new_activity');
+//   newActivityForm.innerHTML = innerHTML;
+// }
+
+// function addActivity(reviewHTML) {
+//   const activities = document.querySelectorAll('choose-activity');
+//   activities.insertAdjacentHTML('beforeend', activityHTML);
+// }
+
+// <% if @review.errors.any? %>
+//   refreshForm('<%= j render "reviews/form", restaurant: @restaurant, review: @review %>');
+// <% else %>
+//   addReview('<%= j render "reviews/show", review: @review %>');
+//   refreshForm('<%= j render "reviews/form", restaurant: @restaurant, review: Review.new %>');
+// <% end %>
+
+
+<% if @activity.save %>
+// Remove the form
+document.querySelectorAll('.choose-activity').remove();
+// Add the newly created review
+document.querySelectorAll('.tour-recap').insertAdjacentHTML('beforeend', "<%= j render 'reviews/show', review: @review %>");
+<% else %>
+document.getElementById('review_form').innerHTML = "<%= j render 'reviews/form' %>";
+<% end %>
+

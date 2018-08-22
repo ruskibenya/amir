@@ -1,0 +1,54 @@
+body.tours.index{
+  // background-color: red;
+  background-color: white;
+  p{
+    margin: 0;
+  }
+}
+
+
+.title-add{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tour-card{
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 3%;
+  padding: 2% 1%;
+
+}
+
+.tour-name-and-group{
+  font-size: 14px;
+}
+
+.tour-date{
+  font-size: 11px;
+}
+
+// <div class="row">
+//   <% @tours.each do |tour| %>
+//   <div class="col-xs-12 col-md-4 col-sm-4">
+//     <div class="tour-card">
+//       <div class="tour-name-and-group">
+//         <h4><%= tour.name %></h4>
+//         <% if !tour.group.nil? %>
+//           <h5><%= tour.group.name %></h5>
+//         <% end %>
+//       </div>
+//       <div class="tour-date">
+//         <p><%= tour.start_date %></p>
+//         <p><%= tour.end_date %></p>
+//       </div>
+//       <div class="view-more-tour">
+//         <%= link_to 'see', tour_path(tour) %>
+//       </div>
+//     </div>
+//   </div>
+//   <% end %>
+// </div>
