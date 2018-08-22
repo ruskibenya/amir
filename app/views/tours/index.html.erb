@@ -1,17 +1,34 @@
 <% if flash[:invitations_sent] %>
-    <div class="notice">Sent!</div>
+
+    <div class="sent_message">
+      <div class="title">
+        <i class="far fa-check-circle"></i>
+      </div>
+    </div>
+
   <% end %>
 
 <p><% @tours.each do |tour| %></p>
   <p><%= tour.name %></p>
   <p><%= tour.start_date %></p>
   <p><%= tour.end_date %></p>
-  <p>
-    <% if (tour.group_id != nil) then %>
-      <%= puts Group.find(tour.group_id).name %>
-    <% end %>
-  </p>
-  <%= link_to "Edit tour", tour_path(tour) %>
+
+  <% if !tour.group.nil? %>
+    <p><%= tour.group.name %></p>
+  <% end %>
+
+  <% tour.activities.each do |activity| %>
+    <p><%= activity.name %></p>
+    <p><%= activity.start_time %></p>
+    <p><%= activity.end_time %></p>
+  <% end %>
+
+
+  <%= link_to 'see', tour_path(tour) %>
 <% end %>
 <%= link_to 'create a new tour', new_tour_path(@tour) %>
 
+  <%# tour.activities.each do |activity| %>
+    <p><%#= activity.name %></p>
+    <p><%#= activity.start_time %></p>
+  <%# end %>

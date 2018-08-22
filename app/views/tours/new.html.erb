@@ -1,9 +1,10 @@
 <h2>Create a new tour</h2>
-<%= simple_form_for @tour do |f| %>
+<%= simple_form_for @tour, url: tours_path do |f| %>
+
   <%= f.input :name %>
-  <%= f.input :start_date, as: :string, input_html: { class: "flatpickr-input"} %>
-  <%= f.input :end_date, as: :string, input_html: { class: "flatpickr-input-two"} %>
-  <%= f.input :group_id, collection: @groups, prompt: "Choose a Group" %>
+  <%= f.input :start_date, as: :string, input_html: { class: "flatpickr-date"} %>
+  <%= f.input :end_date, as: :string, input_html: { class: "flatpickr-date"} %>
+  <%= f.input :group_id, collection: @groups %>
   <%= f.submit %>
 <% end %>
 
@@ -11,11 +12,21 @@
 <% content_for :after_js do %>
 
   <script type="text/javascript">
-    document.querySelector('.flatpickr-input').flatpickr();
+    document.querySelectorAll('.flatpickr-date').flatpickr({
+    enableTime: true
+    });
   </script>
 
     <script type="text/javascript">
-    document.querySelector('.flatpickr-input-two').flatpickr();
+    document.querySelectorAll('.flatpickr-time').flatpickr({
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    time_24hr: true
+});
   </script>
 
 <% end %>
+
+
+<!-- :label_method => lambda{ |activity| "#{activity.name} - #{activity.address} "  -->
