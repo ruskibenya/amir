@@ -42,10 +42,15 @@ class ToursController < ApplicationController
   def selectgroup
   end
 
+  def visitor_show
+    @invitation = Invitation.find(params[:invitation_id])
+    @tour = Tour.find(params[:tour_id])
+  end
+
   private
 
   def tours_params
-    params.require(:tour).permit(:name, :start_date, :group_id, :end_date)
+    params.require(:tour).permit(:name, :start_date, :end_date, :group_id)
   end
 
   # def activities_params

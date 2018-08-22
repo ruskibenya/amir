@@ -1,10 +1,11 @@
+<% if flash[:invitations_sent] %>
+    <div class="notice">Sent!</div>
+  <% end %>
 
-<h3>Create</h3>
 <p><% @tours.each do |tour| %></p>
   <p><%= tour.name %></p>
   <p><%= tour.start_date %></p>
   <p><%= tour.end_date %></p>
-  <p><%#= Group.find(tour.group_id).name %></p>
 
   <% if !tour.group.nil? %>
     <p><%= tour.group.name %></p>

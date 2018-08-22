@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 2018_08_22_083313) do
     t.bigint "tour_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.time "start_time"
-    t.time "end_time"
+    t.datetime "starting_time"
+    t.datetime "ending_time"
     t.index ["tour_id"], name: "index_activities_on_tour_id"
   end
 
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_08_22_083313) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "email"
     t.index ["group_id"], name: "index_invitations_on_group_id"
     t.index ["user_id"], name: "index_invitations_on_user_id"
   end

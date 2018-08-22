@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Amir
   class Application < Rails::Application
+    config.time_zone = 'Asia/Jerusalem'
     config.generators do |generate|
           generate.assets false
           generate.helper false
@@ -20,5 +21,10 @@ module Amir
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    config.action_mailer.delivery_method = :postmark
+    config.action_mailer.postmark_settings = { :api_token => ENV['POSTMARK_KEY'] }
   end
 end
+
+
