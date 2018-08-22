@@ -22,6 +22,9 @@
 
 
 <!-- Button to send invitations to group -->
+
+<h3>Tour's Schedule</h3>
+
 <p> <%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %> </p>
 
 <p> <%= link_to "See all tours", tours_path %> </p>
@@ -52,6 +55,13 @@
 
 <p> <%= @tour.end_date %> </p>
 
+
+<h3>Tour's map</h3>
+<div
+  id="map"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  ></div>
 
 <% content_for :after_js do %>
 <script type="text/javascript">
