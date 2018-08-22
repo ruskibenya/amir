@@ -14,8 +14,6 @@ class UserMailer < ApplicationMailer
     # set sender of email
     from = "#{tour.user.name}@amir.com"
 
-    raise
-
     # tour organizer name
     @sender = tour.user.name
 
