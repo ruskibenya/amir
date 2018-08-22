@@ -1,3 +1,7 @@
+<% if flash[:invitations_sent] %>
+    <div class="notice">Sent!</div>
+  <% end %>
+
 <p><% @tours.each do |tour| %></p>
   <p><%= tour.name %></p>
   <p><%= tour.start_date %></p>

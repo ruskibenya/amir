@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
 
   post "invitations/send/:tour_id", to: 'invitations#send_invitations', as: :send_invitations
+  get "invitations/:invitation_id/accept", to: 'invitations#accept', as: :accept_invitation
 
   resources :users, only: [:show]
 end
