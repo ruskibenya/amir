@@ -1,27 +1,28 @@
 <!-- Button to send invitations to group -->
-<%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %>
+<p> <%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %> </p>
+
+<p> <%= link_to "See all tours", tours_path %> </p>
 
 <h1> '<%=  @tour.name  %>'</h1>
 
 <% step = 0 %>
-<p> <%= @tour.start_date %> </p>
+<p> <%= @tour.start_date.strftime("%d %B %Y") %> </p>
 <% Activity.where("tour_id = ?", @tour.id).each do |activity|  %>
   <% step += 1 %>
   <%= step %>
   <p>
-    <% if activity.start_date != tour.start_date then %>
-      <%= activity.start_date %>
+    <% if activity.starting_time.day != @tour.start_date.day then %>
+      <%= activity.starting_time.strftime("%A %d of %B %Y") %>
     <% end %>
 
   </p>
-  <p> <%= activity.starting_time %> to <%= activity.ending_time %> </p>
+  <p> <%= activity.starting_time.strftime("%l%P") %> <%= activity.ending_time.strftime(" - %l%P") %>  </p>
   <p> <%= activity.category %> </p>
   <p> <%= activity.name %> </p>
-  <p> <%= activity.address %> </p>
-  <p> <%= activity.city %> </p>
+  <p> <%= activity.address %>, <%= activity.city %> </p>
   <p>
     <% if activity.meeting_point then %>
-      <%=  meeting point 🏁  %>
+      <%=  "meeting point 🏁"  %>
     <% end %>
   </p>
   <% end %>

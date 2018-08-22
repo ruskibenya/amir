@@ -8,6 +8,7 @@ Bundler.require(*Rails.groups)
 
 module Amir
   class Application < Rails::Application
+    config.time_zone = 'Asia/Jerusalem'
     config.generators do |generate|
           generate.assets false
           generate.helper false
@@ -25,3 +26,5 @@ module Amir
     config.action_mailer.postmark_settings = { :api_token => ENV['POSTMARK_KEY'] }
   end
 end
+
+
