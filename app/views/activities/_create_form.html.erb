@@ -1,0 +1,11 @@
+<h2>Create a new Activity</h2>
+<%= simple_form_for [@tour, @activity],remote: true do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :city %>
+  <%= f.input :meeting_point %>
+  <%= f.select :category, ["Business", "Travel & Outdoor", "Food & Drink", "Lecture", "Cultural", "Religious", "Other"] %>
+  <input type="text" name="start_time" class="flatpickr-time" style="height: 30px;">
+  <input type="text" name="end_time" class="flatpickr-time" style="height: 30px;">
+  <%= f.submit %>
+<% end %>

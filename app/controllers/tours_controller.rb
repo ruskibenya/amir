@@ -1,4 +1,4 @@
-class ToursController < ApplicationController
+  class ToursController < ApplicationController
 
   def index
     @tours = Tour.all
@@ -6,7 +6,9 @@ class ToursController < ApplicationController
 
   def show
     @tour = Tour.find(params[:id])
-    @activities = Activity.where(tour_id: @tour.id).where.not(latitude: nil, longitude: nil)
+    @activity = Activity.new
+    @activities = @tour.activities
+    @s = 1
     @markers = @activities.map do |activity|
       {
         lat: activity.latitude,
