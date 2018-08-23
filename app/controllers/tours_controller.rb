@@ -8,13 +8,6 @@
     @tour = Tour.find(params[:id])
     @activity = Activity.new
     @activities = @tour.activities
-    @s = 1
-    @markers = @activities.map do |activity|
-      {
-        lat: activity.latitude,
-        lng: activity.longitude,
-      }
-    end
   end
 
   def new
@@ -60,8 +53,4 @@
   def tours_params
     params.require(:tour).permit(:name, :start_date, :end_date, :group_id)
   end
-
-  # def activities_params
-  #   params.require(:tour).permit(activities_attributes: [:start_time])
-  # end
 end

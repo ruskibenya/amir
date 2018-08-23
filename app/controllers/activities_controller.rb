@@ -3,16 +3,16 @@ class ActivitiesController < ApplicationController
     @tour = Tour.find(params[:tour_id])
     @activity = Activity.new(activity_params)
     @activity.tour = @tour
+    @saved = @activity.save
 
     respond_to do |format|
       format.html {
-        if @activity.save
+        if @saved
           redirect_to @tour
         else
           render 'tours/show'
         end
       }
-
       format.js
     end
   end
