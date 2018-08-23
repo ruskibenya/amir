@@ -30,7 +30,7 @@
 
         </div>
       <!-- updates the next step number -->
-      <% s += 1 %>
+      <% @s += 1 %>
     <% end %>
   <% end %>
 </div>
@@ -69,23 +69,13 @@
   ></div>
   <% end %>
 </div>
+
+
 <% content_for :after_js do %>
+
+<!-- script for dropdown_toggle -->
 <script>
   const map = document.getElementById('map')
-
-  <!-- script for dropdown_toggle -->
-<script>
-  const buttons = document.querySelectorAll(".dropdown_toggle");
-  buttons.forEach(button => {
-    button.addEventListener("click", (event) => {
-      console.log("ciao");
-      button.querySelector(".dropdown_content").classList.toggle("hidden");
-    })
-  })
-</script>
-
-
-  <script>
   let button = document.getElementById("show_tour_map")
   button.addEventListener('click', function(event) {
     event.preventDefault();
@@ -104,7 +94,17 @@
  </script>
 
 
-<% content_for :after_js do %>
+<script>
+  const buttons = document.querySelectorAll(".dropdown_toggle");
+  buttons.forEach(button => {
+    button.addEventListener("click", (event) => {
+      console.log("ciao");
+      button.querySelector(".dropdown_content").classList.toggle("hidden");
+    })
+  })
+</script>
+
+
   <script type="text/javascript">
       document.querySelectorAll('.flatpickr-time').flatpickr({
       enableTime: true,
@@ -113,14 +113,4 @@
       });
   </script>
 
-  <!-- script for dropdown_toggle -->
-  <script>
-    const buttons = document.querySelectorAll(".dropdrown_toggle");
-    buttons.forEach(button => {
-      button.addEventListener("click", (event) => {
-        // console.log("ciao");
-        event.target.querySelector(".dropdown_content").classList.toggle("hidden");
-      })
-    })
-  </script>
 <% end %>
