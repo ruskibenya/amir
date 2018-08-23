@@ -5,23 +5,31 @@
 <br>
 
 
+
+
+
+
 <div id="activity_count">
   <h1><%= @tour.name %></h1>
-  <h5><%= render 'activities/count' %></h5>
+  <h5><%= render 'activities/count', activities: @activities %></h5>
 </div>
 
 <div id="activities">
   <% if @activities.blank? %>
     <%= @tour.name %> doesn't have any activities!
   <% else %>
+    <% s = 1 %>
     <% @tour.activities.each do |activity| %>
-    <%# @activity = activity %>
       <div style="background-color: white">
-        <%= link_to "Stop ##{@s} - #{activity.name}", tour_activity_path(@tour, activity) %>
+        <%= link_to "Stop ##{s} - #{activity.name}", tour_activity_path(@tour, activity) %>
+          <!-- TODO hidden div with all the info from activity show -->
 <!-- why doesn't @activity get passed through to link_item? -->
+            <div class="hidden">
+              <%= render 'activities/show', activity: activity %>
+            </div>
         <%#= render 'activities/link_item', activity: @activity, tour: @tour%>
       </div>
-      <% @s += 1 %>
+      <% s += 1 %>
     <% end %>
   <% end %>
 </div>
@@ -56,6 +64,12 @@
 
 
 <h3>Tour's map</h3>
+<% markers = @activities.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+      }
+    end %>
 <div
   id="map"
   style="width: 100%; height: 600px;"

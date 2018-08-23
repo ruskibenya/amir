@@ -1,10 +1,10 @@
-<% if @activity.save %>
-// Remove the form
-document.querySelector('#activity_form').remove();
-// Add the newly created activity
-document.querySelector('#activities').insertAdjacentHTML('beforeend', "<%=j render 'activities/link_item', activity: @activity, tour: @tour%>");
-// Change the number of activities
-document.querySelector('#activity_count').innerHTML = "<%= j render 'activities/count' %>";
+<% if @saved %>
+  // Remove the form
+  // document.querySelector('#activity_form').remove();
+  // Add the newly created activity
+  document.querySelector('#activities').insertAdjacentHTML('beforeend', "<%=j render 'activities/link_item', activity: @activity, tour: @tour%>");
+  // Change the number of activities
+  document.querySelector('#activity_count').innerHTML = "<%= j render 'activities/count', activities: @tour.activities %>";
 <% else %>
-document.querySelector('#activity_form').innerHTML = "<%= j render 'activities/create_form' %>";
+  document.querySelector('#activity_form').innerHTML = "<%= j render 'activities/create_form' %>";
 <% end %>

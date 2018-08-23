@@ -1,0 +1,26 @@
+<br>
+<br>
+<br>
+<br>
+
+<!-- displays day of activity -->
+<p>
+  <%= activity.starting_time.strftime("%A %d of %B %Y") %>
+</p>
+<!-- displays time of activity -->
+<p> <%= activity.starting_time.strftime("%l%P") %> <%= activity.ending_time.strftime(" - %l%P") %>  </p>
+<!-- displays category of activity -->
+<p> <%= activity.category %> </p>
+<!-- displays name of activity -->
+<p><%= activity.name %></p>
+<!-- displays address of activity -->
+<p> <%= activity.address %>, <%= activity.city %> </p>
+<!-- displays if activity is a meeting point -->
+<p>
+  <% if activity.meeting_point then %>
+    <%=  "meeting point 🏁"  %>
+  <% end %>
+</p>
+
+<%#= link_to "Edit",  %>
+
