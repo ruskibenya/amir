@@ -33,6 +33,7 @@ class ActivitiesController < ApplicationController
       respond_to do |format|
         format.html { render 'tours/show' }
         format.js
+      end
     end
   end
 
