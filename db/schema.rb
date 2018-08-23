@@ -26,10 +26,10 @@ ActiveRecord::Schema.define(version: 2018_08_22_115215) do
     t.bigint "tour_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.time "start_time"
-    t.time "end_time"
     t.datetime "starting_time"
     t.datetime "ending_time"
+    t.time "start_time"
+    t.time "end_time"
     t.index ["tour_id"], name: "index_activities_on_tour_id"
   end
 
