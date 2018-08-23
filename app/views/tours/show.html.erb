@@ -1,14 +1,15 @@
 <% content_for :above_container do %>
-  <div class="title-show col-xs-12">
+  <!-- displays number of current activities in this tour -->
+  <div class="title-show col-xs-12" id="activity_count">
     <h4><%= @tour.name %></h4>
+    <h5><%= render 'activities/count', activities: @activities %></h5>
   </div>
 <% end %>
 
-<!-- displays number of current activities in this tour -->
-<div id="activity_count">
-  <h1><%= @tour.name %></h1>
-  <h5><%= render 'activities/count', activities: @activities %></h5>
-</div>
+<a href="#" id="show_tour_overview">Overview</a>
+<a href="#" id="show_tour_map">Map</a>
+
+<div id="tour-overview">
 
 <!-- displays activities on this tour -->
 <div id="activities">
@@ -44,6 +45,7 @@
   <%= render 'activities/create_form' %>
 </div>
 
+</div>  
 <!-- send email invitations for this tour -->
 <p> <%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %> </p>
 
@@ -51,6 +53,7 @@
 <p> <%= link_to "See all tours", tours_path %> </p>
 
 <!-- map section -->
+<div id="tour-map" class="hidden">
 <h3>Tour's map</h3>
   <%
     markers = @activities.map do |activity|
@@ -69,7 +72,27 @@
   ></div>
   <% end %>
 
+<script>
+  const map = document.getElementById('map')
 
+  let button = document.getElementById("show_tour_map")
+  button.addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('tour-map').classList.toggle('hidden');
+    document.getElementById('tour-overview').classList.toggle('hidden');
+    initMap(map);
+  });
+
+  button = document.getElementById("show_tour_overview")
+  button.addEventListener('click', function(event) {
+    event.preventDefault();
+    document.getElementById('tour-overview').classList.toggle('hidden');
+    document.getElementById('tour-map').classList.toggle('hidden');
+    initMap(map);
+   });
+ </script>  
+
+  
 <% content_for :after_js do %>
   <script type="text/javascript">
       document.querySelectorAll('.flatpickr-time').flatpickr({
@@ -91,3 +114,4 @@
     })
   </script>
 <% end %>
+  })
