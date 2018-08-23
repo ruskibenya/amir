@@ -4,11 +4,6 @@
 <br>
 <br>
 
-
-
-
-
-
 <div id="activity_count">
   <h1><%= @tour.name %></h1>
   <h5><%= render 'activities/count', activities: @activities %></h5>
@@ -21,13 +16,13 @@
     <% s = 1 %>
     <% @tour.activities.each do |activity| %>
       <div style="background-color: white">
-        <%= link_to "Stop ##{s} - #{activity.name}", tour_activity_path(@tour, activity) %>
-          <!-- TODO hidden div with all the info from activity show -->
-<!-- why doesn't @activity get passed through to link_item? -->
-            <div class="hidden">
+        <%= "Stop ##{s}"  %><br>
+        <button class="dropdrown_toggle"><%= "#{activity.name}" %>
+            <div class="dropdown_content hidden">
               <%= render 'activities/show', activity: activity %>
             </div>
-        <%#= render 'activities/link_item', activity: @activity, tour: @tour%>
+        </button>
+        <%#= link_to , tour_activity_path(@tour, activity) %>
       </div>
       <% s += 1 %>
     <% end %>
@@ -64,24 +59,37 @@
 
 
 <h3>Tour's map</h3>
-<% markers = @activities.map do |activity|
+  <%
+    markers = @activities.map do |activity|
       {
         lat: activity.latitude,
         lng: activity.longitude,
-      }
-    end %>
+        }
+    end
+  %>
 <div
   id="map"
   style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
+  data-markers="<%= markers.to_json %>"
   ></div>
 
 <% content_for :after_js do %>
-<script type="text/javascript">
-    document.querySelectorAll('.flatpickr-time').flatpickr({
-    enableTime: true,
-    minTime: "16:00",
-    maxTime: "22:00"
-    });
-</script>
+  <script type="text/javascript">
+      document.querySelectorAll('.flatpickr-time').flatpickr({
+      enableTime: true,
+      minTime: "16:00",
+      maxTime: "22:00"
+      });
+  </script>
 <% end %>
+
+<!-- script for dropdown_toggle -->
+<script>
+  const buttons = document.querySelectorAll(".dropdrown_toggle");
+  buttons.forEach(button => {
+    button.addEventListener("click", (event) => {
+      // console.log("ciao");
+      event.target.querySelector(".dropdown_content").classList.toggle("hidden");
+    })
+  })
+</script>
