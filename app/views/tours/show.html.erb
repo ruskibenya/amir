@@ -2,64 +2,85 @@
   <h4><%= @tour.name %></h4>
 </div>
 
-  <% @tour.activities.each do |activity| %>
-    <%= render 'components/activity_card', activity: activity %>
-  <% end %>
+<!-- displays number of current activities in this tour -->
+<div id="activity_count">
+  <h1><%= @tour.name %></h1>
+  <h5><%= render 'activities/count', activities: @activities %></h5>
+</div>
 
-  <% @activities.each do |activity| %>
-  <div class="choose-activity">
-      <%= simple_form_for [@tour, activity] do |f| %>
-      <%= activity.name %>
-      <%= f.input :starting_time, as: :string, input_html: { class: "flatpickr-time"} %>
-      <%= f.input :ending_time, as: :string, input_html: { class: "flatpickr-time"} %>
-
-      <!-- <input type="text" name="starting_time" class="flatpickr-time" style="height: 30px;"> -->
-      <!-- <input type="text" name="ending_time" class="flatpickr-time" style="height: 30px;"> -->
-      <%= f.submit %>
-  </div>
+<!-- displays activities on this tour -->
+<div id="activities">
+  <!-- displays message if tour doesn't have any activities -->
+  <% if @activities.blank? %>
+    <%= @tour.name %> doesn't have any activities!
+  <% else %>
+    <!-- sets first activity as first step -->
+    <% s = 1 %>
+    <!-- displays each activity on this tour as a button -->
+    <% @tour.activities.each do |activity| %>
+      <div style="background-color: white">
+        <%= "Stop ##{s}"  %><br>
+        <button class="dropdrown_toggle"><%= "#{activity.name}" %>
+          <!-- toggle show the contents of activity -->
+            <div class="dropdown_content hidden">
+              <%= render 'activities/show', activity: activity %>
+              <%= render 'components/activity_card', activity: activity %>
+            </div>
+        </button>
+      </div>
+      <!-- updates the next step number -->
+      <% @s += 1 %>
     <% end %>
   <% end %>
+</div>
 
+<!-- create a new activity for this tour -->
+<div id="activity_form">
+  <%#= link_to '',  do %>
+  <%#= 'activities/create_form' %>
+  <%# end %>
+  <%= render 'activities/create_form' %>
+</div>
 
-
-<!-- Button to send invitations to group -->
+<!-- send email invitations for this tour -->
 <p> <%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %> </p>
 
+<!-- link back to "my tours" -->
 <p> <%= link_to "See all tours", tours_path %> </p>
 
-<h1> '<%=  @tour.name  %>'</h1>
-
-<% step = 0 %>
-<p> <%= @tour.start_date.strftime("%d %B %Y") %> </p>
-<% Activity.where("tour_id = ?", @tour.id).each do |activity|  %>
-  <% step += 1 %>
-  <%= step %>
-  <p>
-    <% if activity.starting_time.day != @tour.start_date.day then %>
-      <%= activity.starting_time.strftime("%A %d of %B %Y") %>
-    <% end %>
-
-  </p>
-  <p> <%= activity.starting_time.strftime("%l%P") %> <%= activity.ending_time.strftime(" - %l%P") %>  </p>
-  <p> <%= activity.category %> </p>
-  <p> <%= activity.name %> </p>
-  <p> <%= activity.address %>, <%= activity.city %> </p>
-  <p>
-    <% if activity.meeting_point then %>
-      <%=  "meeting point 🏁"  %>
-    <% end %>
-  </p>
-  <% end %>
-
-<p> <%= @tour.end_date %> </p>
-
+<!-- map section -->
+<h3>Tour's map</h3>
+  <%
+    markers = @activities.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        }
+    end
+  %>
+<div
+  id="map"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= markers.to_json %>"
+  ></div>
 
 <% content_for :after_js do %>
-<script type="text/javascript">
-    document.querySelectorAll('.flatpickr-time').flatpickr({
-    enableTime: true,
-    minTime: "16:00",
-    maxTime: "22:00"
-    });
-</script>
+  <script type="text/javascript">
+      document.querySelectorAll('.flatpickr-time').flatpickr({
+      enableTime: true,
+      minTime: "16:00",
+      maxTime: "22:00"
+      });
+  </script>
 <% end %>
+
+<!-- script for dropdown_toggle -->
+<script>
+  const buttons = document.querySelectorAll(".dropdrown_toggle");
+  buttons.forEach(button => {
+    button.addEventListener("click", (event) => {
+      // console.log("ciao");
+      event.target.querySelector(".dropdown_content").classList.toggle("hidden");
+    })
+  })
+</script>

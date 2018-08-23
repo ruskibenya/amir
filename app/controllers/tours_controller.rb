@@ -1,4 +1,4 @@
-class ToursController < ApplicationController
+  class ToursController < ApplicationController
 
   def index
     @tours = Tour.all
@@ -6,7 +6,8 @@ class ToursController < ApplicationController
 
   def show
     @tour = Tour.find(params[:id])
-    @activities = Activity.all
+    @activity = Activity.new
+    @activities = @tour.activities
   end
 
   def new
@@ -52,8 +53,4 @@ class ToursController < ApplicationController
   def tours_params
     params.require(:tour).permit(:name, :start_date, :end_date, :group_id)
   end
-
-  # def activities_params
-  #   params.require(:tour).permit(activities_attributes: [:start_time])
-  # end
 end

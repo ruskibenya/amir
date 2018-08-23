@@ -1,3 +1,8 @@
+
+<% if flash[:invitations_sent] %>
+    <div class="notice">Sent!</div>
+<% end %>
+
 <div class="title-add">
   <h3>Tours</h3>
   <%= link_to 'Create'.html_safe, new_tour_path(@tour), class: 'amir-btn buttons-amir' %>
