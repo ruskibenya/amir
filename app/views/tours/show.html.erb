@@ -43,7 +43,7 @@
   <%= render 'activities/create_form' %>
 </div>
 
-</div>  
+</div>
 <!-- send email invitations for this tour -->
 <p> <%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %> </p>
 
@@ -65,11 +65,11 @@
   <% content_for :below_container do %>
   <div
   id="map"
-  style="width: 100%; height: 600px;"
   data-markers="<%= markers.to_json %>"
   ></div>
   <% end %>
-
+</div>
+<% content_for :after_js do %>
 <script>
   const map = document.getElementById('map')
 
@@ -101,7 +101,8 @@
     document.getElementById('tour-map').classList.toggle('hidden');
     initMap(map);
    });
- </script>  
+ </script>
+
 
 <% content_for :after_js do %>
   <script type="text/javascript">
@@ -111,3 +112,15 @@
       maxTime: "22:00"
       });
   </script>
+
+  <!-- script for dropdown_toggle -->
+  <script>
+    const buttons = document.querySelectorAll(".dropdrown_toggle");
+    buttons.forEach(button => {
+      button.addEventListener("click", (event) => {
+        // console.log("ciao");
+        event.target.querySelector(".dropdown_content").classList.toggle("hidden");
+      })
+    })
+  </script>
+<% end %>
