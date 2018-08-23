@@ -1,2 +1,14 @@
 @import "tours_index";
+@import "tour_index";
 
+#map {
+    width: 100%;
+    height: 600px;
+}
+
+#map label {
+    display: inline-block;
+}
+#map img {
+    max-width: inherit;
+}

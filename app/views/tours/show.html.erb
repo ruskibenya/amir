@@ -1,44 +1,50 @@
+ <br>
+  <br>
+  <br>
+  <br>
+  <br>
 
-<br>
-<br>
-<br>
-<br>
-<br>
+<a href="#" id="show_tour_overview">Overview</a>
+<a href="#" id="show_tour_map">Map</a>
+
+<div id="tour-overview">
 
 
-<div id="activity_count">
-  <h1><%= @tour.name %></h1>
-  <h5><%= render 'activities/count' %></h5>
-</div>
 
-<div id="activities">
-  <% if @activities.blank? %>
+
+  <div id="activity_count">
+    <h1><%= @tour.name %></h1>
+    <h5><%= render 'activities/count' %></h5>
+  </div>
+
+  <div id="activities">
+    <% if @activities.blank? %>
     <%= @tour.name %> doesn't have any activities!
-  <% else %>
+    <% else %>
     <% @tour.activities.each do |activity| %>
     <%# @activity = activity %>
-      <div style="background-color: white">
-        <%= link_to "Stop ##{@s} - #{activity.name}", tour_activity_path(@tour, activity) %>
-<!-- why doesn't @activity get passed through to link_item? -->
-        <%#= render 'activities/link_item', activity: @activity, tour: @tour%>
-      </div>
-      <% @s += 1 %>
-=======
-<h1><%= @tour.name %></h1>
-<p>Find me in app/views/tours/show.html.erb</p>
+    <div style="background-color: white">
+      <%= link_to "Stop ##{@s} - #{activity.name}", tour_activity_path(@tour, activity) %>
+      <!-- why doesn't @activity get passed through to link_item? -->
+      <%#= render 'activities/link_item', activity: @activity, tour: @tour%>
+    </div>
+    <% @s += 1 %>
+    <% end %>
+    <% end %>
 
-  <% @tour.activities.each do |activity| %>
+    <h1><%= @tour.name %></h1>
+    <p>Find me in app/views/tours/show.html.erb</p>
 
-      <div class="tour-recap" style="background-color: white">
-        <p><%= activity.name %></p>
-        <p><%= activity.starting_time.strftime "%d-%m-%Y %H:%M" %></p>
-        <p><%= activity.ending_time.strftime "%d-%m-%Y %H:%M" %></p>
-      </div>
+    <% @tour.activities.each do |activity| %>
+    <div class="tour-recap" style="background-color: white">
+      <p><%= activity.name %></p>
+      <p><%= activity.starting_time.strftime "%d-%m-%Y %H:%M" %></p>
+      <p><%= activity.ending_time.strftime "%d-%m-%Y %H:%M" %></p>
+    </div>
+    <% end %>
 
-  <% end %>
-
-  <% @activities.each do |activity| %>
-  <div class="choose-activity">
+    <% @activities.each do |activity| %>
+    <div class="choose-activity">
       <%= simple_form_for [@tour, activity] do |f| %>
       <%= activity.name %>
       <%= f.input :starting_time, as: :string, input_html: { class: "flatpickr-time"} %>
@@ -47,54 +53,74 @@
       <!-- <input type="text" name="starting_time" class="flatpickr-time" style="height: 30px;"> -->
       <!-- <input type="text" name="ending_time" class="flatpickr-time" style="height: 30px;"> -->
       <%= f.submit %>
+      <% end %>
+    </div>
+    <% end %>
   </div>
 
-    <% end %>
-  <% end %>
-</div>
-
-<div id="activity_form">
-  <%= render 'activities/create_form' %>
-</div>
+  <div id="activity_form">
+    <%= render 'activities/create_form' %>
+  </div>
 
 
 
-
-
-
-
-<%# @activities.each do |activity| %>
+  <%# @activities.each do |activity| %>
   <!-- <div class="activity_form"> -->
-  <%#= render 'activities/form' %>
+    <%#= render 'activities/form' %>
     <%#= simple_form_for [@tour, activity], remote: true do |f| %>
-      <%#= activity.name %>
-      <!-- <input type="text" name="start_time" class="flatpickr-time" style="height: 30px;"> -->
-      <!-- <input type="text" name="end_time" class="flatpickr-time" style="height: 30px;"> -->
-      <%#= f.input :start_time, input_html: { class: "flatpickr-time"} %>
-      <%#= f.input :end_time, input_html: { class: "flatpickr-time"} %>
-      <%#= f.submit %>
+    <%#= activity.name %>
+    <!-- <input type="text" name="start_time" class="flatpickr-time" style="height: 30px;"> -->
+    <!-- <input type="text" name="end_time" class="flatpickr-time" style="height: 30px;"> -->
+    <%#= f.input :start_time, input_html: { class: "flatpickr-time"} %>
+    <%#= f.input :end_time, input_html: { class: "flatpickr-time"} %>
+    <%#= f.submit %>
     <%# end %>
-  <!-- </div> -->
-<%# end %>
+    <!-- </div> -->
+    <%# end %>
 
-<p> <%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %> </p>
+    <p> <%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %> </p>
 
-<p> <%= link_to "See all tours", tours_path %> </p>
+    <p> <%= link_to "See all tours", tours_path %> </p>
+
+    <% content_for :after_js do %>
+    <script type="text/javascript">
+      document.querySelectorAll('.flatpickr-time').flatpickr({
+        enableTime: true,
+        minTime: "16:00",
+        maxTime: "22:00"
+      });
+    </script>
+    <% end %>
 
 
-<h3>Tour's map</h3>
-<div
-  id="map"
-  style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-  ></div>
+  </div>
 
-<% content_for :after_js do %>
-<script type="text/javascript">
-    document.querySelectorAll('.flatpickr-time').flatpickr({
-    enableTime: true,
-    minTime: "16:00",
-    maxTime: "22:00"
+  <div id="tour-map" class="hidden">
+    <h3>Tour's map</h3>
+      <div
+      id="map"
+      data-markers="<%= @markers.to_json %>"
+      >
+    </div>
+</div>
+
+ <script>
+    const map = document.getElementById('map')
+
+    let button = document.getElementById("show_tour_map")
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('tour-map').classList.toggle('hidden');
+      document.getElementById('tour-overview').classList.toggle('hidden');
+      initMap(map);
     });
-</script>
-<% end %>
+
+    button = document.getElementById("show_tour_overview")
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('tour-overview').classList.toggle('hidden');
+      document.getElementById('tour-map').classList.toggle('hidden');
+      initMap(map);
+     });
+  </script>
+

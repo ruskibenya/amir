@@ -13,6 +13,12 @@
       {
         lat: activity.latitude,
         lng: activity.longitude,
+        infoWindow: { content: activity.name },
+      }
+    end
+    @polylines = @activities.map do |activity|
+      {
+        lng: activity.longitude, lat: activity.latitude
       }
     end
   end
