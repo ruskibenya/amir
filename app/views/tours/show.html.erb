@@ -4,60 +4,52 @@
 <br>
 <br>
 
+<!-- displays number of current activities in this tour -->
 <div id="activity_count">
   <h1><%= @tour.name %></h1>
   <h5><%= render 'activities/count', activities: @activities %></h5>
 </div>
 
+<!-- displays activities on this tour -->
 <div id="activities">
+  <!-- displays message if tour doesn't have any activities -->
   <% if @activities.blank? %>
     <%= @tour.name %> doesn't have any activities!
   <% else %>
+    <!-- sets first activity as first step -->
     <% s = 1 %>
+    <!-- displays each activity on this tour as a button -->
     <% @tour.activities.each do |activity| %>
       <div style="background-color: white">
         <%= "Stop ##{s}"  %><br>
         <button class="dropdrown_toggle"><%= "#{activity.name}" %>
+          <!-- toggle show the contents of activity -->
             <div class="dropdown_content hidden">
               <%= render 'activities/show', activity: activity %>
             </div>
         </button>
-        <%#= link_to , tour_activity_path(@tour, activity) %>
       </div>
+      <!-- updates the next step number -->
       <% s += 1 %>
     <% end %>
   <% end %>
 </div>
 
+<!-- create a new activity for this tour -->
 <div id="activity_form">
+  <%#= link_to '',  do %>
+  <%#= 'activities/create_form' %>
+  <%# end %>
   <%= render 'activities/create_form' %>
 </div>
 
-
-
-
-
-
-
-<%# @activities.each do |activity| %>
-  <!-- <div class="activity_form"> -->
-  <%#= render 'activities/form' %>
-    <%#= simple_form_for [@tour, activity], remote: true do |f| %>
-      <%#= activity.name %>
-      <!-- <input type="text" name="start_time" class="flatpickr-time" style="height: 30px;"> -->
-      <!-- <input type="text" name="end_time" class="flatpickr-time" style="height: 30px;"> -->
-      <%#= f.input :start_time, input_html: { class: "flatpickr-time"} %>
-      <%#= f.input :end_time, input_html: { class: "flatpickr-time"} %>
-      <%#= f.submit %>
-    <%# end %>
-  <!-- </div> -->
-<%# end %>
-
+<!-- send email invitations for this tour -->
 <p> <%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %> </p>
 
+<!-- link back to "my tours" -->
 <p> <%= link_to "See all tours", tours_path %> </p>
 
-
+<!-- map section -->
 <h3>Tour's map</h3>
   <%
     markers = @activities.map do |activity|
