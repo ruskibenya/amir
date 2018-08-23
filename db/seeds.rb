@@ -187,7 +187,7 @@ activities_attributes = [
   },
     {
   name: "'My life is a joke by Kevin' @Camel Comedy Club",
-  address: "Allenby St 128",
+  address: "Allenby Street 128 tel Aviv",
   city: "Tel Aviv-Yafo",
   meeting_point: true,
   category: "Religious",
