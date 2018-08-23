@@ -1,17 +1,15 @@
+<% content_for :above_container do %>
+  <!-- displays number of current activities in this tour -->
+  <div class="title-show col-xs-12" id="activity_count">
+    <h4><%= @tour.name %></h4>
+    <h5><%= render 'activities/count', activities: @activities %></h5>
+  </div>
+<% end %>
+
 <a href="#" id="show_tour_overview">Overview</a>
 <a href="#" id="show_tour_map">Map</a>
 
 <div id="tour-overview">
-
-<div class="title-show col-xs-12">
-  <h4><%= @tour.name %></h4>
-</div>
-
-<!-- displays number of current activities in this tour -->
-<div id="activity_count">
-  <h1><%= @tour.name %></h1>
-  <h5><%= render 'activities/count', activities: @activities %></h5>
-</div>
 
 <!-- displays activities on this tour -->
 <div id="activities">
@@ -34,7 +32,7 @@
         </button>
       </div>
       <!-- updates the next step number -->
-      <% @s += 1 %>
+      <% s += 1 %>
     <% end %>
   <% end %>
 </div>
@@ -65,35 +63,16 @@
         }
     end
   %>
-  
-<div
+
+  <% content_for :below_container do %>
+  <div
   id="map"
   style="width: 100%; height: 600px;"
   data-markers="<%= markers.to_json %>"
   ></div>
-  
- </div>
+  <% end %>
 
-<% content_for :after_js do %>
-  <script type="text/javascript">
-      document.querySelectorAll('.flatpickr-time').flatpickr({
-      enableTime: true,
-      minTime: "16:00",
-      maxTime: "22:00"
-      });
-  </script>
-<% end %>
-
-<!-- script for dropdown_toggle -->
 <script>
-  const buttons = document.querySelectorAll(".dropdrown_toggle");
-  buttons.forEach(button => {
-    button.addEventListener("click", (event) => {
-      // console.log("ciao");
-      event.target.querySelector(".dropdown_content").classList.toggle("hidden");
-    })
-  })
-
   const map = document.getElementById('map')
 
   let button = document.getElementById("show_tour_map")
@@ -111,4 +90,28 @@
     document.getElementById('tour-map').classList.toggle('hidden');
     initMap(map);
    });
- </script>
+ </script>  
+
+  
+<% content_for :after_js do %>
+  <script type="text/javascript">
+      document.querySelectorAll('.flatpickr-time').flatpickr({
+      enableTime: true,
+      minTime: "16:00",
+      maxTime: "22:00"
+      });
+  </script>
+
+
+  <!-- script for dropdown_toggle -->
+  <script>
+    const buttons = document.querySelectorAll(".dropdrown_toggle");
+    buttons.forEach(button => {
+      button.addEventListener("click", (event) => {
+        // console.log("ciao");
+        event.target.querySelector(".dropdown_content").classList.toggle("hidden");
+      })
+    })
+  </script>
+<% end %>
+  })
