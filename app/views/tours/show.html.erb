@@ -1,3 +1,29 @@
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div id="activity_count">
+  <h1><%= @tour.name %></h1>
+  <h5><%= render 'activities/count' %></h5>
+</div>
+
+<div id="activities">
+  <% if @activities.blank? %>
+    <%= @tour.name %> doesn't have any activities!
+  <% else %>
+    <% @tour.activities.each do |activity| %>
+    <%# @activity = activity %>
+      <div style="background-color: white">
+        <%= link_to "Stop ##{@s} - #{activity.name}", tour_activity_path(@tour, activity) %>
+<!-- why doesn't @activity get passed through to link_item? -->
+        <%#= render 'activities/link_item', activity: @activity, tour: @tour%>
+      </div>
+      <% @s += 1 %>
+=======
 <h1><%= @tour.name %></h1>
 <p>Find me in app/views/tours/show.html.erb</p>
 
@@ -22,44 +48,38 @@
       <!-- <input type="text" name="ending_time" class="flatpickr-time" style="height: 30px;"> -->
       <%= f.submit %>
   </div>
+
     <% end %>
   <% end %>
+</div>
+
+<div id="activity_form">
+  <%= render 'activities/create_form' %>
+</div>
 
 
 
-<!-- Button to send invitations to group -->
 
-<h3>Tour's Schedule</h3>
+
+
+
+<%# @activities.each do |activity| %>
+  <!-- <div class="activity_form"> -->
+  <%#= render 'activities/form' %>
+    <%#= simple_form_for [@tour, activity], remote: true do |f| %>
+      <%#= activity.name %>
+      <!-- <input type="text" name="start_time" class="flatpickr-time" style="height: 30px;"> -->
+      <!-- <input type="text" name="end_time" class="flatpickr-time" style="height: 30px;"> -->
+      <%#= f.input :start_time, input_html: { class: "flatpickr-time"} %>
+      <%#= f.input :end_time, input_html: { class: "flatpickr-time"} %>
+      <%#= f.submit %>
+    <%# end %>
+  <!-- </div> -->
+<%# end %>
 
 <p> <%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %> </p>
 
 <p> <%= link_to "See all tours", tours_path %> </p>
-
-<h1> '<%=  @tour.name  %>'</h1>
-
-<% step = 0 %>
-<p> <%= @tour.start_date.strftime("%d %B %Y") %> </p>
-<% Activity.where("tour_id = ?", @tour.id).each do |activity|  %>
-  <% step += 1 %>
-  <%= step %>
-  <p>
-    <% if activity.starting_time.day != @tour.start_date.day then %>
-      <%= activity.starting_time.strftime("%A %d of %B %Y") %>
-    <% end %>
-
-  </p>
-  <p> <%= activity.starting_time.strftime("%l%P") %> <%= activity.ending_time.strftime(" - %l%P") %>  </p>
-  <p> <%= activity.category %> </p>
-  <p> <%= activity.name %> </p>
-  <p> <%= activity.address %>, <%= activity.city %> </p>
-  <p>
-    <% if activity.meeting_point then %>
-      <%=  "meeting point 🏁"  %>
-    <% end %>
-  </p>
-  <% end %>
-
-<p> <%= @tour.end_date %> </p>
 
 
 <h3>Tour's map</h3>
