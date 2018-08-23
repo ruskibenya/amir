@@ -1,14 +1,9 @@
-<h1><%= @tour.name %></h1>
-<p>Find me in app/views/tours/show.html.erb</p>
+<div class="title-show col-xs-12">
+  <h4><%= @tour.name %></h4>
+</div>
 
   <% @tour.activities.each do |activity| %>
-
-      <div class="tour-recap" style="background-color: white">
-        <p><%= activity.name %></p>
-        <p><%= activity.starting_time.strftime "%d-%m-%Y %H:%M" %></p>
-        <p><%= activity.ending_time.strftime "%d-%m-%Y %H:%M" %></p>
-      </div>
-
+    <%= render 'components/activity_card', activity: activity %>
   <% end %>
 
   <% @activities.each do |activity| %>

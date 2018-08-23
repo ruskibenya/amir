@@ -1,54 +1,18 @@
-<% if flash[:invitations_sent] %>
-    <div class="notice">Sent!</div>
-<% end %>
-
-  <% @tours.each do |tour| %>
-    <p><%= tour.name %></p>
-    <p><%= tour.start_date %></p>
-    <p><%= tour.end_date %></p>
-
-  <% if !tour.group.nil? %>
-    <p><%= tour.group.name %></p>
-  <% end %>
-
-  <% tour.activities.each do |activity| %>
-    <p><%= activity.name %></p>
-    <p><%= activity.start_time %></p>
-    <p><%= activity.end_time %></p>
-  <% end %>
-
-
-  <%= link_to 'see', tour_path(tour) %>
-<% end %>
-<%= link_to 'create a new tour', new_tour_path(@tour) %>
-
-
-<hr><hr>
 <div class="title-add">
-  <h3>Your tours</h3>
-  <%= link_to 'create a new tour', new_tour_path(@tour), class: 'amir-btn' %>
+  <h3>Tours</h3>
+  <%= link_to 'Create'.html_safe, new_tour_path(@tour), class: 'amir-btn buttons-amir' %>
 </div>
 
 <div class="row">
+
+
   <% @tours.each do |tour| %>
-  <div class="col-xs-12 col-md-6 col-sm-6">
-    <div class="tour-card">
-      <div class="tour-name-and-group">
-        <p><%= tour.name %></p>
-        <% if !tour.group.nil? %>
-          <p><%= tour.group.name %></p>
-        <% end %>
-      </div>
-      <div class="tour-date">
-        <p><%= tour.start_date %></p>
-        <p><%= tour.end_date %></p>
-      </div>
-      <div class="view-more-tour">
-        <%= link_to 'see', tour_path(tour), class: "simple-link" %>
-      </div>
-    </div>
-  </div>
+<!--   <div class="wrapper-row"> -->
+    <%#= link_to "", tour_path(tour) %>
+    <%= render "components/card", tour: tour %>
+ <!--  </div> -->
   <% end %>
+
 </div>
 
 

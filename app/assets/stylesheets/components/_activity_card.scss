@@ -1,0 +1,105 @@
+.activity-card{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5% 0;
+  border: 1px solid $light-gray;
+  border-radius: 3px;
+}
+
+.meeting-point{
+  flex: 0 0 10%;
+  padding: 0 1%;
+}
+
+.activity-category{
+  flex: 0 0 20%;
+}
+
+.activity-name{
+  flex: 0 0 50%;
+  p{
+    color: #4E8397;
+    font-weight: 500;
+  }
+}
+
+.see-activity{
+  flex: 10%;
+}
+
+
+
+
+
+.index-activity{
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin: 2% 0;
+  .number{
+    padding: 0;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    background-color: #4E8397;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+  }
+}
+
+
+
+
+@media screen and (max-width: 640px) {
+  .activity-name{
+    flex: 0 0 50%;
+    p{
+      color: #4E8397;
+      font-weight: 500;
+      font-size: 14px;
+    }
+  }
+
+  .meeting-point{
+  flex: 0 0 10%;
+  padding: 0 1%;
+  }
+
+.activity-category{
+  flex: 0 0 20%;
+  }
+
+.activity-name{
+  flex: 0 0 50%;
+  p{
+    color: #4E8397;
+    font-weight: 500;
+  }
+  }
+
+.see-activity{
+  flex: 0 0 10%;
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
