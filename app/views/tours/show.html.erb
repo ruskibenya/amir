@@ -18,19 +18,17 @@
     <%= @tour.name %> doesn't have any activities!
   <% else %>
     <!-- sets first activity as first step -->
-    <% s = 1 %>
+    <% @s = 1 %>
     <!-- displays each activity on this tour as a button -->
     <% @tour.activities.each do |activity| %>
-      <div style="background-color: white">
-        <%= "Stop ##{s}"  %><br>
-        <button class="dropdrown_toggle"><%= "#{activity.name}" %>
+        <div class="dropdown_toggle">
+          <%= render 'components/activity_card', activity: activity, s: @s %>
           <!-- toggle show the contents of activity -->
-            <div class="dropdown_content hidden">
-              <%= render 'activities/show', activity: activity %>
-              <%= render 'components/activity_card', activity: activity %>
-            </div>
-        </button>
-      </div>
+          <div class="dropdown_content hidden">
+            <%= render 'activities/show', activity: activity %>
+          </div>
+
+        </div>
       <!-- updates the next step number -->
       <% s += 1 %>
     <% end %>
@@ -75,6 +73,19 @@
 <script>
   const map = document.getElementById('map')
 
+  <!-- script for dropdown_toggle -->
+<script>
+  const buttons = document.querySelectorAll(".dropdown_toggle");
+  buttons.forEach(button => {
+    button.addEventListener("click", (event) => {
+      console.log("ciao");
+      button.querySelector(".dropdown_content").classList.toggle("hidden");
+    })
+  })
+</script>
+
+
+  <script>
   let button = document.getElementById("show_tour_map")
   button.addEventListener('click', function(event) {
     event.preventDefault();
@@ -92,7 +103,6 @@
    });
  </script>  
 
-  
 <% content_for :after_js do %>
   <script type="text/javascript">
       document.querySelectorAll('.flatpickr-time').flatpickr({
@@ -101,17 +111,3 @@
       maxTime: "22:00"
       });
   </script>
-
-
-  <!-- script for dropdown_toggle -->
-  <script>
-    const buttons = document.querySelectorAll(".dropdrown_toggle");
-    buttons.forEach(button => {
-      button.addEventListener("click", (event) => {
-        // console.log("ciao");
-        event.target.querySelector(".dropdown_content").classList.toggle("hidden");
-      })
-    })
-  </script>
-<% end %>
-  })
