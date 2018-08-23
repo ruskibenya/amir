@@ -1,0 +1,36 @@
+.amir-btn{
+  font-size: 17px;
+  background-image: linear-gradient(to left top, #FF929A, #FF9363);
+  padding: 10px 15px;
+  border-radius: 30px;
+  color: white;
+  font-weight: bolder;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+
+.amir-btn:hover{
+  text-decoration: none;
+  color: white;
+  background-color: #FF9363;
+}
+
+
+.simple-link{
+  padding: 3px 5px;
+  border: 1px solid black;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 12px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.simple-link:hover{
+  text-decoration: none;
+  background-color: black;
+  color: white;
+}

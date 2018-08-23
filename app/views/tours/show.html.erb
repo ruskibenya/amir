@@ -1,3 +1,4 @@
+
 <br>
 <br>
 <br>
@@ -30,7 +31,33 @@
         </button>
       </div>
       <!-- updates the next step number -->
-      <% s += 1 %>
+      <% @s += 1 %>
+
+<h1><%= @tour.name %></h1>
+<p>Find me in app/views/tours/show.html.erb</p>
+
+  <% @tour.activities.each do |activity| %>
+
+      <div class="tour-recap" style="background-color: white">
+        <p><%= activity.name %></p>
+        <p><%= activity.starting_time.strftime "%d-%m-%Y %H:%M" %></p>
+        <p><%= activity.ending_time.strftime "%d-%m-%Y %H:%M" %></p>
+      </div>
+
+  <% end %>
+
+  <% @activities.each do |activity| %>
+  <div class="choose-activity">
+      <%= simple_form_for [@tour, activity] do |f| %>
+      <%= activity.name %>
+      <%= f.input :starting_time, as: :string, input_html: { class: "flatpickr-time"} %>
+      <%= f.input :ending_time, as: :string, input_html: { class: "flatpickr-time"} %>
+
+      <!-- <input type="text" name="starting_time" class="flatpickr-time" style="height: 30px;"> -->
+      <!-- <input type="text" name="ending_time" class="flatpickr-time" style="height: 30px;"> -->
+      <%= f.submit %>
+  </div>
+
     <% end %>
   <% end %>
 </div>
