@@ -51,6 +51,7 @@
 <p> <%= link_to "See all tours", tours_path %> </p>
 
 <!-- map section -->
+<% content_for :below_container do %>
 <div id="tour-map" class="hidden">
 <h3>Tour's map</h3>
   <%
@@ -62,13 +63,13 @@
     end
   %>
 
-  <% content_for :below_container do %>
+
   <div
   id="map"
   data-markers="<%= markers.to_json %>"
   ></div>
-  <% end %>
 </div>
+<% end %>
 
 
 <% content_for :after_js do %>
