@@ -18,14 +18,21 @@ class ActivitiesController < ApplicationController
   end
 
   def update
+
     @activity = Activity.find(params[:id])
     @tour = Tour.find(params[:tour_id])
     @activity.tour = @tour
-    @activity.save
+    @activity.update(activities_params)
+
     if @activity.save
-      redirect_to tour_path
+      respond_to do |format|
+        format.html { redirect_to tour_path(@tour) }
+        format.js  # <-- will render `app/views/activities/update.js.erb`
+      end
     else
-      render :show
+      respond_to do |format|
+        format.html { render 'tours/show' }
+        format.js
     end
   end
 
@@ -37,6 +44,6 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :address, :city, :meeting_point, :category)
+    params.require(:activity).permit(:name, :address, :city, :meeting_point, :category, :starting_time, :ending_time)
   end
 end
