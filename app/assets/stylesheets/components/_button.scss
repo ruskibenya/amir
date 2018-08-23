@@ -1,12 +1,17 @@
 .amir-btn{
   font-size: 17px;
   background-image: linear-gradient(to left top, #FF929A, #FF9363);
-  padding: 10px 15px;
-  border-radius: 30px;
+  padding: 10px 10px;
   color: white;
   font-weight: bolder;
   text-decoration: none;
   transition: 0.2s;
+  border-radius: 30px;
+}
+
+
+.round-btn{
+  border-radius: 50%;
 }
 
 
@@ -15,6 +20,13 @@
   color: white;
   background-color: #FF9363;
 }
+
+.amir-btn:active /* Quand le visiteur clique sur le lien */
+{
+  padding: 12px 17px;
+  background-image: linear-gradient(to right top, #208293, #4cbbce);
+}
+
 
 
 .simple-link{
@@ -33,4 +45,18 @@
   text-decoration: none;
   background-color: black;
   color: white;
+}
+
+
+.simple-link:active /* Quand le visiteur clique sur le lien */
+{
+  padding: 6px 10px;
+  background-color: #FFCC66;
+}
+
+
+@media screen and (max-width: 640px) {
+  .buttons-amir {
+    font-size: 13px;
+  }
 }
