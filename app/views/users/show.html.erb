@@ -5,16 +5,14 @@
         <%= image_tag ("cyrille"), class: 'avatar-large' %>
       </div>
       <div class="user-name">
-        <h4><%= current_user.name %></h4>
+        <h4><%= current_user.name %>   <i class="far fa-edit"></i></h4>
       </div>
     </div>
     <div class="button-create">
-      <%= link_to 'create a new tour', new_tour_path, class: 'amir-btn' %>
-    </div>
-    <div class="button-create">
-      <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class=“fa fa-sign-out”></i> <%= t(".sign_out", default: "Log out") %>
-              <% end %>
+
+      <%= link_to destroy_user_session_path, class: 'amir-btn', method: :delete do %>
+        <i class=“fa fa-sign-out”></i> <%= t(".sign_out", default: "Log out") %>
+      <% end %>
     </div>
   </div>
 <% end %>
@@ -25,6 +23,7 @@
 
 <div class="tours-section">
   <h4 class="title-page">tours</h4>
+  <%= link_to 'create a new tour', new_tour_path, class: 'col-xs-12 col-sm-12 col-md-12 tour-card' %>
   <% current_user.tours.each do |tour| %>
     <%= render "components/tour_card", tour: tour %>
   <% end %>
