@@ -1,25 +1,29 @@
 Rails.application.routes.draw do
-  get 'activities/index'
   devise_for :users
+  # if logged in root to user homepage
   authenticated :user do
-    root 'tours#index', as: :authenticated_root
+    root 'users#show', as: :authenticated_root
+
   end
+  # if not logged in root to landing page
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :tours do
-    resources :activities, only: [:create, :new, :edit, :update, :show, :destroy]
-    member do
-      patch :selectgroup
 
-    end
-    resources :groups, only: [:new, :create]
+  #TODO: Ajaxify new tour form so doesn't need own route
+
+  # only redirect to new pages to see a specific tour, create a new tour,
+  # or if logged in as a visitor, sent by an invitation
+  resources :tours, only: [:show, :new, :create] do
+    resources :activities, only: [:show, :create]
+    resources :groups, only: [:show, :create]
   end
-  resources :groups
+  resources :users, only: [:show]
 
+  # TODO: do we need this?
+  get 'activities/index'
 
+  # TODO: clean up this mess
   post "invitations/send/:tour_id", to: 'invitations#send_invitations', as: :send_invitations
   get "invitations/:invitation_id/accept", to: 'invitations#accept', as: :accept_invitation
   get "tours/:tour_id/:invitation_id/visitor_show", to: 'tours#visitor_show', as: :visitor_show
 
-  resources :users, only: [:show]
 end

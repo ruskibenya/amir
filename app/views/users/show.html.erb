@@ -11,26 +11,21 @@
     <div class="button-create">
       <%= link_to 'create a new tour', new_tour_path, class: 'amir-btn' %>
     </div>
+    <div class="button-create">
+      <%= link_to destroy_user_session_path, method: :delete do %>
+                <i class=“fa fa-sign-out”></i> <%= t(".sign_out", default: "Log out") %>
+              <% end %>
+    </div>
   </div>
+<% end %>
+
+<% if flash[:invitations_sent] %>
+    <div class="notice">Invitations were sent!</div>
 <% end %>
 
 <div class="tours-section">
   <h4 class="title-page">tours</h4>
   <% current_user.tours.each do |tour| %>
-    <div class="col-xs-12 col-sm-12 col-md-6">
-      <%= link_to tour_path(tour) do %>
-      <div class="tour-card">
-        <div class="group-category">
-          <i class="fas fa-map"></i>
-        </div>
-        <div class="group-name">
-          <p><%= tour.name %></p>
-        </div>
-        <div class="group-dates">
-          <p>200000</p>
-        </div>
-      </div>
-      <% end %>
-    </div>
+    <%= render "components/tour_card", tour: tour %>
   <% end %>
 </div>
