@@ -9,6 +9,8 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Poppins:300,400,500,600,900" rel="stylesheet">
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Poppins:100,400,500,800,900" rel="stylesheet">
   </head>
   <body class="<%= params[:controller] %> <%= params[:action] %>">
     <%#= render 'shared/navbar' %>
@@ -17,11 +19,7 @@
     <div class="container">
       <%= yield %>
     </div>
-    <footer style="
-    position: fixed;
-    height: 100px;
-    bottom: 0;
-    width: 100%;"></footer>
+    <%= yield :below_container %>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

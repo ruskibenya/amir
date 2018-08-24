@@ -8,6 +8,19 @@
     @tour = Tour.find(params[:id])
     @activity = Activity.new
     @activities = @tour.activities
+    @s = 1
+    @markers = @activities.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        infoWindow: { content: activity.name },
+      }
+    end
+    @polylines = @activities.map do |activity|
+      {
+        lng: activity.longitude, lat: activity.latitude
+      }
+    end
   end
 
   def new
