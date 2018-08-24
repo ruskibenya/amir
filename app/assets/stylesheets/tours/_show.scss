@@ -14,8 +14,7 @@ body.tours.show{
 }
 
 .email-btn{
-  margin-top: 300px;
-  text-align: center;
+  width: 300px;
   font-size: 13px;
   background-color: $purple;
   padding: 5px 15px;
@@ -26,6 +25,8 @@ body.tours.show{
   border-radius: 4px;
   text-transform: uppercase;
   box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
+
+
   p{
     color: white;
     margin: 0;

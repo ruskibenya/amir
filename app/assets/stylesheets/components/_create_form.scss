@@ -1,0 +1,16 @@
+.activity-card{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5% 0;
+  border: 1px solid $light-gray;
+  border-radius: 3px;
+}
+
+.activity-name{
+  flex: 0 0 50%;
+  p{
+    color: #4E8397;
+    font-weight: 500;
+  }
+}
