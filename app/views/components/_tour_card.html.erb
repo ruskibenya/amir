@@ -1,14 +1,25 @@
 <div class="col-xs-12 col-sm-12 col-md-6">
   <%= link_to tour_path(tour) do %>
   <div class="tour-card">
-    <div class="group-category">
+    <!-- TODO: Either add category to tour model or use tour.group.city -->
+    <div class="tour-category">
       <i class="fas fa-map"></i>
     </div>
-    <div class="group-name">
+<!--     <div class="group-name">
       <p><%= tour.name %></p>
+    </div> -->
+    <div class="tour-name-and-group">
+      <div class="tour-name">
+        <p><%= tour.name %></p>
+      </div>
+      <% if !tour.group.nil? %>
+        <div class="group-name">
+          <p><%= tour.group.name %></p>
+        </div>
+      <% end %>
     </div>
-    <div class="group-dates">
-      <p>200000</p>
+    <div class="tour-dates">
+      <p><%= tour.start_date.strftime("%d/%m") %> - <%= tour.end_date.strftime("%d/%m") %></p>
     </div>
   </div>
   <% end %>

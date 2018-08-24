@@ -23,7 +23,11 @@
 
 <div class="tours-section">
   <h4 class="title-page">tours</h4>
-  <%= link_to 'create a new tour', new_tour_path, class: 'col-xs-12 col-sm-12 col-md-12 tour-card' %>
+  <div class= "col-xs-12 col-sm-12 col-md-12" >
+    <div class="tour-card">
+      <%= link_to 'create a new tour', new_tour_path %>
+    </div>
+  </div>
   <% current_user.tours.each do |tour| %>
     <%= render "components/tour_card", tour: tour %>
   <% end %>

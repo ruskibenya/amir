@@ -1,0 +1,38 @@
+
+
+.tour-category{
+  flex: 0 0 10%;
+  i{
+    font-size: 30px;
+    color: blue;
+    opacity: 0.3;
+  }
+}
+
+.tour-name{
+  flex: 0 0 50%;
+  p{
+    font-size: 17px;
+    color: $light-purple;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+}
+
+.group-name{
+  flex: 0 0 50%;
+  p{
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+    line-height: 0.9;
+  }
+}
+
+.tour-dates{
+  flex: 0 0 15%;
+  p{
+    font-size: 10px;
+    color: gray;
+  }
+}
