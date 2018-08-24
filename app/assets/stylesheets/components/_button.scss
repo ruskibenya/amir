@@ -1,12 +1,14 @@
 .amir-btn{
-  font-size: 17px;
-  background-image: linear-gradient(to left top, #FF929A, #FF9363);
-  padding: 10px 10px;
+  font-size: 13px;
+  background-color: $purple;
+  padding: 10px 15px;
   color: white;
-  font-weight: bolder;
+  font-weight: 400;
   text-decoration: none;
   transition: 0.2s;
-  border-radius: 30px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,.08);
 }
 
 
@@ -18,13 +20,12 @@
 .amir-btn:hover{
   text-decoration: none;
   color: white;
-  background-color: #FF9363;
 }
 
 .amir-btn:active /* Quand le visiteur clique sur le lien */
 {
   padding: 12px 17px;
-  background-image: linear-gradient(to right top, #208293, #4cbbce);
+  opacity: 0.5;
 }
 
 
@@ -54,9 +55,3 @@
   background-color: #FFCC66;
 }
 
-
-@media screen and (max-width: 640px) {
-  .buttons-amir {
-    font-size: 13px;
-  }
-}

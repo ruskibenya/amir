@@ -4,55 +4,54 @@ body.tours.index{
   p{
     margin: 0;
   }
-}
 
-.tour-name-and-group{
-  flex: 0 0 40%;
-}
-
-.group-name{
-  color: rgba(0, 0, 0, 0.4);
-}
-
-
-.title-add{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 4% 0;
-  h3{
-    font-weight: 600;
+  .tour-name-and-group{
+    flex: 0 0 40%;
   }
-}
 
-.tour-card{
-  box-shadow: 0px 2px 1px $light-gray;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-bottom: 3%;
-  padding: 2% 1%;
-  cursor: pointer;
-}
+  .group-name{
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  .title-add{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4% 0;
+    h3{
+      font-weight: 600;
+    }
+  }
+
+  .tour-card{
+    box-shadow: 0px 2px 1px $light-gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 3%;
+    padding: 2% 1%;
+    cursor: pointer;
+  }
 
 
 
-.tour-name{
-  font-weight: 400;
-}
+  .tour-name{
+    font-weight: 400;
+  }
 
-.tour-date{
-  font-size: 11px;
-}
+  .tour-date{
+    font-size: 11px;
+  }
 
-.see-tour{
+  .see-tour{
   color: $light-gray;
+  }
+
 }
-
-
 
 @media screen and (max-width: 640px) {
-  .tour-card {
+  body.tours.index{
+   .tour-card {
     margin-bottom: 5%;
   }
 
@@ -63,5 +62,6 @@ body.tours.index{
   .tour-name-and-group{
   font-size: 14px;
   flex: 0 0 35%;
+  }
 }
 }

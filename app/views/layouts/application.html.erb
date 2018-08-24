@@ -7,14 +7,21 @@
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Poppins:300,400,500,600,900" rel="stylesheet">
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body class="<%= params[:controller] %> <%= params[:action] %>">
     <%#= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <%= yield :above_container %>
     <div class="container">
       <%= yield %>
     </div>
+    <footer style="
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;"></footer>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
