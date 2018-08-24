@@ -18,9 +18,15 @@
         </div>
       <% end %>
     </div>
-    <div class="tour-dates">
-      <p><%= tour.start_date.strftime("%d/%m") %> - <%= tour.end_date.strftime("%d/%m") %></p>
-    </div>
+    <% if (tour.start_date..tour.end_date) === Date.today %>
+      <div class="active-tour">
+        <p>ACTIVE</p>
+      </div>
+    <% else %>
+      <div class="tour-dates">
+        <p><%= tour.start_date.strftime("%d/%m") %> - <%= tour.end_date.strftime("%d/%m") %></p>
+      </div>
+    <% end %>
   </div>
   <% end %>
 </div>

@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   post "invitations/send/:tour_id", to: 'invitations#send_invitations', as: :send_invitations
   get "invitations/:invitation_id/accept", to: 'invitations#accept', as: :accept_invitation
   get "tours/:tour_id/:invitation_id/visitor_show", to: 'tours#visitor_show', as: :visitor_show
+  get "tours/:id?status=active", to: 'tours#active_show', as: :active_tour
 
 end

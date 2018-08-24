@@ -36,3 +36,23 @@
     color: gray;
   }
 }
+.active-tour{
+  flex: 0 0 10%;
+  p{
+    font-size: 15px;
+    color: red;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-animation-name: neon-title;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-iteration-count: infinite;
+  }
+}
+
+@-webkit-keyframes neon-title {
+  0%, 10%, 80%, 100%   { font-weight: bold; }
+  5%, 95% { font-weight: 400; }
+}
+
+

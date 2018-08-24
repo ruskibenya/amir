@@ -6,6 +6,14 @@
   </div>
 <% end %>
 
+
+<div class="email-btn">
+  <!-- send email invitations for this tour -->
+  <%= link_to send_invitations_path(@tour), method: :post  do %>
+  <p>Send Invitations to: <span class="underline"><%= "#{@tour.group.name}"  %></span> </p>
+  <% end %>
+</div>
+
 <a href="#" id="show_tour_overview">Overview</a>
 <a href="#" id="show_tour_map">Map</a>
 
@@ -44,8 +52,7 @@
 </div>
 
 </div>
-<!-- send email invitations for this tour -->
-<p> <%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %> </p>
+
 
 <!-- map section -->
 <% content_for :below_container do %>
