@@ -1,6 +1,6 @@
 module ActivitiesHelper
-  def icon(category)
-    icons = {
+  def symbol(category)
+    symbols = {
       "Business" => "🕴",
       "Travel & Outdoor" => "🌴",
       "Food & Drink" => "🌭 ",
@@ -10,6 +10,6 @@ module ActivitiesHelper
       "Other" => "🍑"
     }
 
-    icons[category]
+    symbols[category]
   end
 end
