@@ -47,9 +47,6 @@
 <!-- send email invitations for this tour -->
 <p> <%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %> </p>
 
-<!-- link back to "my tours" -->
-<p> <%= link_to "See all tours", tours_path %> </p>
-
 <!-- map section -->
 <% content_for :below_container do %>
 <div id="tour-map" class="hidden">

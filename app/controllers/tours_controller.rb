@@ -1,9 +1,5 @@
   class ToursController < ApplicationController
 
-  def index
-    @tours = Tour.all
-  end
-
   def show
     @tour = Tour.find(params[:id])
     @activity = Activity.new
@@ -26,34 +22,17 @@
   def new
     @tour = Tour.new
     @groups = Group.all
-    #@activities = Activity.all
-    #@tour.activities.build
   end
 
   def create
-    #activities = tours_params[:activities]
     @tour = Tour.new(tours_params)
-    # @tour.activity_ids = activity_ids
-    # raise
     @tour.user = current_user
     if @tour.save
-      redirect_to tours_path
+      redirect_to  authenticated_root_path
     else
       @groups = Group.all
       render :new
     end
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
-  def selectgroup
   end
 
   def visitor_show
