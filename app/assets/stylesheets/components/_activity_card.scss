@@ -7,13 +7,10 @@
   border-radius: 3px;
 }
 
-.meeting-point{
-  flex: 0 0 10%;
-  padding: 0 1%;
-}
+
 
 .activity-category{
-  flex: 0 0 20%;
+  flex: 0 0 25%;
 }
 
 .activity-name{
@@ -24,10 +21,26 @@
   }
 }
 
-.activity-time{
-  flex: 10%;
+.activity-time-meeting-point{
+  display: flex;
+  flex: 25%;
+  justify-content: space-around;
+  align-items: center;
 }
 
+.activity-time{
+  // flex: 10%;
+}
+.meeting-point{
+  // flex: 0 0 10%;
+  padding: 0 1%;
+  .fa-flag{
+    color: red;
+  }
+  .fa-shoe-prints{
+    color:green;
+  }
+}
 
 
 

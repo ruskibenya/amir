@@ -9,6 +9,6 @@ class Tour < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   # validates_inclusion_of :status, :in => %w(sent pending)
 
-  CATEGORIES = ["School", "Family Reunion", "Religious", "Business", "Pub Crawl", "Other"]
+  CATEGORIES = ["School", "Family Reunion", "Religious", "Business", "Pub Crawl", "Nature", "Government", "Other"]
   validates_inclusion_of :category, :in => CATEGORIES
 end

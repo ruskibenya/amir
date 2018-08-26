@@ -4,7 +4,7 @@
   <div class="profil-section">
     <div class="info">
       <div class="user-pp">
-        <%= image_tag ("cyrille"), class: 'avatar-large' %>
+        <%= image_tag ("#{current_user.profile_picture}"), class: 'avatar-large' %>
       </div>
       <div class="user-name">
         <h4><%= current_user.name %>   <i class="far fa-edit"></i></h4>
@@ -27,9 +27,9 @@
   <h4 class="title-page">tours</h4>
   <div class= "col-xs-12 col-sm-12 col-md-12" >
     <%= link_to new_tour_path do %>
-      <div class="tour-card">
-        <p>➕</p>
-        <!-- <i class="fas fa-plus-circle"></i> -->
+      <div class="tour-card" id="purple-background">
+        <!-- <p>➕</p> -->
+        <i class="fas fa-plus-circle"></i>
       </div>
     <% end %>
   </div>
