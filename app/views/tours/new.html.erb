@@ -3,31 +3,16 @@
   <%= f.input :name %>
   <%= f.input :start_date, as: :string, input_html: { class: "flatpickr-input"} %>
   <%= f.input :end_date, as: :string, input_html: { class: "flatpickr-input-two"} %>
-  <%= f.input :group_id, collection: @groups %>
-
-  <%#= f.button  %>
-  <%#= f.input :activity_id, collection: @activities, prompt: "Choose an activity" %>
-  <%= f.input :activities, collection: @activities,
-:input_html => { :multiple => true } %>
-  <%= f.input :start_date, as: :string, input_html: { class: "flatpickr-input"} %>
-  <%= f.input :name %>
-  <%#= f.input "activity" %>
-
+  <!-- TODO: Decide if adding a group from beginning matters -->
+  <%#= f.input :group_id, collection: @groups %>
   <%= f.submit %>
 <% end %>
 
-
 <% content_for :after_js do %>
-
   <script type="text/javascript">
     document.querySelector('.flatpickr-input').flatpickr();
   </script>
-
-    <script type="text/javascript">
+  <script type="text/javascript">
     document.querySelector('.flatpickr-input-two').flatpickr();
   </script>
-
 <% end %>
-
-
-<!-- :label_method => lambda{ |activity| "#{activity.name} - #{activity.address} "  -->

@@ -50,41 +50,36 @@ body.users.show{
   box-shadow: 0 1px 0px 0 rgba(0,0,0,0.08), 0 7px 14px 0 rgba(49,49,93,0.1);;
 }
 
-.group-category{
-  flex: 0 0 10%;
-  i{
-    font-size: 30px;
-    color: blue;
-    opacity: 0.3;
-  }
-}
 
-.group-name{
-  flex: 0 0 50%;
-  p{
-    font-size: 17px;
-    color: $light-purple;
-    font-weight: 300;
-    line-height: 1.5;
-  }
-}
+// Moved to _tour_card
 
-.group-dates{
-  flex: 0 0 10%;
-  p{
-    font-size: 10px;
-    color: gray;
-  }
-}
-// <div class="group-category">
-//     <p><%= tour.name %></p>
-// </div>
-// <div class="group-name">
+// .group-category{
+//   flex: 0 0 10%;
+//   i{
+//     font-size: 30px;
+//     color: blue;
+//     opacity: 0.3;
+//   }
+// }
 
-// </div>
-// <div class="group-dates">
+// .group-name{
+//   flex: 0 0 50%;
+//   p{
+//     font-size: 17px;
+//     color: $light-purple;
+//     font-weight: 300;
+//     line-height: 1.5;
+//   }
+// }
 
-// </div>
+// .group-dates{
+//   flex: 0 0 10%;
+//   p{
+//     font-size: 10px;
+//     color: gray;
+//   }
+// }
+
 
 
 

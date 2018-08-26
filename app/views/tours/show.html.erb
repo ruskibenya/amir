@@ -6,6 +6,17 @@
   </div>
 <% end %>
 
+<div>
+  When everything looks good!
+  <div class="email-btn">
+    <!-- send email invitations for this tour -->
+    <%= link_to send_invitations_path(@tour), method: :post  do %>
+    <p>Send Invitations to: <span class="underline"><%= "#{@tour.group.name}"  %></span> </p>
+    <% end %>
+  </div>
+</div>
+
+
 <a href="#" id="show_tour_overview">Overview</a>
 <a href="#" id="show_tour_map">Map</a>
 
@@ -27,25 +38,33 @@
           <div class="dropdown_content hidden">
             <%= render 'activities/show', activity: activity %>
           </div>
-
         </div>
       <!-- updates the next step number -->
       <% @s += 1 %>
     <% end %>
+  <!-- create a new activity for this tour -->
+  <div id="activity_form">
+    <div class="dropdown_toggle">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="activity-card">
+          <div class="activity-name">
+          <p>Create a new Activity</p>
+          </div>
+        </div>
+      </div>
+      <div class="dropdown_content hidden">
+        <%= render 'activities/create_form' %>
+      </div>
+    </div>
+
+  </div>
   <% end %>
 </div>
 
-<!-- create a new activity for this tour -->
-<div id="activity_form">
-  <%#= link_to '',  do %>
-  <%#= 'activities/create_form' %>
-  <%# end %>
-  <%= render 'activities/create_form' %>
-</div>
+
 
 </div>
-<!-- send email invitations for this tour -->
-<p> <%= link_to "Email Tour Invitations", send_invitations_path(@tour), method: :post %> </p>
+
 
 <!-- map section -->
 <% content_for :below_container do %>
@@ -63,7 +82,7 @@
 
   <div
   id="map"
-  data-markers="<%= markers.to_json %>"
+  data-markers="<%= @markers.to_json %>"
   ></div>
 </div>
 <% end %>

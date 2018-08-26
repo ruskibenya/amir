@@ -5,7 +5,7 @@ class InvitationsController < ApplicationController
       UserMailer.invitation(@tour, invitation).deliver_now
     end
     flash[:invitations_sent] = "Sent!"
-    redirect_to tours_path(@tour)
+    redirect_to user_path(current_user)
   end
 
   def accept

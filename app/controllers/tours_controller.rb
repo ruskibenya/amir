@@ -21,7 +21,8 @@
 
   def new
     @tour = Tour.new
-    @groups = Group.all
+    # TODO: decide how add group to new tour
+    # @groups = Group.all
   end
 
   def create
