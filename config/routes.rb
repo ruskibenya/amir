@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   # if logged in root to user homepage
   authenticated :user do
     root 'users#show', as: :authenticated_root
-
   end
   # if not logged in root to landing page
   root to: 'pages#home'
