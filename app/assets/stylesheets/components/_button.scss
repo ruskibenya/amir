@@ -12,6 +12,19 @@
 }
 
 
+.simple-link{
+  color: #999999;
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+.simple-link:hover{
+  text-decoration: underline;
+  color: #999999;
+  font-weight: 300;
+}
+
+
 .round-btn{
   border-radius: 50%;
 }
@@ -27,31 +40,3 @@
   padding: 12px 17px;
   opacity: 0.5;
 }
-
-
-
-.simple-link{
-  padding: 3px 5px;
-  border: 1px solid black;
-  text-transform: uppercase;
-  color: black;
-  font-weight: 300;
-  text-decoration: none;
-  font-size: 12px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.simple-link:hover{
-  text-decoration: none;
-  background-color: black;
-  color: white;
-}
-
-
-.simple-link:active /* Quand le visiteur clique sur le lien */
-{
-  padding: 6px 10px;
-  background-color: #FFCC66;
-}
-
