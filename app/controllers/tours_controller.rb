@@ -22,7 +22,7 @@
   def new
     @tour = Tour.new
     # TODO: decide how add group to new tour
-    # @groups = Group.all
+    @groups = Group.all
   end
 
   def create
@@ -44,6 +44,6 @@
   private
 
   def tours_params
-    params.require(:tour).permit(:name, :start_date, :end_date, :group_id)
+    params.require(:tour).permit(:name, :start_date, :end_date, :group_id, :category)
   end
 end

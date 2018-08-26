@@ -56,19 +56,22 @@ tours_attributes = [
     user: cyrille,
     start_date: Date.today,
     end_date: Date.today() + 3.days,
-    name: "How to eat like a rabbit in Tel Aviv"
+    name: "How to eat like a rabbit in Tel Aviv",
+    category: "Family Reunion"
   },
   {
     user: bryan,
     start_date: Date.today,
     end_date: Date.today() + 5.days,
-    name: "Swing dancing in the Sea"
+    name: "Swing dancing in the Sea",
+    category: "School"
   },
   {
     user: kevin,
     start_date: Date.today,
     end_date: Date.today() + 8.days,
-    name: "Be the coolest kid in school"
+    name: "Be the coolest kid in school",
+    category: "Religious"
   }
 ]
 

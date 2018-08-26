@@ -3,7 +3,11 @@
   <div class="tour-card">
     <!-- TODO: Either add category to tour model or use tour.group.city -->
     <div class="tour-category">
-      <i class="fas fa-map"></i>
+      <% if !tour.category.nil? %>
+        <%= icon(tour.category).html_safe %>
+      <% else %>
+        <i class="fas fa-map"></i>
+      <% end %>
     </div>
 <!--     <div class="group-name">
       <p><%= tour.name %></p>
