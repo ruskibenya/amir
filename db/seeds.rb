@@ -19,14 +19,14 @@ Invitation.destroy_all
 ## set user seed info
 users_attributes = [
   {
-    name: "Rabea Bader",
+    name: "Rabea",
     email: "rab@ea.com",
     password: "123456",
     profile_picture: "rabea.jpg",
     bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!"
   },
   {
-    name: "Donald Trump",
+    name: "Donny",
     email: "don@don.com",
     password: "merica",
     profile_picture: "don.png",
