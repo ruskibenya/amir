@@ -9,7 +9,8 @@
       {
         lat: activity.latitude,
         lng: activity.longitude,
-        infoWindow: { content: activity.name },
+        infoWindow: { content: "#{activity.name}: #{activity.starting_time.strftime("%l%P")} - #{activity.ending_time.strftime("%l%P")}" },
+        icon: "http://maps.google.com/mapfiles/kml/pal5/icon14.png"
       }
     end
     @polylines = @activities.map do |activity|
