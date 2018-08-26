@@ -11,16 +11,14 @@ gem 'redis'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3'
-gem 'font-awesome-sass', '~> 5.2'
+gem 'font-awesome-sass'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
 gem 'postmark-rails'
-gem "letter_opener", group: :development
 gem 'flatpickr_rails'
-gem 'pry-byebug'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -33,6 +31,7 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+  gem 'letter_opener'
 end
 
 gem "geocoder"

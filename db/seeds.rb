@@ -617,10 +617,10 @@ invitations_attributes = [
     group: lewagon_tlv,
     email: "boris@lw.fr"
   },
-    {
-    group: lewagon_tlv,
-    email: "sebastian@lw.fr"
-  },
+  # {
+  #   group: lewagon_tlv,
+  #   email: "sebastian@lw.fr"
+  # },
   {
     group: fat_america_tlv,
     email: "boris@lw.fr"
