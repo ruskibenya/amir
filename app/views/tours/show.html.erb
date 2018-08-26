@@ -45,22 +45,21 @@
       <!-- updates the next step number -->
       <% @s += 1 %>
     <% end %>
-  <!-- create a new activity for this tour -->
-  <div id="activity_form">
-    <div class="dropdown_toggle">
-      <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="activity-card" id="add-activity">
-          <div class="activity-name">
-          <p><i class="fas fa-plus-circle"></i></p>
+    <!-- create a new activity for this tour -->
+    <div id="activity_form">
+      <div class="dropdown_toggle">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="activity-card" id="add-activity">
+            <div class="activity-name">
+            <p><i class="fas fa-plus-circle"></i></p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="dropdown_content hidden">
-        <%= render 'activities/create_form' %>
+        <div class="dropdown_content hidden">
+          <%= render 'activities/create_form' %>
+        </div>
       </div>
     </div>
-
-  </div>
   <% end %>
 </div>
 

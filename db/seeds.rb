@@ -44,8 +44,8 @@ users_attributes = [
 ## generate user seeds for all user seed info
 User.create!(users_attributes)
 cyrille = User.find_by(name: "Cyrille")
-don = User.find_by(name: "Donald Trump")
-rabea = User.find_by(name: "Rabea Bader")
+don = User.find_by(name: "Donny")
+rabea = User.find_by(name: "Rabea")
 
 
 # Tour seeds
@@ -200,7 +200,7 @@ groups_attributes = [
 Group.create!(groups_attributes)
 young_repubs = Group.find_by(name: "Young Republicans of Tel Aviv")
 fat_america = Group.find_by(name: "Fat Americans in Tel Aviv")
-lewagon_tlv = Group.find_by(name: "Le Wagon Followers")
+lewagon_tlv_follow = Group.find_by(name: "Le Wagon Followers")
 tulane_chabad = Group.find_by(name: "Tulane Chabad Bus #161")
 lewagon_tlv = Group.find_by(name: "Le Wagon Batch #161")
 
@@ -590,15 +590,15 @@ invitations_attributes = [
     email: "chrisChristie@usa.gov"
   },
   {
-    group: lewagon_tlv,
+    group: lewagon_tlv_follow,
     email: "rabea@lwtlv.il"
   },
   {
-    group: lewagon_tlv,
+    group: lewagon_tlv_follow,
     email: "david@lwtlv.il"
   },
   {
-    group: lewagon_tlv,
+    group: lewagon_tlv_follow,
     email: "pinchas@lwtlv.il"
   },
     {

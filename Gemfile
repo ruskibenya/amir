@@ -18,6 +18,7 @@ gem 'uglifier'
 gem 'webpacker'
 
 gem 'postmark-rails'
+gem "letter_opener", group: :development
 gem 'flatpickr_rails'
 gem 'pry-byebug'
 

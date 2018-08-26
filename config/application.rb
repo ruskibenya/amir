@@ -24,8 +24,6 @@ module Amir
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.action_view.embed_authenticity_token_in_remote_forms = true
-    config.action_mailer.delivery_method = :postmark
-    config.action_mailer.postmark_settings = { :api_token => ENV['POSTMARK_KEY'] }
   end
 end
 
