@@ -24,14 +24,14 @@
 <% end %>
 
 <div class="tours-section">
+  <div class="create-button-section align-text">
+    <%= link_to 'create a new tour', new_tour_path, class: 'simple-link' %>
+  </div>
+
   <h4 class="title-page">tours</h4>
+
   <div class= "col-xs-12 col-sm-12 col-md-12" >
-    <%= link_to new_tour_path do %>
-      <div class="tour-card" id="purple-background">
-        <!-- <p>➕</p> -->
-        <i class="fas fa-plus-circle"></i>
-      </div>
-    <% end %>
+
   </div>
   <% current_user.tours.each do |tour| %>
     <%= render "components/tour_card", tour: tour %>
