@@ -316,8 +316,8 @@ activities_attributes = [
   {
   name: "Morning Prayers with Rabbi Yochanan",
   description: "Greet Israel in true Hebrew fashion with the Shachrit led by our favorite rebbe Yochanan! All are welcome regardless of religious background. Services with be held in Hebrew and English.",
-  address: "2J99+7R",
-  city: "Gadot",
+  address: "Hazor Museum",
+  city: "Ayelet HaShahar",
   meeting_point: false,
   category: "Religious",
   tour_id: rabea_birthright.id,
@@ -327,8 +327,8 @@ activities_attributes = [
   {
   name: "Breakfast @ Dining Hall",
   description: "Enjoy your morning ritual of authentic Israeli breakfast of bread, pastries, salads, fresh fruit/vegetables, & much more!",
-  address: "2J99+7R",
-  city: "Gadot",
+  address: "Mahanayim Shopping Center",
+  city: "Rosh Pina",
   meeting_point: true,
   category: "Food & Drink",
   tour_id: rabea_birthright.id,
@@ -338,8 +338,8 @@ activities_attributes = [
   {
   name: "Morning Yoga with Emily",
   description: "Kibbutz Yogi will lead a vigorous align-and-flow style classes to wake you up and get you going and flowing into the rest of your day!",
-  address: "2J99+7R",
-  city: "Gadot",
+  address: "Beit HaRishonim",
+  city: "Rosh Pinna",
   meeting_point: false,
   category: "Other",
   tour_id: rabea_birthright.id,
@@ -349,7 +349,7 @@ activities_attributes = [
   {
   name: "Meet the neighbors! Learn about life on a kibbutz from Ephraim Bismuth",
   description: "Leader of the Gadot Kibbutz, Ephraim Bismuth, will speak about growing up, living on, and maintaing a kibbutz in the 21st century. Short walking tour of the Kibbutz to follow.",
-  address: "2J99+7R",
+  address: "Kibbutz Gadot",
   city: "Gadot",
   meeting_point: false,
   category: "Lecture",
@@ -360,7 +360,7 @@ activities_attributes = [
   {
   name: "Ice Breakers & Leave for Jalaboun",
   description: "Drivers Rabea and Joy will lead team ice breakers for everyone to meet one another. Then vroom vroom to our first trek!",
-  address: "2J99+7R",
+  address: "Jalaboun Stream",
   city: "Gadot",
   meeting_point: true,
   category: "Travel & Outdoor",
@@ -371,7 +371,7 @@ activities_attributes = [
   {
   name: "Hiking Jalaboun Red Trail (Longer Option)",
   description: "This longer trail continues from the Jilaboun pool towards the El Jalabina ruins and the officers’ pool, finally ending near the Pkak Bridge.",
-  address: "2MVC+JC",
+  address: "Jordan River Rafting Attractions",
   city: "Golan Heights",
   meeting_point: false,
   category: "Travel & Outdoor",
@@ -382,8 +382,8 @@ activities_attributes = [
   {
   name: "Hiking Jalaboun Blue Trail (Shorter Option)",
   description: "Chase waterfalls & take in the breathtaking scenery while hiking the Jilaboon, a bubbling stream in the Golan with great significance.",
-  address: "2MVC+JC",
-  city: "Golan Heights",
+  address: "Jordan River Rafting Attractions",
+  city: "Gadot",
   meeting_point: false,
   category: "Travel & Outdoor",
   tour_id: rabea_birthright.id,
@@ -393,7 +393,7 @@ activities_attributes = [
   {
   name: "Swimming Jalaboun Waterfalls & Natural Pool",
   description: "Continue on the trail down to the Jilaboun pool. Turn right off the path at the bottom; you may have to cross the stream in the water in order to reach the pool. You can swim in the pool and even have a seat on the rocks behind the waterfall; beware of the deep water. You may be able to see the rainbow in the waterfall from within the pool as well.",
-  address: "2MVC+JC",
+  address: "Metsad Ateret",
   city: "Golan Heights",
   meeting_point: false,
   category: "Travel & Outdoor",
@@ -404,7 +404,7 @@ activities_attributes = [
   {
   name: "Israeli Topography by Joy",
   description: "Driver Joy explains the history of the varied Israeli terrain. From the mountain tops of the Golan to the salty waters of the Dead Sea, Joy knows it all!",
-  address: "2MVC+JC",
+  address: "Gesher Benot Ya'akov",
   city: "Golan Heights",
   meeting_point: false,
   category: "Travel & Outdoor",
@@ -415,8 +415,8 @@ activities_attributes = [
   {
   name: "BBQ Lunch and Games",
   description: "Relax as Chef David fires up the grill and cooks a kosher feast. The menu includes kebabs, sausages, chicken hearts, and of course Israeli Salad+Hummus!! In the mean time play soccer, football, cards, horseshoes, or just learn more about your new friends! After lunch it's straight to Mount Bental for more picturesque views!",
-  address: "2MVC+JC",
-  city: "Golan Heights",
+  address: "Hukok St 12, Qatsrin",
+  city: "Qatsrin",
   meeting_point: true,
   category: "Food & Drink",
   tour_id: rabea_birthright.id,
@@ -426,8 +426,8 @@ activities_attributes = [
   {
   name: "Mount Bental Vista Views",
   description: "Gaze out over the borders of neighboring countries from an old IDF bunker on top of Mount Bental in the Golan Heights.",
-  address: "4QHP+C5",
-  city: "Golan Heights",
+  address: "Merom Golan Hotel",
+  city: "Merom Golan",
   meeting_point: false,
   category: "Travel & Outdoor",
   tour_id: rabea_birthright.id,
@@ -437,7 +437,7 @@ activities_attributes = [
   {
   name: "Yom Kippur War by Ariel Sharon",
   description: "Listen to the story of the Yom Kippur War in 1973 from it's biggest hero, Ariel Sharon. Ariel gives a rivetting first-person account of one of the largest tank battles ever that was miraculously won by the Israelis with their small force of 160 tanks.",
-  address: "4QHP+C5",
+  address: "Golan Volcanic Park",
   city: "Golan Heights",
   meeting_point: false,
   category: "Lecture",
@@ -448,8 +448,8 @@ activities_attributes = [
   {
   name: "Life as a UN Observer by António Guterres",
   description: "António Guterres gives the detailed account of what it means to be a peace-keeping soldier.",
-  address: "4QHP+C5",
-  city: "Golan Heights",
+  address: "La pizzal'e Merom Golan",
+  city: "Merom Golan",
   meeting_point: false,
   category: "Lecture",
   tour_id: rabea_birthright.id,
@@ -459,8 +459,8 @@ activities_attributes = [
   {
   name: "Israeli doctors saving Syrians by Dr. Tal Solomon",
   description: "Since 2013, Israel has been transporting severly injured Syrians to Israeli hospitals to give them free medical care. Hear how the Syrian Civil War is affecting Dr. Tal Solomon's vascular surgery unit, located an hour from the border.",
-  address: "4QHP+C5",
-  city: "Golan Heights",
+  address: "Ein Zivan",
+  city: "Ein Zivan",
   meeting_point: false,
   category: "Lecture",
   tour_id: rabea_birthright.id,
@@ -470,8 +470,8 @@ activities_attributes = [
   {
   name: "Buy a snack or souvenir at Coffee Annan ",
   description: "Named after the former secretary general of the UN, whose name sounds in Hebrew like coffee in the cloud.From Mount Bental you almost can see Damascus.",
-  address: "4QHP+C5",
-  city: "Golan Heights",
+  address: "Kibuttz Gonen",
+  city: "Gonen",
   meeting_point: false,
   category: "Food & Drink",
   tour_id: rabea_birthright.id,
@@ -481,8 +481,8 @@ activities_attributes = [
   {
   name: "Reflection: War, Civil War, Survival",
   description: "Let's recap everything we've seen and heard about Israel's Yom Kippur War, Syria's Civil War, and what war really looks and feels like. Then back on the bus and home to Gadot!",
-  address: "4QHP+C5",
-  city: "Golan Heights",
+  address: "Lehavot HaBashan",
+  city: "Lehavot HaBashan",
   meeting_point: true,
   category: "Other",
   tour_id: rabea_birthright.id,
@@ -492,8 +492,8 @@ activities_attributes = [
   {
   name: "Dinner @ Dining Hall",
   description: "Enjoy a tasty, buffet-style dinner at the Kibbutz & get to know the other amazing people you’ll be traveling with on this unbelievable adventure.",
-  address: "2J99+7R",
-  city: "Gadot",
+  address: "Kibuttz Shamir",
+  city: "Shamir",
   meeting_point: true,
   category: "Food & Drink",
   tour_id: rabea_birthright.id,
@@ -503,8 +503,8 @@ activities_attributes = [
   {
   name: "Learn about life on a kibbutz from Ephraim Bismuth",
   description: "Another chance to hear from leader of the Gadot Kibbutz, Ephraim Bismuth, will speak about growing up, living on, and maintaing a kibbutz in the 21st century. This talk will be at the campfire site with marshmellows!",
-  address: "2J99+7R",
-  city: "Gadot",
+  address: "Zavitan St 2, Qatsrin",
+  city: "Qatsrin",
   meeting_point: false,
   category: "Lecture",
   tour_id: rabea_birthright.id,
@@ -512,10 +512,10 @@ activities_attributes = [
   ending_time: DateTime.now.beginning_of_day + 21.5.hours
   },
   {
-  name: "Party @ Gadot Bar",
+  name: "Party @ Kibbutz Amir",
   description: "See another side of your group mates at the kibbutz bar! Have fun with the local youth. Plenty of dancing, laughing, most importantly Tubi!",
-  address: "2J99+7R",
-  city: "Gadot",
+  address: "Zavitan St 2, Qatsrin",
+  city: "Qatsrin",
   meeting_point: false,
   category: "Lecture",
   tour_id: rabea_birthright.id,
@@ -523,10 +523,10 @@ activities_attributes = [
   ending_time: DateTime.now.next_day.beginning_of_day + 1.hours
   },
   {
-  name: "Breakfast at Ben Yehuda",
-  description: "Eat some penut butter at the office. What did you expect?",
-  address: "32 Ben Yehuda",
-  city: "Tel Aviv-Yafo",
+  name: "Breakfast at Beer Sheva",
+  description: "Eat some penut butter at the train station. What did you expect?",
+  address: "Derekh Eilat 15, Beersheba",
+  city: "Beersheba",
   meeting_point: true,
   category: "Food & Drink",
   tour_id: rabea_negev_lw.id,
@@ -536,7 +536,7 @@ activities_attributes = [
   {
   name: "Ben Gurion's House",
   description: "The kibbutz of Sde Boker is famous as the home of David Ben Gurion, Israel’s first Prime Minister whose home is now a museum open to the public, and is the feature of a number of supporting exhibits in the kibbutz. Sde Boker is located in the center of the Negev Desert in southern Israel, a community founded in 1952 by a number of pioneering families who were later joined by Ben Gurion after an interesting encounter. Today, visitors from around the world visit to learn about the life of Israel’s iconic leader.",
-  address: "VQFQ+M9 Sde Boker",
+  address: "Kibbutz Sde Boker",
   city: "Sde Boker",
   meeting_point: false,
   category: "Food & Drink",
@@ -547,7 +547,7 @@ activities_attributes = [
   {
   name: "Ein Ovdat Hike",
   description: "Hike through the desert oasis of natural cliff formations at Ein Ovdat Preserve!",
-  address: "RQF4+VH ",
+  address: "Carmey Avdat Farm ",
   city: "Midreshet Ben-Gurion",
   meeting_point: true,
   category: "Travel & Outdoor",
@@ -556,10 +556,10 @@ activities_attributes = [
   ending_time: DateTime.now.beginning_of_day + 3.days + 16.hours
   },
   {
-  name: "Dinner at Ben Yehuda",
+  name: "Dinner at Bee Sheva",
   description: "Eat some hummus at the office. What did you expect?",
-  address: "32 Ben Yehuda",
-  city: "Tel Aviv-Yafo",
+  address: "Derekh Eilat 15, Beersheba",
+  city: "Beersheba",
   meeting_point: true,
   category: "Food & Drink",
   tour_id: rabea_negev_lw.id,
