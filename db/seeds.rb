@@ -19,14 +19,14 @@ Invitation.destroy_all
 ## set user seed info
 users_attributes = [
   {
-    name: "Rabea Bader",
+    name: "Rabea",
     email: "rab@ea.com",
     password: "123456",
     profile_picture: "rabea.jpg",
     bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!"
   },
   {
-    name: "Donald Trump",
+    name: "Donny",
     email: "don@don.com",
     password: "merica",
     profile_picture: "don.png",
@@ -44,8 +44,8 @@ users_attributes = [
 ## generate user seeds for all user seed info
 User.create!(users_attributes)
 cyrille = User.find_by(name: "Cyrille")
-don = User.find_by(name: "Donald Trump")
-rabea = User.find_by(name: "Rabea Bader")
+don = User.find_by(name: "Donny")
+rabea = User.find_by(name: "Rabea")
 
 
 # Tour seeds
@@ -200,7 +200,7 @@ groups_attributes = [
 Group.create!(groups_attributes)
 young_repubs = Group.find_by(name: "Young Republicans of Tel Aviv")
 fat_america = Group.find_by(name: "Fat Americans in Tel Aviv")
-lewagon_tlv = Group.find_by(name: "Le Wagon Followers")
+lewagon_tlv_follow = Group.find_by(name: "Le Wagon Followers")
 tulane_chabad = Group.find_by(name: "Tulane Chabad Bus #161")
 lewagon_tlv = Group.find_by(name: "Le Wagon Batch #161")
 
@@ -231,7 +231,8 @@ activities_attributes = [
   category: "Business",
   tour_id: don_swamp_drain.id,
   starting_time: DateTime.now.beginning_of_day + 11.hours,
-  ending_time: DateTime.now.beginning_of_day + 13.hours
+  ending_time: DateTime.now.beginning_of_day + 13.hours,
+  order_number: "1",
   },
   {
   name: "Lock Hillary Up",
@@ -241,7 +242,8 @@ activities_attributes = [
   category: "Religious",
   tour_id: don_swamp_drain.id,
   starting_time: DateTime.now.beginning_of_day + 14.hours,
-  ending_time: DateTime.now.beginning_of_day + 17.hours
+  ending_time: DateTime.now.beginning_of_day + 17.hours,
+  order_number: "2",
   },
   {
   name: "Send Illiterate Tweets",
@@ -251,7 +253,8 @@ activities_attributes = [
   category: "Travel & Outdoor",
   tour_id: don_swamp_drain.id,
   starting_time: DateTime.now.beginning_of_day + 17.hours,
-  ending_time: DateTime.now.beginning_of_day + 19.hours
+  ending_time: DateTime.now.beginning_of_day + 19.hours,
+  order_number: "3",
   },
   {
   name: "Buy ingredients at AM:PM",
@@ -261,7 +264,8 @@ activities_attributes = [
   category: "Food & Drink",
   tour_id: don_local_eats.id,
   starting_time: DateTime.now.beginning_of_day + 11.hours,
-  ending_time: DateTime.now.beginning_of_day + 13.hours
+  ending_time: DateTime.now.beginning_of_day + 13.hours,
+  order_number: "1",
   },
   {
   name: "Cooking lesson with Yoram Nitzan @Mul Yam",
@@ -271,7 +275,8 @@ activities_attributes = [
   category: "Lecture",
   tour_id: don_local_eats.id,
   starting_time: DateTime.now.beginning_of_day + 14.hours,
-  ending_time: DateTime.now.beginning_of_day + 17.hours
+  ending_time: DateTime.now.beginning_of_day + 17.hours,
+  order_number: "2",
   },
   {
   name: "McDonalds",
@@ -281,7 +286,8 @@ activities_attributes = [
   category: "Food & Drink",
   tour_id: don_local_eats.id,
   starting_time: DateTime.now.beginning_of_day + 17.hours,
-  ending_time: DateTime.now.beginning_of_day + 19.hours
+  ending_time: DateTime.now.beginning_of_day + 19.hours,
+  order_number: "3",
   },
   {
   name: "Buy ingredients at Carmel Shuk",
@@ -291,7 +297,8 @@ activities_attributes = [
   category: "Food & Drink",
   tour_id: cyrille_eats.id,
   starting_time: DateTime.now.beginning_of_day + 11.hours,
-  ending_time: DateTime.now.beginning_of_day + 13.hours
+  ending_time: DateTime.now.beginning_of_day + 13.hours,
+  order_number: "1",
   },
   {
   name: "Cooking lesson by Cyrille",
@@ -301,7 +308,8 @@ activities_attributes = [
   category: "Lecture",
   tour_id: cyrille_eats.id,
   starting_time: DateTime.now.beginning_of_day + 14.hours,
-  ending_time: DateTime.now.beginning_of_day + 17.hours
+  ending_time: DateTime.now.beginning_of_day + 17.hours,
+  order_number: "2",
   },
   {
   name: "French picnic at Bograshov Beach",
@@ -311,260 +319,286 @@ activities_attributes = [
   category: "Travel & Outdoor",
   tour_id: cyrille_eats.id,
   starting_time: DateTime.now.beginning_of_day + 17.hours,
-  ending_time: DateTime.now.beginning_of_day + 19.hours
+  ending_time: DateTime.now.beginning_of_day + 19.hours,
+  order_number: "3",
+
   },
   {
   name: "Morning Prayers with Rabbi Yochanan",
   description: "Greet Israel in true Hebrew fashion with the Shachrit led by our favorite rebbe Yochanan! All are welcome regardless of religious background. Services with be held in Hebrew and English.",
-  address: "2J99+7R",
-  city: "Gadot",
+  address: "Hazor Museum",
+  city: "Ayelet HaShahar",
   meeting_point: false,
   category: "Religious",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 7.hours,
-  ending_time: DateTime.now.beginning_of_day + 7.5.hours
+  ending_time: DateTime.now.beginning_of_day + 8.hours,
+  order_number: "1",
   },
   {
   name: "Breakfast @ Dining Hall",
   description: "Enjoy your morning ritual of authentic Israeli breakfast of bread, pastries, salads, fresh fruit/vegetables, & much more!",
-  address: "2J99+7R",
-  city: "Gadot",
+  address: "Mahanayim Shopping Center",
+  city: "Rosh Pina",
   meeting_point: true,
   category: "Food & Drink",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 8.hours,
-  ending_time: DateTime.now.beginning_of_day + 8.5.hours
+  ending_time: DateTime.now.beginning_of_day + 9.hours,
+  order_number: "2",
   },
   {
   name: "Morning Yoga with Emily",
   description: "Kibbutz Yogi will lead a vigorous align-and-flow style classes to wake you up and get you going and flowing into the rest of your day!",
-  address: "2J99+7R",
-  city: "Gadot",
+  address: "Beit HaRishonim",
+  city: "Rosh Pinna",
   meeting_point: false,
   category: "Other",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 9.hours,
-  ending_time: DateTime.now.beginning_of_day + 10.hours
+  ending_time: DateTime.now.beginning_of_day + 10.hours,
+  order_number: "3",
   },
   {
   name: "Meet the neighbors! Learn about life on a kibbutz from Ephraim Bismuth",
   description: "Leader of the Gadot Kibbutz, Ephraim Bismuth, will speak about growing up, living on, and maintaing a kibbutz in the 21st century. Short walking tour of the Kibbutz to follow.",
-  address: "2J99+7R",
+  address: "Kibbutz Gadot",
   city: "Gadot",
   meeting_point: false,
   category: "Lecture",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 9.hours,
-  ending_time: DateTime.now.beginning_of_day + 9.75.hours
+  ending_time: DateTime.now.beginning_of_day + 10.hours,
+  order_number: "4",
   },
   {
   name: "Ice Breakers & Leave for Jalaboun",
   description: "Drivers Rabea and Joy will lead team ice breakers for everyone to meet one another. Then vroom vroom to our first trek!",
-  address: "2J99+7R",
+  address: "Jalaboun Stream",
   city: "Gadot",
   meeting_point: true,
   category: "Travel & Outdoor",
   tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 10.5.hours,
-  ending_time: DateTime.now.beginning_of_day + 11.hours
+  starting_time: DateTime.now.beginning_of_day + 10.hours,
+  ending_time: DateTime.now.beginning_of_day + 11.hours,
+  order_number: "5",
   },
   {
   name: "Hiking Jalaboun Red Trail (Longer Option)",
   description: "This longer trail continues from the Jilaboun pool towards the El Jalabina ruins and the officers’ pool, finally ending near the Pkak Bridge.",
-  address: "2MVC+JC",
+  address: "Jordan River Rafting Attractions",
   city: "Golan Heights",
   meeting_point: false,
   category: "Travel & Outdoor",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 11.hours,
-  ending_time: DateTime.now.beginning_of_day + 16.hours
+  ending_time: DateTime.now.beginning_of_day + 16.hours,
+  order_number: "6",
   },
   {
   name: "Hiking Jalaboun Blue Trail (Shorter Option)",
   description: "Chase waterfalls & take in the breathtaking scenery while hiking the Jilaboon, a bubbling stream in the Golan with great significance.",
-  address: "2MVC+JC",
-  city: "Golan Heights",
+  address: "Jordan River Rafting Attractions",
+  city: "Gadot",
   meeting_point: false,
   category: "Travel & Outdoor",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 11.hours,
-  ending_time: DateTime.now.beginning_of_day + 16.hours
+  ending_time: DateTime.now.beginning_of_day + 16.hours,
+  order_number: "7",
   },
   {
   name: "Swimming Jalaboun Waterfalls & Natural Pool",
   description: "Continue on the trail down to the Jilaboun pool. Turn right off the path at the bottom; you may have to cross the stream in the water in order to reach the pool. You can swim in the pool and even have a seat on the rocks behind the waterfall; beware of the deep water. You may be able to see the rainbow in the waterfall from within the pool as well.",
-  address: "2MVC+JC",
+  address: "Metsad Ateret",
   city: "Golan Heights",
   meeting_point: false,
   category: "Travel & Outdoor",
   tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 12.5.hours,
-  ending_time: DateTime.now.beginning_of_day + 14.5.hours
+  starting_time: DateTime.now.beginning_of_day + 12.hours,
+  ending_time: DateTime.now.beginning_of_day + 14.hours,
+  order_number: "8",
+
   },
   {
   name: "Israeli Topography by Joy",
   description: "Driver Joy explains the history of the varied Israeli terrain. From the mountain tops of the Golan to the salty waters of the Dead Sea, Joy knows it all!",
-  address: "2MVC+JC",
+  address: "Gesher Benot Ya'akov",
   city: "Golan Heights",
   meeting_point: false,
   category: "Travel & Outdoor",
   tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 14.25.hours,
-  ending_time: DateTime.now.beginning_of_day + 14.75.hours
+  starting_time: DateTime.now.beginning_of_day + 14.hours,
+  ending_time: DateTime.now.beginning_of_day + 15.hours,
+  order_number: "9",
   },
   {
   name: "BBQ Lunch and Games",
   description: "Relax as Chef David fires up the grill and cooks a kosher feast. The menu includes kebabs, sausages, chicken hearts, and of course Israeli Salad+Hummus!! In the mean time play soccer, football, cards, horseshoes, or just learn more about your new friends! After lunch it's straight to Mount Bental for more picturesque views!",
-  address: "2MVC+JC",
-  city: "Golan Heights",
+  address: "Hukok St 12, Qatsrin",
+  city: "Qatsrin",
   meeting_point: true,
   category: "Food & Drink",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 15.hours,
-  ending_time: DateTime.now.beginning_of_day + 16.5.hours
+  ending_time: DateTime.now.beginning_of_day + 16.hours,
+  order_number: "10",
   },
   {
   name: "Mount Bental Vista Views",
   description: "Gaze out over the borders of neighboring countries from an old IDF bunker on top of Mount Bental in the Golan Heights.",
-  address: "4QHP+C5",
-  city: "Golan Heights",
+  address: "Merom Golan Hotel",
+  city: "Merom Golan",
   meeting_point: false,
   category: "Travel & Outdoor",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 17.hours,
-  ending_time: DateTime.now.beginning_of_day + 18.5.hours
+  ending_time: DateTime.now.beginning_of_day + 18.hours,
+  order_number: "11",
   },
   {
   name: "Yom Kippur War by Ariel Sharon",
   description: "Listen to the story of the Yom Kippur War in 1973 from it's biggest hero, Ariel Sharon. Ariel gives a rivetting first-person account of one of the largest tank battles ever that was miraculously won by the Israelis with their small force of 160 tanks.",
-  address: "4QHP+C5",
+  address: "Golan Volcanic Park",
   city: "Golan Heights",
   meeting_point: false,
   category: "Lecture",
   tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 17.25.hours,
-  ending_time: DateTime.now.beginning_of_day + 17.75.hours
+  starting_time: DateTime.now.beginning_of_day + 17.hours,
+  ending_time: DateTime.now.beginning_of_day + 18.hours,
+  order_number: "12",
   },
   {
   name: "Life as a UN Observer by António Guterres",
   description: "António Guterres gives the detailed account of what it means to be a peace-keeping soldier.",
-  address: "4QHP+C5",
-  city: "Golan Heights",
+  address: "La pizzal'e Merom Golan",
+  city: "Merom Golan",
   meeting_point: false,
   category: "Lecture",
   tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 17.75.hours,
-  ending_time: DateTime.now.beginning_of_day + 18.hours
+  starting_time: DateTime.now.beginning_of_day + 17.hours,
+  ending_time: DateTime.now.beginning_of_day + 18.hours,
+  order_number: "13",
   },
   {
   name: "Israeli doctors saving Syrians by Dr. Tal Solomon",
   description: "Since 2013, Israel has been transporting severly injured Syrians to Israeli hospitals to give them free medical care. Hear how the Syrian Civil War is affecting Dr. Tal Solomon's vascular surgery unit, located an hour from the border.",
-  address: "4QHP+C5",
-  city: "Golan Heights",
+  address: "Ein Zivan",
+  city: "Ein Zivan",
   meeting_point: false,
   category: "Lecture",
   tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 18.25.hours,
-  ending_time: DateTime.now.beginning_of_day + 18.5.hours
+  starting_time: DateTime.now.beginning_of_day + 18.hours,
+  ending_time: DateTime.now.beginning_of_day + 19.hours,
+  order_number: "14",
   },
   {
   name: "Buy a snack or souvenir at Coffee Annan ",
   description: "Named after the former secretary general of the UN, whose name sounds in Hebrew like coffee in the cloud.From Mount Bental you almost can see Damascus.",
-  address: "4QHP+C5",
-  city: "Golan Heights",
+  address: "Kibuttz Gonen",
+  city: "Gonen",
   meeting_point: false,
   category: "Food & Drink",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 17.hours,
-  ending_time: DateTime.now.beginning_of_day + 18.5.hours
+  ending_time: DateTime.now.beginning_of_day + 18.hours,
+  order_number: "15",
   },
   {
   name: "Reflection: War, Civil War, Survival",
   description: "Let's recap everything we've seen and heard about Israel's Yom Kippur War, Syria's Civil War, and what war really looks and feels like. Then back on the bus and home to Gadot!",
-  address: "4QHP+C5",
-  city: "Golan Heights",
+  address: "Lehavot HaBashan",
+  city: "Lehavot HaBashan",
   meeting_point: true,
   category: "Other",
   tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 18.5.hours,
-  ending_time: DateTime.now.beginning_of_day + 19.hours
+  starting_time: DateTime.now.beginning_of_day + 18.hours,
+  ending_time: DateTime.now.beginning_of_day + 19.hours,
+  order_number: "16",
   },
   {
   name: "Dinner @ Dining Hall",
   description: "Enjoy a tasty, buffet-style dinner at the Kibbutz & get to know the other amazing people you’ll be traveling with on this unbelievable adventure.",
-  address: "2J99+7R",
-  city: "Gadot",
+  address: "Kibuttz Shamir",
+  city: "Shamir",
   meeting_point: true,
   category: "Food & Drink",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 20.hours,
-  ending_time: DateTime.now.beginning_of_day + 21.hours
+  ending_time: DateTime.now.beginning_of_day + 21.hours,
+  order_number: "17",
   },
   {
   name: "Learn about life on a kibbutz from Ephraim Bismuth",
   description: "Another chance to hear from leader of the Gadot Kibbutz, Ephraim Bismuth, will speak about growing up, living on, and maintaing a kibbutz in the 21st century. This talk will be at the campfire site with marshmellows!",
-  address: "2J99+7R",
-  city: "Gadot",
+  address: "Zavitan St 2, Qatsrin",
+  city: "Qatsrin",
   meeting_point: false,
   category: "Lecture",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 21.hours,
-  ending_time: DateTime.now.beginning_of_day + 21.5.hours
+  ending_time: DateTime.now.beginning_of_day + 22.hours,
+  order_number: "18",
   },
   {
-  name: "Party @ Gadot Bar",
+  name: "Party @ Kibbutz Amir",
   description: "See another side of your group mates at the kibbutz bar! Have fun with the local youth. Plenty of dancing, laughing, most importantly Tubi!",
-  address: "2J99+7R",
-  city: "Gadot",
+  address: "Zavitan St 2, Qatsrin",
+  city: "Qatsrin",
   meeting_point: false,
   category: "Lecture",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 21.hours,
-  ending_time: DateTime.now.next_day.beginning_of_day + 1.hours
+  ending_time: DateTime.now.next_day.beginning_of_day + 1.hours,
+  order_number: "19",
   },
   {
-  name: "Breakfast at Ben Yehuda",
-  description: "Eat some penut butter at the office. What did you expect?",
-  address: "32 Ben Yehuda",
-  city: "Tel Aviv-Yafo",
+  name: "Breakfast at Beer Sheva",
+  description: "Eat some penut butter at the train station. What did you expect?",
+  address: "Derekh Eilat 15, Beersheba",
+  city: "Beersheba",
   meeting_point: true,
   category: "Food & Drink",
   tour_id: rabea_negev_lw.id,
   starting_time: DateTime.now.beginning_of_day + 3.days + 9.hours,
-  ending_time: DateTime.now.beginning_of_day + 3.days + 10.hours
+  ending_time: DateTime.now.beginning_of_day + 3.days + 10.hours,
+  order_number: "1",
   },
   {
   name: "Ben Gurion's House",
   description: "The kibbutz of Sde Boker is famous as the home of David Ben Gurion, Israel’s first Prime Minister whose home is now a museum open to the public, and is the feature of a number of supporting exhibits in the kibbutz. Sde Boker is located in the center of the Negev Desert in southern Israel, a community founded in 1952 by a number of pioneering families who were later joined by Ben Gurion after an interesting encounter. Today, visitors from around the world visit to learn about the life of Israel’s iconic leader.",
-  address: "VQFQ+M9 Sde Boker",
+  address: "Kibbutz Sde Boker",
   city: "Sde Boker",
   meeting_point: false,
   category: "Food & Drink",
   tour_id: rabea_negev_lw.id,
   starting_time: DateTime.now.beginning_of_day + 3.days + 12.hours,
-  ending_time: DateTime.now.beginning_of_day + 3.days + 13.hours
+  ending_time: DateTime.now.beginning_of_day + 3.days + 13.hours,
+  order_number: "2",
   },
   {
   name: "Ein Ovdat Hike",
   description: "Hike through the desert oasis of natural cliff formations at Ein Ovdat Preserve!",
-  address: "RQF4+VH ",
+  address: "Carmey Avdat Farm ",
   city: "Midreshet Ben-Gurion",
   meeting_point: true,
   category: "Travel & Outdoor",
   tour_id: rabea_negev_lw.id,
   starting_time: DateTime.now.beginning_of_day + 3.days + 12.hours,
-  ending_time: DateTime.now.beginning_of_day + 3.days + 16.hours
+  ending_time: DateTime.now.beginning_of_day + 3.days + 16.hours,
+  order_number: "3",
   },
   {
-  name: "Dinner at Ben Yehuda",
+  name: "Dinner at Bee Sheva",
   description: "Eat some hummus at the office. What did you expect?",
-  address: "32 Ben Yehuda",
-  city: "Tel Aviv-Yafo",
+  address: "Derekh Eilat 15, Beersheba",
+  city: "Beersheba",
   meeting_point: true,
   category: "Food & Drink",
   tour_id: rabea_negev_lw.id,
   starting_time: DateTime.now.beginning_of_day + 3.days + 18.hours,
-  ending_time: DateTime.now.beginning_of_day + 3.days + 19.hours
+  ending_time: DateTime.now.beginning_of_day + 3.days + 19.hours,
+  order_number: "4",
   },
 ]
 #generate activity seeds for all activity seed info
@@ -577,98 +611,98 @@ invitations_attributes = [
     group: young_repubs,
     email: "hillary@usa.gov"
   },
-  {
-    group: young_repubs,
-    email: "barack@usa.gov"
-  },
+  # {
+  #   group: young_repubs,
+  #   email: "barack@usa.gov"
+  # },
   {
     group: fat_america,
     email: "bib@israel.gov"
   },
+  # {
+  #   group: fat_america,
+  #   email: "chrisChristie@usa.gov"
+  # },
   {
-    group: fat_america,
-    email: "chrisChristie@usa.gov"
-  },
-  {
-    group: lewagon_tlv,
+    group: lewagon_tlv_follow,
     email: "rabea@lwtlv.il"
   },
+  # {
+  #   group: lewagon_tlv_follow,
+  #   email: "david@lwtlv.il"
+  # },
+  # {
+  #   group: lewagon_tlv_follow,
+  #   email: "pinchas@lwtlv.il"
+  # },
   {
-    group: lewagon_tlv,
-    email: "david@lwtlv.il"
-  },
-  {
-    group: lewagon_tlv,
-    email: "pinchas@lwtlv.il"
-  },
-    {
     group: tulane_chabad,
     email: "rabbi@chabad.com"
   },
-  {
-    group: tulane_chabad,
-    email: "wife@chabad.com"
-  },
-  {
-    group: tulane_chabad,
-    email: "child#9@chabad.com"
-  },
+  # {
+  #   group: tulane_chabad,
+  #   email: "wife@chabad.com"
+  # },
+  # {
+  #   group: tulane_chabad,
+  #   email: "child#9@chabad.com"
+  # },
   {
     group: lewagon_tlv,
     email: "boris@lw.fr"
   },
-    {
-    group: lewagon_tlv,
-    email: "sebastian@lw.fr"
-  },
+  # {
+  #   group: lewagon_tlv,
+  #   email: "sebastian@lw.fr"
+  # },
   {
     group: fat_america_tlv,
     email: "boris@lw.fr"
   },
-    {
-    group: fat_america_tlv,
-    email: "sebastian@lw.fr"
-  },
+  #{
+  #   group: fat_america_tlv,
+  #   email: "sebastian@lw.fr"
+  # },
   {
     group: fat_america_brln,
     email: "boris@lw.fr"
   },
-  {
-    group: fat_america_brln,
-    email: "sebastian@lw.fr"
-  },
+  # {
+  #   group: fat_america_brln,
+  #   email: "sebastian@lw.fr"
+  # },
   {
     group: fat_america_rmtgn,
     email: "boris@lw.fr"
   },
-  {
-    group: fat_america_rmtgn,
-    email: "sebastian@lw.fr"
-  },
+  # {
+  #   group: fat_america_rmtgn,
+  #   email: "sebastian@lw.fr"
+  # },
   {
     group: tulane_chabad_2,
     email: "boris@lw.fr"
   },
-  {
-    group: tulane_chabad_2,
-    email: "sebastian@lw.fr"
-  },
+  # {
+  #   group: tulane_chabad_2,
+  #   email: "sebastian@lw.fr"
+  # },
   {
     group: fat_america_tlv_spr,
     email: "boris@lw.fr"
   },
-  {
-    group: fat_america_tlv_spr,
-    email: "sebastian@lw.fr"
-  },
+  # {
+  #   group: fat_america_tlv_spr,
+  #   email: "sebastian@lw.fr"
+  # },
   {
     group: lewagon_tlv_1,
     email: "boris@lw.fr"
   },
-  {
-    group: lewagon_tlv_1,
-    email: "sebastian@lw.fr"
-  },
+  # {
+  #   group: lewagon_tlv_1,
+  #   email: "sebastian@lw.fr"
+  # }
 ]
 
 #generate invitations seeds for all invitations seed info

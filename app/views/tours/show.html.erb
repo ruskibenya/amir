@@ -52,22 +52,19 @@
       <!-- updates the next step number -->
       <% @s += 1 %>
     <% end %>
+
   <!-- create a new activity for this tour -->
   <div id="activity_form">
     <div class="dropdown_toggle">
       <div class="col-xs-12 col-sm-12 col-md-12">
         <div id="add-activity">
-
           <p class="amir-btn">Add activity</p>
-
+        </div>
+        <div class="dropdown_content hidden">
+          <%= render 'activities/create_form' %>
         </div>
       </div>
-      <div class="dropdown_content hidden">
-        <%= render 'activities/create_form' %>
-      </div>
     </div>
-
-  </div>
   <% end %>
 </div>
 
@@ -79,6 +76,7 @@
 <!-- map section -->
 <% content_for :below_container do %>
 <div id="tour-map" class="hidden">
+
 <h5 style="text-align: center;"><%= @tour.name %>'s map</h5>
   <%
     markers = @activities.map do |activity|
@@ -90,11 +88,16 @@
   %>
 
 
+
   <div
   id="map"
   data-markers="<%= @markers.to_json %>"
   ></div>
 </div>
+
+<%=  request.location.ip %>
+
+
 <% end %>
 
 
@@ -118,21 +121,6 @@
     document.getElementById('tour-map').classList.toggle('hidden');
     initMap(map);
    });
- </script>
-
- <script>
-   function initUpdateNavbarOnScroll() {
-  const navbar = document.querySelector('.title-show');
-  if (navbar) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY >= window.innerHeight) {
-        navbar.classList.add('title-show-scroll');
-      } else {
-        navbar.classList.remove('.title-show');
-      }
-    });
-  }
-}
  </script>
 
 
