@@ -231,7 +231,8 @@ activities_attributes = [
   category: "Business",
   tour_id: don_swamp_drain.id,
   starting_time: DateTime.now.beginning_of_day + 11.hours,
-  ending_time: DateTime.now.beginning_of_day + 13.hours
+  ending_time: DateTime.now.beginning_of_day + 13.hours,
+  order_number: "1",
   },
   {
   name: "Lock Hillary Up",
@@ -241,7 +242,8 @@ activities_attributes = [
   category: "Religious",
   tour_id: don_swamp_drain.id,
   starting_time: DateTime.now.beginning_of_day + 14.hours,
-  ending_time: DateTime.now.beginning_of_day + 17.hours
+  ending_time: DateTime.now.beginning_of_day + 17.hours,
+  order_number: "2",
   },
   {
   name: "Send Illiterate Tweets",
@@ -251,7 +253,8 @@ activities_attributes = [
   category: "Travel & Outdoor",
   tour_id: don_swamp_drain.id,
   starting_time: DateTime.now.beginning_of_day + 17.hours,
-  ending_time: DateTime.now.beginning_of_day + 19.hours
+  ending_time: DateTime.now.beginning_of_day + 19.hours,
+  order_number: "3",
   },
   {
   name: "Buy ingredients at AM:PM",
@@ -261,7 +264,8 @@ activities_attributes = [
   category: "Food & Drink",
   tour_id: don_local_eats.id,
   starting_time: DateTime.now.beginning_of_day + 11.hours,
-  ending_time: DateTime.now.beginning_of_day + 13.hours
+  ending_time: DateTime.now.beginning_of_day + 13.hours,
+  order_number: "1",
   },
   {
   name: "Cooking lesson with Yoram Nitzan @Mul Yam",
@@ -271,7 +275,8 @@ activities_attributes = [
   category: "Lecture",
   tour_id: don_local_eats.id,
   starting_time: DateTime.now.beginning_of_day + 14.hours,
-  ending_time: DateTime.now.beginning_of_day + 17.hours
+  ending_time: DateTime.now.beginning_of_day + 17.hours,
+  order_number: "2",
   },
   {
   name: "McDonalds",
@@ -281,7 +286,8 @@ activities_attributes = [
   category: "Food & Drink",
   tour_id: don_local_eats.id,
   starting_time: DateTime.now.beginning_of_day + 17.hours,
-  ending_time: DateTime.now.beginning_of_day + 19.hours
+  ending_time: DateTime.now.beginning_of_day + 19.hours,
+  order_number: "3",
   },
   {
   name: "Buy ingredients at Carmel Shuk",
@@ -291,7 +297,8 @@ activities_attributes = [
   category: "Food & Drink",
   tour_id: cyrille_eats.id,
   starting_time: DateTime.now.beginning_of_day + 11.hours,
-  ending_time: DateTime.now.beginning_of_day + 13.hours
+  ending_time: DateTime.now.beginning_of_day + 13.hours,
+  order_number: "1",
   },
   {
   name: "Cooking lesson by Cyrille",
@@ -301,7 +308,8 @@ activities_attributes = [
   category: "Lecture",
   tour_id: cyrille_eats.id,
   starting_time: DateTime.now.beginning_of_day + 14.hours,
-  ending_time: DateTime.now.beginning_of_day + 17.hours
+  ending_time: DateTime.now.beginning_of_day + 17.hours,
+  order_number: "2",
   },
   {
   name: "French picnic at Bograshov Beach",
@@ -311,7 +319,9 @@ activities_attributes = [
   category: "Travel & Outdoor",
   tour_id: cyrille_eats.id,
   starting_time: DateTime.now.beginning_of_day + 17.hours,
-  ending_time: DateTime.now.beginning_of_day + 19.hours
+  ending_time: DateTime.now.beginning_of_day + 19.hours,
+  order_number: "3",
+
   },
   {
   name: "Morning Prayers with Rabbi Yochanan",
@@ -322,7 +332,8 @@ activities_attributes = [
   category: "Religious",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 7.hours,
-  ending_time: DateTime.now.beginning_of_day + 7.5.hours
+  ending_time: DateTime.now.beginning_of_day + 8.hours,
+  order_number: "1",
   },
   {
   name: "Breakfast @ Dining Hall",
@@ -333,7 +344,8 @@ activities_attributes = [
   category: "Food & Drink",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 8.hours,
-  ending_time: DateTime.now.beginning_of_day + 8.5.hours
+  ending_time: DateTime.now.beginning_of_day + 9.hours,
+  order_number: "2",
   },
   {
   name: "Morning Yoga with Emily",
@@ -344,7 +356,8 @@ activities_attributes = [
   category: "Other",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 9.hours,
-  ending_time: DateTime.now.beginning_of_day + 10.hours
+  ending_time: DateTime.now.beginning_of_day + 10.hours,
+  order_number: "3",
   },
   {
   name: "Meet the neighbors! Learn about life on a kibbutz from Ephraim Bismuth",
@@ -355,7 +368,8 @@ activities_attributes = [
   category: "Lecture",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 9.hours,
-  ending_time: DateTime.now.beginning_of_day + 9.75.hours
+  ending_time: DateTime.now.beginning_of_day + 10.hours,
+  order_number: "4",
   },
   {
   name: "Ice Breakers & Leave for Jalaboun",
@@ -365,8 +379,9 @@ activities_attributes = [
   meeting_point: true,
   category: "Travel & Outdoor",
   tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 10.5.hours,
-  ending_time: DateTime.now.beginning_of_day + 11.hours
+  starting_time: DateTime.now.beginning_of_day + 10.hours,
+  ending_time: DateTime.now.beginning_of_day + 11.hours,
+  order_number: "5",
   },
   {
   name: "Hiking Jalaboun Red Trail (Longer Option)",
@@ -377,7 +392,8 @@ activities_attributes = [
   category: "Travel & Outdoor",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 11.hours,
-  ending_time: DateTime.now.beginning_of_day + 16.hours
+  ending_time: DateTime.now.beginning_of_day + 16.hours,
+  order_number: "6",
   },
   {
   name: "Hiking Jalaboun Blue Trail (Shorter Option)",
@@ -388,7 +404,8 @@ activities_attributes = [
   category: "Travel & Outdoor",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 11.hours,
-  ending_time: DateTime.now.beginning_of_day + 16.hours
+  ending_time: DateTime.now.beginning_of_day + 16.hours,
+  order_number: "7",
   },
   {
   name: "Swimming Jalaboun Waterfalls & Natural Pool",
@@ -398,8 +415,10 @@ activities_attributes = [
   meeting_point: false,
   category: "Travel & Outdoor",
   tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 12.5.hours,
-  ending_time: DateTime.now.beginning_of_day + 14.5.hours
+  starting_time: DateTime.now.beginning_of_day + 12.hours,
+  ending_time: DateTime.now.beginning_of_day + 14.hours,
+  order_number: "8",
+
   },
   {
   name: "Israeli Topography by Joy",
@@ -409,8 +428,9 @@ activities_attributes = [
   meeting_point: false,
   category: "Travel & Outdoor",
   tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 14.25.hours,
-  ending_time: DateTime.now.beginning_of_day + 14.75.hours
+  starting_time: DateTime.now.beginning_of_day + 14.hours,
+  ending_time: DateTime.now.beginning_of_day + 15.hours,
+  order_number: "9",
   },
   {
   name: "BBQ Lunch and Games",
@@ -421,7 +441,8 @@ activities_attributes = [
   category: "Food & Drink",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 15.hours,
-  ending_time: DateTime.now.beginning_of_day + 16.5.hours
+  ending_time: DateTime.now.beginning_of_day + 16.hours,
+  order_number: "10",
   },
   {
   name: "Mount Bental Vista Views",
@@ -432,7 +453,8 @@ activities_attributes = [
   category: "Travel & Outdoor",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 17.hours,
-  ending_time: DateTime.now.beginning_of_day + 18.5.hours
+  ending_time: DateTime.now.beginning_of_day + 18.hours,
+  order_number: "11",
   },
   {
   name: "Yom Kippur War by Ariel Sharon",
@@ -442,8 +464,9 @@ activities_attributes = [
   meeting_point: false,
   category: "Lecture",
   tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 17.25.hours,
-  ending_time: DateTime.now.beginning_of_day + 17.75.hours
+  starting_time: DateTime.now.beginning_of_day + 17.hours,
+  ending_time: DateTime.now.beginning_of_day + 18.hours,
+  order_number: "12",
   },
   {
   name: "Life as a UN Observer by António Guterres",
@@ -453,8 +476,9 @@ activities_attributes = [
   meeting_point: false,
   category: "Lecture",
   tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 17.75.hours,
-  ending_time: DateTime.now.beginning_of_day + 18.hours
+  starting_time: DateTime.now.beginning_of_day + 17.hours,
+  ending_time: DateTime.now.beginning_of_day + 18.hours,
+  order_number: "13",
   },
   {
   name: "Israeli doctors saving Syrians by Dr. Tal Solomon",
@@ -464,8 +488,9 @@ activities_attributes = [
   meeting_point: false,
   category: "Lecture",
   tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 18.25.hours,
-  ending_time: DateTime.now.beginning_of_day + 18.5.hours
+  starting_time: DateTime.now.beginning_of_day + 18.hours,
+  ending_time: DateTime.now.beginning_of_day + 19.hours,
+  order_number: "14",
   },
   {
   name: "Buy a snack or souvenir at Coffee Annan ",
@@ -476,7 +501,8 @@ activities_attributes = [
   category: "Food & Drink",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 17.hours,
-  ending_time: DateTime.now.beginning_of_day + 18.5.hours
+  ending_time: DateTime.now.beginning_of_day + 18.hours,
+  order_number: "15",
   },
   {
   name: "Reflection: War, Civil War, Survival",
@@ -486,8 +512,9 @@ activities_attributes = [
   meeting_point: true,
   category: "Other",
   tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 18.5.hours,
-  ending_time: DateTime.now.beginning_of_day + 19.hours
+  starting_time: DateTime.now.beginning_of_day + 18.hours,
+  ending_time: DateTime.now.beginning_of_day + 19.hours,
+  order_number: "16",
   },
   {
   name: "Dinner @ Dining Hall",
@@ -498,7 +525,8 @@ activities_attributes = [
   category: "Food & Drink",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 20.hours,
-  ending_time: DateTime.now.beginning_of_day + 21.hours
+  ending_time: DateTime.now.beginning_of_day + 21.hours,
+  order_number: "17",
   },
   {
   name: "Learn about life on a kibbutz from Ephraim Bismuth",
@@ -509,7 +537,8 @@ activities_attributes = [
   category: "Lecture",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 21.hours,
-  ending_time: DateTime.now.beginning_of_day + 21.5.hours
+  ending_time: DateTime.now.beginning_of_day + 22.hours,
+  order_number: "18",
   },
   {
   name: "Party @ Kibbutz Amir",
@@ -520,7 +549,8 @@ activities_attributes = [
   category: "Lecture",
   tour_id: rabea_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 21.hours,
-  ending_time: DateTime.now.next_day.beginning_of_day + 1.hours
+  ending_time: DateTime.now.next_day.beginning_of_day + 1.hours,
+  order_number: "19",
   },
   {
   name: "Breakfast at Beer Sheva",
@@ -531,7 +561,8 @@ activities_attributes = [
   category: "Food & Drink",
   tour_id: rabea_negev_lw.id,
   starting_time: DateTime.now.beginning_of_day + 3.days + 9.hours,
-  ending_time: DateTime.now.beginning_of_day + 3.days + 10.hours
+  ending_time: DateTime.now.beginning_of_day + 3.days + 10.hours,
+  order_number: "1",
   },
   {
   name: "Ben Gurion's House",
@@ -542,7 +573,8 @@ activities_attributes = [
   category: "Food & Drink",
   tour_id: rabea_negev_lw.id,
   starting_time: DateTime.now.beginning_of_day + 3.days + 12.hours,
-  ending_time: DateTime.now.beginning_of_day + 3.days + 13.hours
+  ending_time: DateTime.now.beginning_of_day + 3.days + 13.hours,
+  order_number: "2",
   },
   {
   name: "Ein Ovdat Hike",
@@ -553,7 +585,8 @@ activities_attributes = [
   category: "Travel & Outdoor",
   tour_id: rabea_negev_lw.id,
   starting_time: DateTime.now.beginning_of_day + 3.days + 12.hours,
-  ending_time: DateTime.now.beginning_of_day + 3.days + 16.hours
+  ending_time: DateTime.now.beginning_of_day + 3.days + 16.hours,
+  order_number: "3",
   },
   {
   name: "Dinner at Bee Sheva",
@@ -564,7 +597,8 @@ activities_attributes = [
   category: "Food & Drink",
   tour_id: rabea_negev_lw.id,
   starting_time: DateTime.now.beginning_of_day + 3.days + 18.hours,
-  ending_time: DateTime.now.beginning_of_day + 3.days + 19.hours
+  ending_time: DateTime.now.beginning_of_day + 3.days + 19.hours,
+  order_number: "4",
   },
 ]
 #generate activity seeds for all activity seed info
