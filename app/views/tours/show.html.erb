@@ -78,25 +78,13 @@
 <% content_for :below_container do %>
   <div id="tour-map" class="hidden">
 
-    <h5 style="text-align: center;"><%= @tour.name %>'s map</h5>
-      <%
-        markers = @activities.map do |activity|
-          {
-            lat: activity.latitude,
-            lng: activity.longitude,
-            }
-        end
-      %>
-
-
-
+    <h5 style="text-align: center; font-size: 25px;"><%= @tour.name %>'s map</h5>
     <div
       id="map"
       data-markers="<%= @markers.to_json %>"
       >
     </div>
   </div>
-
 <% end %>
 
 

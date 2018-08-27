@@ -2,3 +2,25 @@ Hello Christophe!
 <%= @invitation.email %>
 <%= @tour.name %>
 
+
+<script>
+  const userUpdateLocation = () => {
+    navigator.geolocation.getCurrentPosition(function(position) {
+  // JS query that triggers submit button of the form
+  // document.getElementById(positionForm).submit("latitude": position.coords.latitude, "longitude": position.coords.longitude);
+
+      fetch("<%= user_path(current_user) %>", {
+        method: 'put',
+        body: JSON.stringify({latitude: position.coords.latitude, longitude: position.coords.longitude}),
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRF-Token': Rails.csrfToken()
+        },
+        credentials: 'same-origin'
+      })
+    });
+  }
+
+  setInterval(userUpdateLocation, 5000)
+
+</script>
