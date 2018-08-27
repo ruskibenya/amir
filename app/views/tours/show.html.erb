@@ -7,24 +7,27 @@
 <% end %>
 
 
-<%= link_to '<i class="fas fa-user-circle"></i>'.html_safe, user_path, class: 'home-button' %>
+<%#= link_to '<i class="fas fa-user-circle"></i>'.html_safe, user_path, class: 'home-button' %>
 
 <!-- send email invitations for this tour -->
-<%= link_to send_invitations_path(@tour), method: :post  do %>
-  <p class="simple-link" style="font-size: 13px; text-align: center;">Send Invitations to: <span><%= @tour.group.name %></span> </p>
-<% end %>
+<div class="sending">
+  <%= link_to 'send invitations', send_invitations_path(@tour), class: 'amir-btn', method: :post%>
+</div>
+  <!-- <p class="amir-btn" style="font-size: 13px; text-align: center;">Send Invitations</p> -->
+<%# end %>
+<!-- <span><%#= @tour.group.name %></span>  -->
 
   <div class="toggle-section">
 
       <!-- <a href="#" id="show_tour_map" class="button-change">Map</a> -->
         <div id="show_tour_map" class="toggle-btn" onclick="
             this.classList.toggle('active');
-            this.querySelector('.fas.fa-list-ol').classList.toggle('hidden');
             this.querySelector('.fas.fa-map').classList.toggle('hidden');
+            this.querySelector('.fas.fa-list-ol').classList.toggle('hidden');
           ">
           <div class="inner-circle">
-            <i class="fas fa-list-ol"></i>
-            <i class="fas fa-map hidden"></i>
+            <i class="fas fa-map"></i>
+            <i class="fas fa-list-ol hidden"></i>
           </div>
         </div>
 
