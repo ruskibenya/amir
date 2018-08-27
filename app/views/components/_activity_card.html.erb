@@ -12,6 +12,13 @@
           <% else %>
             <%= symbol(activity.category) %>
           <% end %>
+          <div class="meeting-point" style="display: inline-block;">
+            <% if activity.meeting_point %>
+              <i class="fas fa-flag"></i>
+            <% else %>
+              <i class="fas fa-shoe-prints"></i>
+            <% end %>
+          </div>
         </div>
 
         <div class="activity-name">
