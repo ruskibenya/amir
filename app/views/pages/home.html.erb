@@ -1,15 +1,37 @@
-<div class="banner">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-8 text">
-        <h1>GUIDE TOURS EASILY</h1>
-        <p>Share the itinerary with visitors. Locate them while visiting</p>
-      </div>
-      <div class="col-xs-12 col-md-4 form">
-        <div form-login>
-          <%= render "shared/signup" %>
-        </div>
+<!-- <div class="row">
+  <div class="col-xs-12 col-md-12">
+    <h1>GUIDE TOURS EASILY</h1>
+    <p>Share the itinerary with visitors. Locate them while visiting</p>
+  </div>
+  <div class="col-xs-12 col-md-4 offset-md-4">
+     <div form-login>
+  <div class="offset-md-4">
+    <%#= render "shared/signup" %>
+  </div>   </div>
+  </div>
+</div>
+ -->
+
+<div class="landing-page">
+  <div class="row">
+
+    <div class=" col-xs-12 col-md-12">
+      <div class="title">
+        <%= image_tag 'fav.png', style: 'width: 50px' %>
+
+        <h1>Guide tours easily</h1>
+        <h4>Share the itinerary with visitors. Locate them while visiting</h4>
       </div>
     </div>
+    <div class="col-md-3"></div>
+
+    <div class="col-xs-12 col-sm-4 offset-sm-4 col-md-6 offset-md-4">
+      <div class="form-section ">
+        <%= render "shared/signup" %>
+      </div>
+    </div>
+
+    <div class="col-md-3"></div>
+
   </div>
 </div>
