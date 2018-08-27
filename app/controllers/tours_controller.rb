@@ -16,7 +16,7 @@
     end
 
     @users_locations_markers = @tour.group.invitations.map do |invitation|
-        if !invitation.user.latitude.nil?
+        if ( !invitation.user.nil? && !invitation.user.latitude.nil? )
           user_location_marker = {
             lat: invitation.user.latitude,
             lng: invitation.user.longitude,
