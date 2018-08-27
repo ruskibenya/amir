@@ -1,20 +1,10 @@
 
 
   <!-- displays address of activity -->
-  <p style="text-align: center;"> <%= activity.address %>, <%= activity.city %> </p>
+
+  <p style="text-align: center; padding: 0 10%;"> <%= activity.address %>, <%= activity.city %> </p>
   <!-- displays description of activity -->
-  <p> <%=  activity.description %></p>
+  <p style="padding: 0 8%; opacity: 0.5; font-size: 13px;"> <%=  activity.description %></p>
   <div class="activity-time text-align">
-            <p style="text-align: center;"><%= activity.starting_time.strftime("%l%P") %> - <%= activity.ending_time.strftime("%l%P") %></p>
+            <p style="text-align: center;opacity: 0.8; font-size: 18px;"><%= activity.starting_time.strftime("%l%P") %> - <%= activity.ending_time.strftime("%l%P") %></p>
   </div>
-  <div class="activity-time-meeting-point">
-
-    <div class="meeting-point">
-      <% if activity.meeting_point %>
-        <i class="fas fa-flag"></i>
-      <% else %>
-        <i class="fas fa-shoe-prints"></i>
-      <% end %>
-    </div>
-  </div>
-

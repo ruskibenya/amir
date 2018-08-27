@@ -12,7 +12,7 @@
     </div>
     <div class="button-create">
 
-      <%= link_to destroy_user_session_path, class: 'amir-btn', method: :delete do %>
+      <%= link_to destroy_user_session_path, class: 'simple-link', method: :delete do %>
         <i class=“fa fa-sign-out”></i> <%= t(".sign_out", default: "Log out") %>
       <% end %>
     </div>
@@ -25,7 +25,7 @@
 
 <div class="tours-section">
   <div class="create-button-section align-text">
-    <%= link_to 'create a new tour', new_tour_path, class: 'simple-link' %>
+    <%= link_to 'create a new tour', new_tour_path, class: 'amir-btn' %>
   </div>
 
   <h4 class="title-page">tours</h4>

@@ -1,41 +1,114 @@
-// Specific CSS for your home-page
-.banner {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  padding: 40px;
-  background-image: linear-gradient(rgba($orange-rub, 0.5), rgba($pink-rub, 0.5)),
-                  url("home_background.jpg");
-  background-position: center top;
+
+body.pages.home{
+  background-color: $light-gray;
+  padding-top: 4%;
+  // background-image: url('ben.jpg'), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  background-image: linear-gradient(rgba(107, 94, 229, 0.7) 0%,  $purple 20%);
+  background-repeat: no-repeat;
   background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 100vw;
-  background-repeat: no-repeat;
+  margin-bottom: 10vh;
+  padding: 10% 0;
+
+}
+.form-section{
+
+  input{
+    border: none;
+  }
+
+  .form-login{
+    // box-shadow: 1px 1px 10px $light-gray;
+      background-color: rgba(0, 0, 0, 0);
+      box-shadow: none;
+      p{
+        color: white;
+        font-family: 'Poppins';
+        text-transform: uppercase;
+      }
+  }
+  label{
+    font-weight: 300;
+    color: white;
+    font-weight: 400;
+  }
+  .form-control{
+    box-shadow: none !important;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid white;
+  }
+
+  .title img{
+    width: 150px;
+  }
+}
+
+.title{
   text-align: center;
+  color: white;
+  h1{
+    font-weight: 500;
+
+  }
+  h4{
+    opacity: 0.7;
+  }
 }
 
-.banner h1 {
-  font-size: 30px;
-  color : white;
+
+.login-link{
+  color: white;
+  text-decoration: none;
 }
 
-.banner p {
-  font-size: 18px;
-  color : white;
-  padding-top: 40px;
-}
 
-.banner .form {
-  flex: 0 0 auto;
-}
 
-.banner .text {
-  flex: 1 1 auto;
-  margin-top: 120px;
-}
 
-.banner .form .btn {
-  background-color: $pink-rub !important;
-  border-style: none;
-}
+
+
+
+
+
+
+
+
+// Specific CSS for your home-page
+// .banner {
+//   align-items: center;
+//   display: flex;
+//   justify-content: center;
+//   padding: 40px;
+//   background-image: linear-gradient(rgba($orange-rub, 0.5), rgba($pink-rub, 0.5)),
+//                   url("home_background.jpg");
+//   background-position: center top;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   height: 100%;
+//   width: 100vw;
+//   background-repeat: no-repeat;
+//   text-align: center;
+// }
+
+// .banner h1 {
+//   font-size: 30px;
+//   color : white;
+// }
+
+// .banner p {
+//   font-size: 18px;
+//   color : white;
+//   padding-top: 40px;
+// }
+
+// .banner .form {
+//   flex: 0 0 auto;
+// }
+
+// .banner .text {
+//   flex: 1 1 auto;
+//   margin-top: 120px;
+// }
+
+// .banner .form .btn {
+//   background-color: $pink-rub !important;
+//   border-style: none;
+// }
