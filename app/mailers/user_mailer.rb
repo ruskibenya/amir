@@ -12,7 +12,7 @@ class UserMailer < ApplicationMailer
     @link = accept_invitation_url(invitation_id: invitation.id, tour_id: tour.id)
 
     # set sender of email
-    from = "#{tour.user.name}"
+    from = "#{tour.user.name}@rollcall.fun"
 
     # tour organizer name
     @sender = tour.user.name
@@ -26,5 +26,6 @@ class UserMailer < ApplicationMailer
     # mail to: "christophe.ridarch@gmail.com", from: from
     #from = "amir@rollcall.fun"
     #mail to: "ruskibear31@gmail.com", from: from
+    #mail to: "benjamin@benyas.com", from: from
   end
 end

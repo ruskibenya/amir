@@ -1,33 +1,24 @@
 <div class="col-xs-12 col-sm-12 col-md-12">
-  <div class="activity-and-number">
-    <div class="index-activity">
-        <p class="number"><%= @s %></p>
-    </div>
+
+
     <div class="activity-card">
-      <div class="activity-category">
-        <% if activity.category.nil? %>
-        <!-- TODO: Font awesome doesn't work here, why??? -->
-          <i class="fas fa-globe-americas"></i>
-        <% else %>
-          <%= symbol(activity.category) %>
-        <% end %>
+      <div class="index-activity">
+        <p class="number"><%= @s %></p>
       </div>
-      <div class="activity-name">
-        <p><%= activity.name %></p>
-      </div>
-      <div class="activity-time-meeting-point">
-        <div class="activity-time">
-          <p><%= activity.starting_time.strftime("%l%P") %> - <%= activity.ending_time.strftime("%l%P") %></p>
-        </div>
-        <div class="meeting-point">
-          <% if activity.meeting_point %>
-            <i class="fas fa-flag"></i>
+      <div class="right-part">
+        <div class="activity-category">
+          <% if activity.category.nil? %>
+            <i class="fas fa-globe-americas"></i>
           <% else %>
-            <i class="fas fa-shoe-prints"></i>
+            <%= symbol(activity.category) %>
           <% end %>
+        </div>
+
+        <div class="activity-name">
+          <p><%= activity.name %></p>
         </div>
       </div>
 
+
     </div>
-  </div>
 </div>

@@ -7,20 +7,27 @@
 <% end %>
 
 
+<%= link_to '<i class="fas fa-home"></i>'.html_safe, user_path, class: 'home-button' %>
 <!-- send email invitations for this tour -->
 <%= link_to send_invitations_path(@tour), method: :post  do %>
-  <p class="simple-link" style="font-size: 13px;">Send Invitations to: <span><%= @tour.group.name %></span> </p>
+  <p class="simple-link" style="font-size: 13px; text-align: center;">Send Invitations to: <span><%= @tour.group.name %></span> </p>
 <% end %>
-<div>
-  <div class="col-xs-12 col-sm-12 col-md-12">
-    <div class="col-xs-6 activity-card">
-      <a href="#" id="show_tour_overview">Overview</a>
-    </div>
-    <div class="col-xs-6 activity-card">
-      <a href="#" id="show_tour_map">Map</a>
-    </div>
+
+  <div class="toggle-section" style="margin: 10%;">
+
+      <!-- <a href="#" id="show_tour_map" class="button-change">Map</a> -->
+        <div id="show_tour_map" class="toggle-btn" onclick="
+            this.classList.toggle('active');
+            this.querySelector('.fas.fa-list-ol').classList.toggle('hidden');
+            this.querySelector('.fas.fa-map').classList.toggle('hidden');
+          ">
+          <div class="inner-circle">
+            <i class="fas fa-list-ol"></i>
+            <i class="fas fa-map hidden"></i>
+          </div>
+        </div>
+
   </div>
-</div>
 
 
 <div id="tour-overview">
@@ -45,22 +52,19 @@
       <!-- updates the next step number -->
       <% @s += 1 %>
     <% end %>
+
   <!-- create a new activity for this tour -->
   <div id="activity_form">
     <div class="dropdown_toggle">
       <div class="col-xs-12 col-sm-12 col-md-12">
-        <div class="activity-card" id="add-activity">
-          <div class="activity-name">
-          <p><i class="fas fa-plus-circle"></i></p>
-          </div>
+        <div id="add-activity">
+          <p class="amir-btn">Add activity</p>
+        </div>
+        <div class="dropdown_content hidden">
+          <%= render 'activities/create_form' %>
         </div>
       </div>
-      <div class="dropdown_content hidden">
-        <%= render 'activities/create_form' %>
-      </div>
     </div>
-
-  </div>
   <% end %>
 </div>
 
@@ -72,7 +76,19 @@
 <!-- map section -->
 <% content_for :below_container do %>
 <div id="tour-map" class="hidden">
-<h3>Tour's map</h3>
+
+<h5 style="text-align: center;"><%= @tour.name %>'s map</h5>
+  <%
+    markers = @activities.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        }
+    end
+  %>
+
+
+
   <div
   id="map"
   data-markers="<%= @markers.to_json %>"

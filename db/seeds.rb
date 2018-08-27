@@ -200,7 +200,7 @@ groups_attributes = [
 Group.create!(groups_attributes)
 young_repubs = Group.find_by(name: "Young Republicans of Tel Aviv")
 fat_america = Group.find_by(name: "Fat Americans in Tel Aviv")
-lewagon_tlv = Group.find_by(name: "Le Wagon Followers")
+lewagon_tlv_follow = Group.find_by(name: "Le Wagon Followers")
 tulane_chabad = Group.find_by(name: "Tulane Chabad Bus #161")
 lewagon_tlv = Group.find_by(name: "Le Wagon Batch #161")
 
@@ -611,98 +611,98 @@ invitations_attributes = [
     group: young_repubs,
     email: "hillary@usa.gov"
   },
-  {
-    group: young_repubs,
-    email: "barack@usa.gov"
-  },
+  # {
+  #   group: young_repubs,
+  #   email: "barack@usa.gov"
+  # },
   {
     group: fat_america,
     email: "bib@israel.gov"
   },
+  # {
+  #   group: fat_america,
+  #   email: "chrisChristie@usa.gov"
+  # },
   {
-    group: fat_america,
-    email: "chrisChristie@usa.gov"
-  },
-  {
-    group: lewagon_tlv,
+    group: lewagon_tlv_follow,
     email: "rabea@lwtlv.il"
   },
+  # {
+  #   group: lewagon_tlv_follow,
+  #   email: "david@lwtlv.il"
+  # },
+  # {
+  #   group: lewagon_tlv_follow,
+  #   email: "pinchas@lwtlv.il"
+  # },
   {
-    group: lewagon_tlv,
-    email: "david@lwtlv.il"
-  },
-  {
-    group: lewagon_tlv,
-    email: "pinchas@lwtlv.il"
-  },
-    {
     group: tulane_chabad,
     email: "rabbi@chabad.com"
   },
-  {
-    group: tulane_chabad,
-    email: "wife@chabad.com"
-  },
-  {
-    group: tulane_chabad,
-    email: "child#9@chabad.com"
-  },
+  # {
+  #   group: tulane_chabad,
+  #   email: "wife@chabad.com"
+  # },
+  # {
+  #   group: tulane_chabad,
+  #   email: "child#9@chabad.com"
+  # },
   {
     group: lewagon_tlv,
     email: "boris@lw.fr"
   },
-    {
-    group: lewagon_tlv,
-    email: "sebastian@lw.fr"
-  },
+  # {
+  #   group: lewagon_tlv,
+  #   email: "sebastian@lw.fr"
+  # },
   {
     group: fat_america_tlv,
     email: "boris@lw.fr"
   },
-    {
-    group: fat_america_tlv,
-    email: "sebastian@lw.fr"
-  },
+  #{
+  #   group: fat_america_tlv,
+  #   email: "sebastian@lw.fr"
+  # },
   {
     group: fat_america_brln,
     email: "boris@lw.fr"
   },
-  {
-    group: fat_america_brln,
-    email: "sebastian@lw.fr"
-  },
+  # {
+  #   group: fat_america_brln,
+  #   email: "sebastian@lw.fr"
+  # },
   {
     group: fat_america_rmtgn,
     email: "boris@lw.fr"
   },
-  {
-    group: fat_america_rmtgn,
-    email: "sebastian@lw.fr"
-  },
+  # {
+  #   group: fat_america_rmtgn,
+  #   email: "sebastian@lw.fr"
+  # },
   {
     group: tulane_chabad_2,
     email: "boris@lw.fr"
   },
-  {
-    group: tulane_chabad_2,
-    email: "sebastian@lw.fr"
-  },
+  # {
+  #   group: tulane_chabad_2,
+  #   email: "sebastian@lw.fr"
+  # },
   {
     group: fat_america_tlv_spr,
     email: "boris@lw.fr"
   },
-  {
-    group: fat_america_tlv_spr,
-    email: "sebastian@lw.fr"
-  },
+  # {
+  #   group: fat_america_tlv_spr,
+  #   email: "sebastian@lw.fr"
+  # },
   {
     group: lewagon_tlv_1,
     email: "boris@lw.fr"
   },
-  {
-    group: lewagon_tlv_1,
-    email: "sebastian@lw.fr"
-  },
+  # {
+  #   group: lewagon_tlv_1,
+  #   email: "sebastian@lw.fr"
+  # }
 ]
 
 #generate invitations seeds for all invitations seed info
