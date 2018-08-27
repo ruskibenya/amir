@@ -3,14 +3,16 @@
   align-items: center;
   padding: 3% 0;
   border-left: 1px solid rgba(243, 116, 121, 0.2);
-  margin-bottom: 3%;
+  cursor: pointer;
 }
-
-
 
 
 .activity-category{
   flex: 0 0 25%;
+}
+
+.toggle-section{
+    margin: 4%;
 }
 
 .activity-name{
@@ -30,7 +32,7 @@
 
 .activity-time{
   flex: 10%;
-  font-size: 10px;
+  font-size: 14px;
 }
 .meeting-point{
   flex: 0 0 10%;
@@ -68,14 +70,19 @@
 
 .fas.fa-flag{
   color: $orange;
+  font-size: 13px;
 }
 
 .fas.fa-shoe-prints{
   color: gray;
+  font-size: 13px;
 }
 @media screen and (max-width: 640px) {
   .activity-card{
     padding: 10% 0;
+  }
+  .toggle-section{
+    margin: 10%;
   }
 }
   .activity-name{
@@ -192,18 +199,28 @@
 a.home-button{
   z-index: 2;
   position: fixed;
-  top: 30%;
-  right: 1%;
-  background-color: black;
-  color: white;
-  border-radius: 50%;
+  top: 20%;
+  right: 2%;
   cursor: pointer;
-  height: 30px;
-  width: 30px;
+  height: 40px;
   line-height: 30px;
-  padding-left: 4px;
+  color: black;
+  opacity: 0.8;
+  font-size: 20px;
 }
 
+a.home-button-write{
+  border-radius: 30px;
+  z-index: 2;
+  position: fixed;
+  top: 30%;
+  right: 1%;
+  cursor: pointer;
+  padding: 10px 15px;
+  background-color: white;
+  box-shadow: 1px 1px 4px $light-gray;
+  font-family: 'Poppins';
+}
 
 
 
