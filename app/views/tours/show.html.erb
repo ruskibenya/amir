@@ -31,7 +31,6 @@
 
 
 <div id="tour-overview">
-
 <!-- displays activities on this tour -->
 <div id="activities">
   <!-- displays message if tour doesn't have any activities -->
@@ -78,16 +77,6 @@
 <div id="tour-map" class="hidden">
 
 <h5 style="text-align: center;"><%= @tour.name %>'s map</h5>
-  <%
-    markers = @activities.map do |activity|
-      {
-        lat: activity.latitude,
-        lng: activity.longitude,
-        }
-    end
-  %>
-
-
 
   <div
   id="map"

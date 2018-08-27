@@ -14,6 +14,18 @@
         label: { text: "#{activity.order_number}", fontSize: "25px"}
       }
     end
+
+    @users_locations_markers = @tour.group.invitations.map do |invitation|
+        if !invitation.user.latitude.nil?
+          user_location_marker = {
+            lat: invitation.user.latitude,
+            lng: invitation.user.longitude,
+            infoWindow: { content: "#{invitation.user.name}" },
+            icon: "http://earth.google.com/images/kml-icons/track-directional/track-10.png"
+        }
+        @markers << user_location_marker
+      end
+    end
   end
 
   def new
@@ -36,6 +48,9 @@
   def visitor_show
     @invitation = Invitation.find(params[:invitation_id])
     @tour = Tour.find(params[:tour_id])
+    @invitation.email = current_user.email if @invitation.email != current_user.email
+    @invitation.user = current_user
+    @invitation.save
   end
 
   private
