@@ -14,11 +14,6 @@
         label: { text: "#{activity.order_number}", fontSize: "25px"}
       }
     end
-    @polylines = @activities.map do |activity|
-      {
-        lng: activity.longitude, lat: activity.latitude
-      }
-    end
   end
 
   def new
