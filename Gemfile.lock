@@ -225,7 +225,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   flatpickr_rails
-  font-awesome-sass (~> 5.2)
+  font-awesome-sass
   geocoder
   jbuilder (~> 2.0)
   letter_opener
