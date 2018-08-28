@@ -2,12 +2,13 @@
 <!-- displays number of current activities in this tour -->
 <div class="title-show col-xs-12" id="activity_count">
   <h4><%= @tour.name %></h4>
+  <h6><%= @tour.group.name %></h6>
   <h5><%= render 'activities/count', activities: @activities %></h5>
 </div>
 <% end %>
 
 
-<%#= link_to '<i class="fas fa-user-circle"></i>'.html_safe, user_path, class: 'home-button' %>
+<%= link_to '<i class="fas fa-user-circle"></i>'.html_safe, user_path, class: 'home-button' %>
 
 <!-- send email invitations for this tour -->
 <div class="sending">

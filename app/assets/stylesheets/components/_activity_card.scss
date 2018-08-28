@@ -204,14 +204,15 @@
 a.home-button{
   z-index: 2;
   position: fixed;
-  top: 20%;
-  right: 2%;
+  bottom: 20%;
+  right: 7%;
   cursor: pointer;
-  height: 40px;
   line-height: 30px;
   color: black;
   opacity: 0.8;
-  font-size: 20px;
+  opacity: 0.5;
+  font-size: 40px;
+  text-shadow: 2px 2px 2px $light-gray;
 }
 
 a.home-button-write{
