@@ -1,3 +1,5 @@
-<h2><%= current_user.name %> you've been invited to <%= @tour.name %>!</h2>
+<h1>Hello <%= current_user.name %> ! </h1>
 
-<%= link_to 'Join the tour!', visitor_show_path(@tour, @invitation)%>
+<h4>You've been invited to <%= @tour.name %></h2>
+
+<%= link_to 'Join the tour!', visitor_show_path(@tour, @invitation), class: 'amir-btn'%>
