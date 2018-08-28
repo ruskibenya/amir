@@ -608,7 +608,7 @@ Activity.create!(activities_attributes)
 invitations_attributes = [
   {
     group: young_repubs,
-    email: "hillary@usa.gov"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: young_repubs,
@@ -616,7 +616,7 @@ invitations_attributes = [
   # },
   {
     group: fat_america,
-    email: "bib@israel.gov"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: fat_america,
@@ -624,7 +624,7 @@ invitations_attributes = [
   # },
   {
     group: lewagon_tlv_follow,
-    email: "rabea@lwtlv.il"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: lewagon_tlv_follow,
@@ -636,7 +636,7 @@ invitations_attributes = [
   # },
   {
     group: tulane_chabad,
-    email: "rabbi@chabad.com"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: tulane_chabad,
@@ -648,7 +648,7 @@ invitations_attributes = [
   # },
   {
     group: lewagon_tlv,
-    email: "boris@lw.fr"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: lewagon_tlv,
@@ -656,7 +656,7 @@ invitations_attributes = [
   # },
   {
     group: fat_america_tlv,
-    email: "boris@lw.fr"
+    email: "rabea@lewagon.org"
   },
   #{
   #   group: fat_america_tlv,
@@ -664,7 +664,7 @@ invitations_attributes = [
   # },
   {
     group: fat_america_brln,
-    email: "boris@lw.fr"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: fat_america_brln,
@@ -672,7 +672,7 @@ invitations_attributes = [
   # },
   {
     group: fat_america_rmtgn,
-    email: "boris@lw.fr"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: fat_america_rmtgn,
@@ -680,7 +680,7 @@ invitations_attributes = [
   # },
   {
     group: tulane_chabad_2,
-    email: "boris@lw.fr"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: tulane_chabad_2,
@@ -688,7 +688,7 @@ invitations_attributes = [
   # },
   {
     group: fat_america_tlv_spr,
-    email: "boris@lw.fr"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: fat_america_tlv_spr,
@@ -696,7 +696,7 @@ invitations_attributes = [
   # },
   {
     group: lewagon_tlv_1,
-    email: "boris@lw.fr"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: lewagon_tlv_1,
