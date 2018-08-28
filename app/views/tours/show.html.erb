@@ -6,134 +6,114 @@
   </div>
 <% end %>
 
-
-<%#= link_to '<i class="fas fa-user-circle"></i>'.html_safe, user_path, class: 'home-button' %>
-
 <!-- send email invitations for this tour -->
 <div class="sending">
   <%= link_to 'send invitations', send_invitations_path(@tour), class: 'amir-btn', method: :post%>
 </div>
-  <!-- <p class="amir-btn" style="font-size: 13px; text-align: center;">Send Invitations</p> -->
-<%# end %>
-<!-- <span><%#= @tour.group.name %></span>  -->
 
-  <div class="toggle-section">
-
-      <!-- <a href="#" id="show_tour_map" class="button-change">Map</a> -->
-        <div id="show_tour_map" class="toggle-btn" onclick="
-            this.classList.toggle('active');
-            this.querySelector('.fas.fa-map').classList.toggle('hidden');
-            this.querySelector('.fas.fa-list-ol').classList.toggle('hidden');
-          ">
-          <div class="inner-circle">
-            <i class="fas fa-map"></i>
-            <i class="fas fa-list-ol hidden"></i>
-          </div>
-        </div>
-
+<!-- toggle between overivew and map -->
+<div class="toggle-section">
+  <div id="show_tour_map" class="toggle-btn" onclick="
+      this.classList.toggle('active');
+      this.querySelector('.fas.fa-map').classList.toggle('hidden');
+      this.querySelector('.fas.fa-list-ol').classList.toggle('hidden');
+    ">
+    <div class="inner-circle">
+      <i class="fas fa-map"></i>
+      <i class="fas fa-list-ol hidden"></i>
+    </div>
   </div>
+</div>
 
 
 <div id="tour-overview">
-<!-- displays activities on this tour -->
-<div id="activities">
-  <!-- displays message if tour doesn't have any activities -->
-  <% if @activities.blank? %>
-    <%= @tour.name %> doesn't have any activities!
-  <% else %>
-    <!-- sets first activity as first step -->
-    <% @s = 1 %>
-    <!-- displays each activity on this tour as a button -->
-    <% @tour.activities.each do |activity| %>
+  <!-- displays activities on this tour -->
+  <div id="activities">
+    <!-- displays message if tour doesn't have any activities -->
+    <% if @activities.blank? %>
+      <%= @tour.name %> doesn't have any activities!
+    <% else %>
+      <!-- sets first activity as first step -->
+      <% @s = 1 %>
+      <!-- displays each activity on this tour as a button -->
+      <% @tour.activities.each do |activity| %>
+          <div class="dropdown_toggle">
+            <%= render 'components/activity_card', activity: activity, s: @s %>
+            <!-- toggle show the contents of activity -->
+            <div class="dropdown_content hidden">
+              <%= render 'activities/show', activity: activity %>
+            </div>
+          </div>
+        <!-- updates the next step number -->
+        <% @s += 1 %>
+      <% end %>
+      <!-- create a new activity for this tour -->
+      <div id="activity_form">
         <div class="dropdown_toggle">
-          <%= render 'components/activity_card', activity: activity, s: @s %>
-          <!-- toggle show the contents of activity -->
-          <div class="dropdown_content hidden">
-            <%= render 'activities/show', activity: activity %>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <div id="add-activity">
+              <p class="amir-btn">Add activity</p>
+            </div>
+            <div class="dropdown_content hidden">
+              <%= render 'activities/create_form' %>
+            </div>
           </div>
         </div>
-      <!-- updates the next step number -->
-      <% @s += 1 %>
-    <% end %>
-
-  <!-- create a new activity for this tour -->
-  <div id="activity_form">
-    <div class="dropdown_toggle">
-      <div class="col-xs-12 col-sm-12 col-md-12">
-        <div id="add-activity">
-          <p class="amir-btn">Add activity</p>
-        </div>
-        <div class="dropdown_content hidden">
-          <%= render 'activities/create_form' %>
-        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
-
-
-
-</div>
-
 
 <!-- map section -->
 <% content_for :below_container do %>
-<div id="tour-map" class="hidden">
-
-<h5 style="text-align: center;"><%= @tour.name %>'s map</h5>
-
+  <div id="tour-map" class="hidden">
     <h5 style="text-align: center; font-size: 25px;"><%= @tour.name %>'s map</h5>
-    <div
-      id="map"
-      data-markers="<%= @markers.to_json %>"
-      >
-    </div>
+    <div id="map" data-markers="<%= @markers.to_json %>"></div>
   </div>
 <% end %>
 
 
 <% content_for :after_js do %>
+  <script>
+    $(window).scroll(function() {
+    if ($(document).scrollTop() > 50) {
+      document.querySelector('.title-show').addClass('shrink');
+    } else {
+      document.querySelectort('.title-show').removeClass('shrink');
+    }
+    });
+  </script>
 
-<script>
-  $(window).scroll(function() {
-  if ($(document).scrollTop() > 50) {
-    document.querySelector('.title-show').addClass('shrink');
-  } else {
-    document.querySelectort('.title-show').removeClass('shrink');
-  }
-  });
-</script>
+  <!-- script for dropdown_toggle -->
+  <script>
+    const map = document.getElementById('map')
+    let button = document.getElementById("show_tour_map")
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('tour-map').classList.toggle('hidden');
+      document.getElementById('tour-overview').classList.toggle('hidden');
+      initMap(map);
+    });
 
-<!-- script for dropdown_toggle -->
-<script>
-  const map = document.getElementById('map')
-  let button = document.getElementById("show_tour_map")
-  button.addEventListener('click', function(event) {
-    event.preventDefault();
-    document.getElementById('tour-map').classList.toggle('hidden');
-    document.getElementById('tour-overview').classList.toggle('hidden');
-    initMap(map);
-  });
-
-  button = document.getElementById("show_tour_overview")
-  button.addEventListener('click', function(event) {
-    event.preventDefault();
-    document.getElementById('tour-overview').classList.toggle('hidden');
-    document.getElementById('tour-map').classList.toggle('hidden');
-    initMap(map);
-   });
- </script>
+    button = document.getElementById("show_tour_overview")
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('tour-overview').classList.toggle('hidden');
+      document.getElementById('tour-map').classList.toggle('hidden');
+      initMap(map);
+     });
+  </script>
 
 
-<script>
-  const buttons = document.querySelectorAll(".dropdown_toggle");
-  buttons.forEach(button => {
-    button.addEventListener("click", (event) => {
-      console.log("ciao");
-      button.querySelector(".dropdown_content").classList.toggle("hidden");
+  <script>
+    const buttons = document.querySelectorAll(".dropdown_toggle");
+    buttons.forEach(button => {
+      button.addEventListener("click", (event) => {
+        console.log("ciao");
+        button.querySelector(".dropdown_content").classList.toggle("hidden");
+      })
     })
-  })
-</script>
+  </script>
 
 
   <script type="text/javascript">
@@ -143,5 +123,4 @@
       maxTime: "22:00"
       });
   </script>
-
 <% end %>
