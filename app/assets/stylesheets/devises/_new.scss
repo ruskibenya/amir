@@ -1,0 +1,49 @@
+
+body.devise\/sessions.new{
+  background-color: $light-gray;
+  padding-top: 4%;
+  // background-image: url('ben.jpg'), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(107, 94, 229, 0.7) 0%,  $purple 20%);
+    // background-image: linear-gradient(rgba(230, 126, 34, 0.7) 0%,  $orange 20%);
+  background-size: cover;
+  padding: 10% 0;
+  height: 100vh;
+
+  h1{
+    font-weight: 500;
+    color: white;
+    text-align: center;
+  }
+  input{
+    border: none;
+  }
+
+  .simple-link{
+    color: white;
+  }
+
+  .form-login{
+    // box-shadow: 1px 1px 10px $light-gray;
+      background-color: rgba(0, 0, 0, 0);
+      box-shadow: none;
+      p{
+        color: white;
+        font-family: 'Poppins';
+        text-transform: uppercase;
+      }
+  }
+  label{
+    font-weight: 300;
+    color: white;
+    font-weight: 400;
+  }
+  input.form-control.string.email.optional:focus{
+    background-color: red;
+  }
+  .form-control{
+    box-shadow: none !important;
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid white;
+  }
+}
