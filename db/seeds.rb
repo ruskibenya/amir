@@ -638,6 +638,18 @@ invitations_attributes = [
     group: tulane_chabad,
     email: "rabea@lewagon.org"
   },
+  {
+    group: tulane_chabad,
+    email: "ephraim.immo2017@gmail.com"
+  },
+  {
+    group: tulane_chabad,
+    email: "rubencattan@gmail.com"
+  },
+  {
+    group: tulane_chabad,
+    email: "benjamin@benyas.com"
+  },
   # {
   #   group: tulane_chabad,
   #   email: "wife@chabad.com"
