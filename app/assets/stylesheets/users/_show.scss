@@ -7,6 +7,19 @@ body.users.show{
   a:hover{
     text-decoration: none;
   }
+
+  #flash-alert{
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    line-height: 0.9;
+  }
+
+  .disappear{
+    transition: opacity 0.3s;
+    opacity: 0;
+  }
 }
 
 .title-page{
@@ -27,6 +40,7 @@ body.users.show{
   .user-name{
     color: white;
   }
+  padding-top: 15%;
 }
 
 .info{
