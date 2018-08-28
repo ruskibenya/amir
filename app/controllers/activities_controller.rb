@@ -4,7 +4,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(activity_params)
     @activity.tour = @tour
     @saved = @activity.save
-
+    @s = @tour.activities.size
     respond_to do |format|
       format.html {
         if @saved
