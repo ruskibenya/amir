@@ -25,7 +25,7 @@ class UserMailer < ApplicationMailer
 
     #attach images to email
     attachments.inline['backpack'] = File.read('public/backpack.png')
-    attachments.inline['cinqueterre'] = File.read('public/cinqueterre.jpg')
+    attachments.inline['cinqueterre'] = File.read('public/cinqueterre.png')
 
 
     mail to: invitation.email, from: from
