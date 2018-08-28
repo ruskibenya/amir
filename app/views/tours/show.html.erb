@@ -6,7 +6,6 @@
 </div>
 <% end %>
 
-
 <%#= link_to '<i class="fas fa-user-circle"></i>'.html_safe, user_path, class: 'home-button' %>
 
 <!-- send email invitations for this tour -->
@@ -75,19 +74,18 @@
 
   </div>
 
-
   <!-- map section -->
   <% content_for :below_container do %>
   <div id="tour-map" class="hidden">
-
     <h5 style="text-align: center;"><%= @tour.name %>'s map</h5>
 
     <div
     id="map"
     data-markers="<%= @markers.to_json %>"
+    style="width: 100%;"
     >
+    </div>
   </div>
-</div>
 <% end %>
 
 
