@@ -1,0 +1,21 @@
+
+body.invitations.accept{
+  background-color: $light-gray;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(107, 94, 229, 0.7) 0%,  $purple 20%);
+  background-size: cover;
+  height: 100vh;
+
+  h1{
+    font-weight: 500;
+    color: white;
+    text-align: center;
+  }
+
+  h4{
+    color: white;
+    text-align: center;
+  }
+}
+
+

@@ -4,7 +4,7 @@ class InvitationsController < ApplicationController
     @tour.group.invitations.each do |invitation|
       UserMailer.invitation(@tour, invitation).deliver_now
     end
-    flash[:notice] = "Sent!"
+    flash[:notice] = "Invitations sent to #{@tour.group.name}!"
     redirect_to user_path(current_user)
   end
 
