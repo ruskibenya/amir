@@ -24,7 +24,8 @@ class UserMailer < ApplicationMailer
     #test cases
     # to send to christophe
     # mail to: "christophe.ridarch@gmail.com", from: from
-    # to send to ben
+    #from = "amir@rollcall.fun"
+    #mail to: "ruskibear31@gmail.com", from: from
     #mail to: "benjamin@benyas.com", from: from
   end
 end

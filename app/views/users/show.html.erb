@@ -19,10 +19,6 @@
   </div>
 <% end %>
 
-<% if flash[:invitations_sent] %>
-    <div class="notice">Invitations were sent!</div>
-<% end %>
-
 <div class="tours-section">
   <div class="create-button-section align-text">
     <%= link_to 'create a new tour', new_tour_path, class: 'amir-btn' %>

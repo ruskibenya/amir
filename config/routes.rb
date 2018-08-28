@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     resources :activities, only: [:show, :create]
     resources :groups, only: [:show, :create]
   end
-  resources :users, only: [:show]
+  resources :users, only: [:show, :update]
 
   # TODO: do we need this?
   get 'activities/index'
