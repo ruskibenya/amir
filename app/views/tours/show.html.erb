@@ -69,14 +69,17 @@
   </div>
 </div>
 
-<!-- map section -->
-<% content_for :below_container do %>
+
+  <!-- map section -->
+  <% content_for :below_container do %>
+
   <div id="tour-map" class="hidden">
     <h5 style="text-align: center;"><%= @tour.name %>'s map</h5>
     <div
-      id="map"
-      data-markers="<%= @markers.to_json %>"
-      >
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    style="width: 100%;"
+    >
     </div>
   </div>
 <% end %>
