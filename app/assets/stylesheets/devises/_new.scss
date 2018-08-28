@@ -1,29 +1,26 @@
 
-body.pages.home{
+body.devise\/sessions.new{
   background-color: $light-gray;
+  padding-top: 4%;
   // background-image: url('ben.jpg'), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-  background-image: linear-gradient(rgba(107, 94, 229, 0.7) 0%,  $purple 20%);
   background-repeat: no-repeat;
+    background-image: linear-gradient(rgba(107, 94, 229, 0.7) 0%,  $purple 20%);
+    // background-image: linear-gradient(rgba(230, 126, 34, 0.7) 0%,  $orange 20%);
   background-size: cover;
-  margin-bottom: 10vh;
+  padding: 10% 0;
+  height: 100vh;
 
-  #flash-alert{
-    position: absolute;
+  h1{
+    font-weight: 500;
+    color: white;
     text-align: center;
-    top: 0;
-    width: 100%;
   }
-
-  .disappear{
-    transition: opacity 0.3s;
-    opacity: 0;
-  }
-
-}
-.form-section{
-
   input{
     border: none;
+  }
+
+  .simple-link{
+    color: white;
   }
 
   .form-login{
@@ -41,32 +38,12 @@ body.pages.home{
     color: white;
     font-weight: 400;
   }
+  input.form-control.string.email.optional:focus{
+    background-color: red;
+  }
   .form-control{
     box-shadow: none !important;
     background-color: rgba(0, 0, 0, 0);
     border: 2px solid white;
   }
-
-  .title img{
-    width: 150px;
-  }
-}
-
-.title{
-  margin-top: 10%;
-  text-align: center;
-  color: white;
-  h1{
-    font-weight: 500;
-
-  }
-  h4{
-    opacity: 0.7;
-  }
-}
-
-
-.login-link{
-  color: white;
-  text-decoration: none;
 }

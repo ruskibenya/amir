@@ -10,8 +10,8 @@
         lat: activity.latitude,
         lng: activity.longitude,
         infoWindow: { content: "#{activity.name}: #{activity.starting_time.strftime("%l%P")} - #{activity.ending_time.strftime("%l%P")}" },
-        icon: "http://maps.google.com/mapfiles/kml/paddle/ltblu-blank.png",
-        label: { text: "#{activity.order_number}", fontSize: "25px"}
+        icon: ActionController::Base.helpers.asset_path('backpack_marker.png'),
+        label: { text: "#{activity.order_number}", fontSize: "18px"}
       }
     end
 
@@ -21,7 +21,7 @@
             lat: invitation.user.latitude,
             lng: invitation.user.longitude,
             infoWindow: { content: "#{invitation.user.name}" },
-            icon: "http://earth.google.com/images/kml-icons/track-directional/track-10.png"
+            icon: ActionController::Base.helpers.asset_path('backpack_marker.png')
         }
         @markers << user_location_marker
       end
