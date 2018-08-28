@@ -1,7 +1,67 @@
-Hello Christophe!
-<%= @invitation.email %>
-<%= @tour.name %>
-<%= @invitation.user.email%>
+<!-- header banner -->
+<% content_for :above_container do %>
+<!-- displays number of current activities in this tour -->
+<div class="title-show" id="activity_count">
+  <h4><%= @tour.name %></h4>
+  <h6><%= @tour.group.name %></h6>
+  <h5><%= render 'activities/count', activities: @activities %></h5>
+</div>
+<% end %>
+
+<!-- bootstrap toggle switch button -->
+<div class="toggle-section">
+  <div id="show_tour_map" class="toggle-btn" onclick="
+  this.classList.toggle('active');
+  this.querySelector('.fas.fa-map').classList.toggle('hidden');
+  this.querySelector('.fas.fa-list-ol').classList.toggle('hidden');
+  ">
+    <div class="inner-circle">
+      <i class="fas fa-map"></i>
+      <i class="fas fa-list-ol hidden"></i>
+    </div>
+  </div>
+</div>
+
+<!-- default display: tour overview -->
+<div id="tour-overview">
+  <!-- displays activities on this tour -->
+  <div id="activities">
+    <!-- displays message if tour doesn't have any activities -->
+    <% if @activities.blank? %>
+      <%= @tour.name %> doesn't have any activities!
+    <% else %>
+      <!-- sets first activity as first step -->
+      <% @s = 1 %>
+      <!-- displays each activity on this tour as a button -->
+      <% @tour.activities.each do |activity| %>
+        <div class="dropdown_toggle">
+          <%= render 'components/activity_card', activity: activity, s: @s %>
+          <!-- toggle show the contents of activity -->
+          <div class="dropdown_content hidden">
+            <%= render 'activities/show', activity: activity %>
+          </div>
+        </div>
+        <!-- updates the next step number -->
+        <% @s += 1 %>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+  <!-- map section -->
+  <% content_for :below_container do %>
+
+  <div id="tour-map" class="hidden">
+    <h5 style="text-align: center;"><%= @tour.name %>'s map</h5>
+    <div
+    id="map"
+    data-markers="<%= @markers.to_json %>"
+    style="width: 100%;"
+    >
+    </div>
+  </div>
+<% end %>
+
 
 <script>
   const userUpdateLocation = () => {
@@ -24,3 +84,46 @@ Hello Christophe!
   setInterval(userUpdateLocation, 5000)
 
 </script>
+
+
+<% content_for :after_js do %>
+  <!-- script for picking date from calendar -->
+  <script type="text/javascript">
+    document.querySelectorAll('.flatpickr-time').flatpickr({
+      enableTime: true,
+      minTime: "16:00",
+      maxTime: "22:00"
+    });
+  </script>
+
+  <!-- script showing/hiding the map -->
+  <script>
+    const map = document.getElementById('map')
+    let button = document.getElementById("show_tour_map")
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('tour-map').classList.toggle('hidden');
+      document.getElementById('tour-overview').classList.toggle('hidden');
+      initMap(map);
+    });
+
+    button = document.getElementById("show_tour_overview")
+    button.addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('tour-overview').classList.toggle('hidden');
+      document.getElementById('tour-map').classList.toggle('hidden');
+      initMap(map);
+    });
+  </script>
+
+  <!-- script for dropdown_toggle -->
+  <script>
+    const buttons = document.querySelectorAll(".dropdown_toggle");
+    buttons.forEach(button => {
+      button.addEventListener("click", (event) => {
+        // console.log("ciao");
+        button.querySelector(".dropdown_content").classList.toggle("hidden");
+      })
+    })
+  </script>
+<% end %>
