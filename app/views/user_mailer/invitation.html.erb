@@ -1,7 +1,45 @@
-<h1><%= @sender %> invite you on a Tour!</h1>
-
-<h2>HERE GOES INTERESTING STUFF FOR OUR EMAIL!</h2>
+<html>
 
 
- <h3><%= link_to 'CLICK HERE TO JOIN THE TOUR!', @link %></h3>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins:400,800|Roboto" rel="stylesheet">
+</head>
 
+<body>
+
+
+    <div style="padding-left: 10%; ">
+      <!-- <img src="./app/assets/images/backpack.png" alt="Backpack.png"> -->
+      <%= image_tag attachments['backpack'].url, style: 'height: 80px; display: inline-block'%> <p style="font-family: 'Poppins'; font-weight: 800; display: inline-block">Amir</p>
+    </div>
+<div style="background-image: url("<%= image_tag attachments['cinqueterre'].url %>"); padding: 4% 0">
+    <div style="text-align: center; font-family: 'Roboto' ">
+      <div class="col-xs-12 col-md-12" style="margin: 3% 0; color: white">
+        <h4>Hello <%= @recipient.capitalize %>,</h4>
+        <p style="font-size: 18px">You were invited to a tour !</p>
+
+      </div>
+
+      <div class="col-xs-12 col-md-12" style="margin: 3% 0">
+        <p style="border-bottom: 10px solid currentColor; width: 30%; margin: 0 auto; font-weight: 800; opacity: 0.5"><%= @tour_name %></p>
+      </div>
+
+    </div>
+</div>
+  <div style="text-align: center;">
+    <%=  link_to @link do %>
+      <a href="", style="
+      font-family: 'Poppins';
+      text-align: center;
+      font-size: 20px;
+      background-color: #ff929a;
+      padding: 10px 15px;
+      font-weight: 400;
+      text-decoration: none;
+      color: white;
+      border-radius: 4px;">Join the tour</a>
+    <% end %>
+  </div>
+</body>
+
+</html>
