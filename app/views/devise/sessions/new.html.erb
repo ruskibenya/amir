@@ -1,5 +1,6 @@
-<h2>Log in</h2>
 
+<h1>Log in</h1>
+<div class="form-login">
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
@@ -13,8 +14,9 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in", class: 'amir-btn' %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>

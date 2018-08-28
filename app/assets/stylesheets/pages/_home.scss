@@ -1,13 +1,11 @@
 
 body.pages.home{
   background-color: $light-gray;
-  padding-top: 4%;
   // background-image: url('ben.jpg'), linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
   background-image: linear-gradient(rgba(107, 94, 229, 0.7) 0%,  $purple 20%);
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 10vh;
-  padding: 10% 0;
 
 }
 .form-section{
@@ -43,6 +41,7 @@ body.pages.home{
 }
 
 .title{
+  margin-top: 10%;
   text-align: center;
   color: white;
   h1{
