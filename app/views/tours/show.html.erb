@@ -14,6 +14,7 @@
 <div class="sending">
   <%= link_to 'send invitations', send_invitations_path(@tour), class: 'amir-btn', method: :post%>
 </div>
+
 <!-- <p class="amir-btn" style="font-size: 13px; text-align: center;">Send Invitations</p> -->
 <%# end %>
 <!-- <span><%#= @tour.group.name %></span>  -->
@@ -40,6 +41,7 @@
   <div id="activities">
     <!-- displays message if tour doesn't have any activities -->
     <% if @activities.blank? %>
+
     <%= @tour.name %> doesn't have any activities!
     <% else %>
     <!-- sets first activity as first step -->
@@ -93,6 +95,16 @@
 
 
 <% content_for :after_js do %>
+  <script>
+    $(window).scroll(function() {
+    if ($(document).scrollTop() > 50) {
+      document.querySelector('.title-show').addClass('shrink');
+    } else {
+      document.querySelectort('.title-show').removeClass('shrink');
+    }
+    });
+  </script>
+
 
 <script>
   $(window).scroll(function() {
@@ -125,15 +137,17 @@
 </script>
 
 
-<script>
-  const buttons = document.querySelectorAll(".dropdown_toggle");
-  buttons.forEach(button => {
-    button.addEventListener("click", (event) => {
-      console.log("ciao");
-      button.querySelector(".dropdown_content").classList.toggle("hidden");
+
+  <script>
+    const buttons = document.querySelectorAll(".dropdown_toggle");
+    buttons.forEach(button => {
+      button.addEventListener("click", (event) => {
+        console.log("ciao");
+        button.querySelector(".dropdown_content").classList.toggle("hidden");
+      })
     })
-  })
-</script>
+  </script>
+
 
 
 <script type="text/javascript">
@@ -143,5 +157,6 @@
     maxTime: "22:00"
   });
 </script>
+
 
 <% end %>
