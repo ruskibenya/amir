@@ -20,6 +20,11 @@ body.users.show{
     transition: opacity 0.3s;
     opacity: 0;
   }
+
+
+  i.fas.fa-sign-out-alt{
+    color: white;
+  }
 }
 
 .title-page{
@@ -32,7 +37,7 @@ body.users.show{
 
 
 .profil-section{
-  padding: 20% 0;
+  padding: 12% 0;
   height: 35vh;
   background-image: linear-gradient(to right bottom, #e16e8a, #f47579, #fb936a);
   display: flex;
@@ -76,4 +81,12 @@ body.users.show{
 .create-button-section{
   text-align: center;
   margin-bottom: 10%;
+}
+
+
+@media screen and (max-width: 640px) {
+  .profil-section{
+    padding: 45% 0;
+  }
+
 }

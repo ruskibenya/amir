@@ -12,6 +12,72 @@
 }
 
 
+.signup-btn{
+  font-size: 13px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 15px;
+  color: white;
+  font-weight: 400;
+  text-decoration: none;
+  transition: 0.2s;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.signup-btn:hover{
+  font-size: 13px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 15px;
+  color: white;
+  font-weight: 400;
+  text-decoration: none;
+  transition: 0.2s;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.login-btn{
+  font-size: 13px;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 10px 15px;
+  color: white;
+  font-weight: 400;
+  text-decoration: none;
+  transition: 0.2s;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.login-btn:hover{
+  font-size: 13px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px 15px;
+  color: white;
+  font-weight: 400;
+  text-decoration: none;
+  transition: 0.2s;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(50,50,93,.11), 0 1px 3px rgba(0,0,0,0.8);
+}
+
+.start-btn{
+  font-size: 13px;
+  background-color: $pink-rub;
+  padding: 10px 15px;
+  color: white;
+  font-weight: 400;
+  text-decoration: none;
+  transition: 0.2s;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin: 10% 20% 0 20%;
+  cursor: pointer;
+}
+
 .simple-link{
   color: white†;
   font-weight: 300;
