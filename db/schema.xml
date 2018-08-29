@@ -56,6 +56,9 @@
 <row name="bio" null="1" autoincrement="0">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
+<row name="role" null="1" autoincrement="0">
+<datatype>VARBINARY</datatype>
+<default>NULL</default></row>
 <key type="PRIMARY" name="">
 <part>id</part>
 </key>
