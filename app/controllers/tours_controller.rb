@@ -27,13 +27,17 @@
         @markers << user_location_marker
       end
     end
-    @markers << {
+
+    if ( !current_user.nil? && !current_user.latitude.nil? )
+      current_user_location_marker = {
             lat: current_user.latitude,
             lng: current_user.longitude,
             infoWindow: { content: "Your location" },
             icon: ActionController::Base.helpers.asset_path('current_user_marker.png'),
             label: { text: "Me", fontSize: "15px", fontWeight: "bold"}
         }
+        @markers << current_user_location_marker
+    end
   end
 
   def visitor_show
@@ -53,13 +57,17 @@
         label: { text: "#{activity.order_number}", fontSize: "15px", fontWeight: "bold"}
       }
     end
-    @markers << {
-      lat: @invitation.user.latitude,
-      lng: @invitation.user.longitude,
-      infoWindow: { content: "Your location" },
-      icon: ActionController::Base.helpers.asset_path('current_user_marker.png'),
-      label: { text: "Me", fontSize: "15px", fontWeight: "bold"}
-    }
+
+    if ( !current_user.nil? && !current_user.latitude.nil? )
+      current_user_location_marker = {
+            lat: current_user.latitude,
+            lng: current_user.longitude,
+            infoWindow: { content: "Your location" },
+            icon: ActionController::Base.helpers.asset_path('current_user_marker.png'),
+            label: { text: "Me", fontSize: "15px", fontWeight: "bold"}
+        }
+        @markers << current_user_location_marker
+    end
   end
 
   def new
