@@ -2,7 +2,7 @@
   // Remove the form
   // document.querySelector('#activity_form').remove();
   // Add the newly created activity
-  document.querySelector('#activities').insertAdjacentHTML('beforeend', "<%=j render 'activities/link_item', activity: @activity, tour: @tour%>");
+  document.querySelector('#activities').insertAdjacentHTML('beforeend', "<%=j render 'components/activity_card', activity: @activity, s: @s%>");
   // Change the number of activities
   document.querySelector('#activity_count').innerHTML = "<%= j render 'activities/count', activities: @tour.activities %>";
 <%# else %>

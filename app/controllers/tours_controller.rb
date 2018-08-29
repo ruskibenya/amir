@@ -10,28 +10,55 @@
         lat: activity.latitude,
         lng: activity.longitude,
         infoWindow: { content: "#{activity.name}: #{activity.starting_time.strftime("%l%P")} - #{activity.ending_time.strftime("%l%P")}" },
-        icon: ActionController::Base.helpers.asset_path('backpack_marker.png'),
-        label: { text: "#{activity.order_number}", fontSize: "18px"}
+        icon: ActionController::Base.helpers.asset_path('marker-activity2.png'),
+        label: { text: "#{activity.order_number}", fontSize: "15px", fontWeight: "bold"}
       }
     end
 
-    @users_locations_markers = @tour.group.invitations.map do |invitation|
+    @tour.group.invitations.map do |invitation|
         if ( !invitation.user.nil? && !invitation.user.latitude.nil? )
           user_location_marker = {
             lat: invitation.user.latitude,
             lng: invitation.user.longitude,
             infoWindow: { content: "#{invitation.user.name}" },
-            icon: ActionController::Base.helpers.asset_path('backpack_marker.png')
+            icon: ActionController::Base.helpers.asset_path('backpack_marker.png'),
+            label: { text: "#{invitation.user.name[0].capitalize}.", fontSize: "15px", fontWeight: "bold"}
         }
         @markers << user_location_marker
       end
     end
   end
 
+  def visitor_show
+    @invitation = Invitation.find(params[:invitation_id])
+    @tour = Tour.find(params[:tour_id])
+    @activities = @tour.activities
+    @invitation.email = current_user.email if @invitation.email != current_user.email
+    @invitation.user = current_user
+    @invitation.save
+    @s = 1
+    @markers = @activities.map do |activity|
+      {
+        lat: activity.latitude,
+        lng: activity.longitude,
+        infoWindow: { content: "#{activity.name}: #{activity.starting_time.strftime("%l%P")} - #{activity.ending_time.strftime("%l%P")}" },
+        icon: ActionController::Base.helpers.asset_path('marker-activity2.png'),
+        label: { text: "#{activity.order_number}", fontSize: "15px", fontWeight: "bold"}
+      }
+    end
+    @markers << {
+      lat: @invitation.user.latitude,
+      lng: @invitation.user.longitude,
+      infoWindow: { content: "Your location" },
+      icon: ActionController::Base.helpers.asset_path('backpack_marker.png'),
+      label: { text: "Me", fontSize: "15px", fontWeight: "bold"}
+    }
+  end
+
   def new
     @tour = Tour.new
     # TODO: decide how add group to new tour
-    @groups = Group.all
+    @groups = current_user.tours.map(&:group).uniq
   end
 
   def create
@@ -43,14 +70,6 @@
       @groups = Group.all
       render :new
     end
-  end
-
-  def visitor_show
-    @invitation = Invitation.find(params[:invitation_id])
-    @tour = Tour.find(params[:tour_id])
-    @invitation.email = current_user.email if @invitation.email != current_user.email
-    @invitation.user = current_user
-    @invitation.save
   end
 
   private

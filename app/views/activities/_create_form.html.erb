@@ -5,9 +5,9 @@
   <%= f.input :city %>
   <%= f.input :meeting_point %>
   <%= f.select :category, ["Business", "Travel & Outdoor", "Food & Drink", "Lecture", "Cultural", "Religious", "Other"] %>
-  <%##= f.input :ending_time, as: :string, input_html: { class: "flatpickr-time"} %>
-
- <input type="text" name="activity[starting_time]" class="flatpickr-time" style="height: 30px;">
-<input type="text" name="activity[ending_time]" class="flatpickr-time" style="height: 30px;">
+  <%= f.input :starting_time, as: :string, input_html: { class: "flatpickr-time"} %>
+  <%= f.input :ending_time, as: :string, input_html: { class: "flatpickr-time"} %>
+  <!-- <input type="text" name="activity[starting_time]" class="flatpickr-time" style="height: 30px;">
+  <input type="text" name="activity[ending_time]" class="flatpickr-time" style="height: 30px;"> -->
   <%= f.submit %>
 <% end %>

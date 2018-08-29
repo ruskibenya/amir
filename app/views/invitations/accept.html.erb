@@ -1,3 +1,11 @@
+<% content_for :above_container do %>
+<div style="padding: 1% 2%; background-color: white;">
+    <!-- <img src="./app/assets/images/backpack.png" alt="Backpack.png"> -->
+    <%= image_tag 'fav.png', style: 'height: 45px;' %>
+    <%#= image_tag attachments['backpack'].url, style: 'height: 80px; display: inline-block'%> <p style="font-family: 'Poppins'; font-weight: 800; display: inline-block;">Amir</p>
+  </div>
+  <% end %>
+
 <h1>Hello <%= current_user.name %> ! </h1>
 
 <h4>You've been invited to <%= @tour.name %></h2>

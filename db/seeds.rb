@@ -18,33 +18,39 @@ Invitation.destroy_all
 
 ## set user seed info
 users_attributes = [
+    {
+    name: "Sam",
+    email: "sam@ea.com",
+    password: "123456",
+    profile_picture: "rabea.jpg",
+    bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!",
+    role: "visitor"
+
+  },
   {
     name: "Rabea",
     email: "rab@ea.com",
     password: "123456",
     profile_picture: "rabea.jpg",
-    bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!"
+    bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!",
+    role: "guide"
+
   },
   {
     name: "Donald Trump",
     email: "don@don.com",
     password: "merica",
     profile_picture: "don.png",
-    bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!"
+    bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!",
+    role: "guide"
   },
   {
     name: "Cyrille",
     email: "cyrille@amir.com",
     password: "cyrillepass",
     profile_picture: "cyrille.png",
-    bio: "A citizen of the world, I can lead any man through any journey. Currently flying paper plans in the South France. Let me take you on a culinary expedition of grass and twigs."
-  },
-  {
-    name: "Doron",
-    email: "doron@fauda.com",
-    password: "1234",
-    profile_picture: "doron.jpg",
-    bio: "I have very particular set of skills. I will look for you, I will find you & put you on the bus."
+    bio: "A citizen of the world, I can lead any man through any journey. Currently flying paper plans in the South France. Let me take you on a culinary expedition of grass and twigs.",
+    role: "guide"
   }
 ]
 
@@ -622,8 +628,13 @@ Activity.create!(activities_attributes)
 # set invitation seed info
 invitations_attributes = [
   {
+    group: tulane_chabad,
+    email: "sam@ea.com",
+    user_id: 1
+  },
+  {
     group: young_repubs,
-    email: "hillary@usa.gov"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: young_repubs,
@@ -631,7 +642,7 @@ invitations_attributes = [
   # },
   {
     group: fat_america,
-    email: "bib@israel.gov"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: fat_america,
@@ -639,7 +650,7 @@ invitations_attributes = [
   # },
   {
     group: lewagon_tlv_follow,
-    email: "rabea@lwtlv.il"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: lewagon_tlv_follow,
@@ -651,7 +662,19 @@ invitations_attributes = [
   # },
   {
     group: tulane_chabad,
-    email: "rabbi@chabad.com"
+    email: "rabea@lewagon.org"
+  },
+  {
+    group: tulane_chabad,
+    email: "ephraim.immo2017@gmail.com"
+  },
+  {
+    group: tulane_chabad,
+    email: "rubencattan@gmail.com"
+  },
+  {
+    group: tulane_chabad,
+    email: "benjamin@benyas.com"
   },
   # {
   #   group: tulane_chabad,
@@ -663,7 +686,7 @@ invitations_attributes = [
   # },
   {
     group: lewagon_tlv,
-    email: "boris@lw.fr"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: lewagon_tlv,
@@ -671,7 +694,7 @@ invitations_attributes = [
   # },
   {
     group: fat_america_tlv,
-    email: "boris@lw.fr"
+    email: "rabea@lewagon.org"
   },
   #{
   #   group: fat_america_tlv,
@@ -679,7 +702,7 @@ invitations_attributes = [
   # },
   {
     group: fat_america_brln,
-    email: "boris@lw.fr"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: fat_america_brln,
@@ -687,7 +710,7 @@ invitations_attributes = [
   # },
   {
     group: fat_america_rmtgn,
-    email: "boris@lw.fr"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: fat_america_rmtgn,
@@ -695,7 +718,7 @@ invitations_attributes = [
   # },
   {
     group: tulane_chabad_2,
-    email: "boris@lw.fr"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: tulane_chabad_2,
@@ -703,7 +726,7 @@ invitations_attributes = [
   # },
   {
     group: fat_america_tlv_spr,
-    email: "boris@lw.fr"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: fat_america_tlv_spr,
@@ -711,7 +734,7 @@ invitations_attributes = [
   # },
   {
     group: lewagon_tlv_1,
-    email: "boris@lw.fr"
+    email: "rabea@lewagon.org"
   },
   # {
   #   group: lewagon_tlv_1,
