@@ -652,7 +652,7 @@ invitations_attributes = [
   # },
   {
     group: tulane_chabad,
-    email: "ephraim.immo2017@gmail.com"
+    email: "ephraim_bismuth@hotmail.fr"
   },
   {
     group: tulane_chabad,
