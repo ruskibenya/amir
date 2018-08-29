@@ -27,6 +27,13 @@
         @markers << user_location_marker
       end
     end
+    @markers << {
+            lat: current_user.latitude,
+            lng: current_user.longitude,
+            infoWindow: { content: "Your location" },
+            icon: ActionController::Base.helpers.asset_path('current_user_marker.png'),
+            label: { text: "Me", fontSize: "15px", fontWeight: "bold"}
+        }
   end
 
   def visitor_show
@@ -50,7 +57,7 @@
       lat: @invitation.user.latitude,
       lng: @invitation.user.longitude,
       infoWindow: { content: "Your location" },
-      icon: ActionController::Base.helpers.asset_path('backpack_marker.png'),
+      icon: ActionController::Base.helpers.asset_path('current_user_marker.png'),
       label: { text: "Me", fontSize: "15px", fontWeight: "bold"}
     }
   end
