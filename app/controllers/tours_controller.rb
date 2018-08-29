@@ -15,7 +15,7 @@
       }
     end
 
-    @users_locations_markers = @tour.group.invitations.map do |invitation|
+    @tour.group.invitations.map do |invitation|
         if ( !invitation.user.nil? && !invitation.user.latitude.nil? )
           user_location_marker = {
             lat: invitation.user.latitude,
@@ -50,7 +50,7 @@
   def new
     @tour = Tour.new
     # TODO: decide how add group to new tour
-    @groups = Group.all
+    @groups = current_user.tours.map(&:group).uniq
   end
 
   def create
