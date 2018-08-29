@@ -10,8 +10,8 @@
         lat: activity.latitude,
         lng: activity.longitude,
         infoWindow: { content: "#{activity.name}: #{activity.starting_time.strftime("%l%P")} - #{activity.ending_time.strftime("%l%P")}" },
-        icon: ActionController::Base.helpers.asset_path('backpack_marker.png'),
-        label: { text: "#{activity.order_number}", fontSize: "18px"}
+        icon: ActionController::Base.helpers.asset_path('marker-activity2.png'),
+        label: { text: "#{activity.order_number}", fontSize: "15px"}
       }
     end
 
@@ -21,7 +21,8 @@
             lat: invitation.user.latitude,
             lng: invitation.user.longitude,
             infoWindow: { content: "#{invitation.user.name}" },
-            icon: ActionController::Base.helpers.asset_path('backpack_marker.png')
+            icon: ActionController::Base.helpers.asset_path('backpack_marker.png'),
+            label: { text: "#{invitation.user.name[0].capitalize}.", fontSize: "15px"}
         }
         @markers << user_location_marker
       end
@@ -41,10 +42,17 @@
         lat: activity.latitude,
         lng: activity.longitude,
         infoWindow: { content: "#{activity.name}: #{activity.starting_time.strftime("%l%P")} - #{activity.ending_time.strftime("%l%P")}" },
-        icon: ActionController::Base.helpers.asset_path('backpack_marker.png'),
-        label: { text: "#{activity.order_number}", fontSize: "18px"}
+        icon: ActionController::Base.helpers.asset_path('marker-activity2.png'),
+        label: { text: "#{activity.order_number}", fontSize: "15px"}
       }
     end
+    @markers << {
+      lat: @invitation.user.latitude,
+      lng: @invitation.user.longitude,
+      infoWindow: { content: "Your location" },
+      icon: ActionController::Base.helpers.asset_path('backpack_marker.png'),
+      label: { text: "Me", fontSize: "15px"}
+    }
   end
 
   def new
