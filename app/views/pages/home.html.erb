@@ -1,23 +1,58 @@
 <div class="landing-page">
-  <div class="row">
+<!--   <div class="row">
 
     <div class=" col-xs-12 col-md-12">
       <div class="title">
-        <%= image_tag 'fav.png', style: 'width: 50px' %>
+        <div class="home-content">
+          <%#= image_tag 'fav.png', style: 'width: 50px' %>
 
-        <h1>Guide tours easily</h1>
-        <h4>Share the itinerary with visitors. Locate them while visiting</h4>
+          <h1>Guide tours easily</h1>
+          <h4>Share the itinerary with visitors. Locate them while visiting</h4>
+          <div id="start-button" onclick="scrollToSection()">
+            <a href="#next-part" class="next-part-btn signup-btn">start</a>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-md-3"></div>
 
-    <div class="col-xs-12 col-sm-4 offset-sm-4 col-md-6 offset-md-4">
+    <div id="next-part" class="col-xs-12 col-sm-4 offset-sm-4 col-md-6 offset-md-4">
       <div class="form-section ">
-        <%= render "shared/signup" %>
+        <%#= render "shared/signup" %>
       </div>
     </div>
 
     <div class="col-md-3"></div>
 
   </div>
+ -->
+
+  <div class="col-xs-12 col-md-12">
+    <div class="welcome-part">
+      <div class="welcome-content">
+        <%= image_tag 'fav.png' %>
+        <h1>Guide tours easily</h1>
+        <h4>Share the itinerary with visitors. Locate them while visiting</h4>
+        <p onclick="scrollToSection()" class="start-btn" >start</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-md-12">
+    <div class="col-md-3"></div>
+    <div id="next-part" class="form-section col-md-6">
+      <%= render "shared/signup" %>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+
+
 </div>
+
+<% content_for :after_js do %>
+<script>
+  function scrollToSection() {
+              document.getElementById('next-part').scrollIntoView({block: 'start', behavior: 'smooth'});
+          };
+</script>
+<% end %>
+

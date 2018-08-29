@@ -59,6 +59,7 @@ User.create!(users_attributes)
 cyrille = User.find_by(name: "Cyrille")
 don = User.find_by(name: "Donald Trump")
 rabea = User.find_by(name: "Rabea")
+doron = User.find_by(name: "Doron")
 
 
 # Tour seeds
@@ -66,14 +67,21 @@ rabea = User.find_by(name: "Rabea")
 # set tour seed info
 tours_attributes = [
   {
-    user: don,
+    user: doron,
     start_date: Date.today,
     end_date: Date.today() + 3.days,
     name: "How to drain the Swamp",
     category: "Business"
   },
   {
-    user: don,
+    user: doron,
+    start_date: Date.today,
+    end_date: Date.today() + 3.days,
+    name: "",
+    category: "Business"
+  },
+  {
+    user: doron,
     start_date: Date.today + 4.days,
     end_date: Date.today() + 5.days,
     name: "How to eat like a local in Tel Aviv",
