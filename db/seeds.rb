@@ -18,26 +18,39 @@ Invitation.destroy_all
 
 ## set user seed info
 users_attributes = [
+    {
+    name: "Sam",
+    email: "sam@ea.com",
+    password: "123456",
+    profile_picture: "rabea.jpg",
+    bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!",
+    role: "visitor"
+
+  },
   {
     name: "Rabea",
     email: "rab@ea.com",
     password: "123456",
     profile_picture: "rabea.jpg",
-    bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!"
+    bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!",
+    role: "guide"
+
   },
   {
     name: "Donald Trump",
     email: "don@don.com",
     password: "merica",
     profile_picture: "don.png",
-    bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!"
+    bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!",
+    role: "guide"
   },
   {
     name: "Cyrille",
     email: "cyrille@amir.com",
     password: "cyrillepass",
     profile_picture: "cyrille.png",
-    bio: "A citizen of the world, I can lead any man through any journey. Currently flying paper plans in the South France. Let me take you on a culinary expedition of grass and twigs."
+    bio: "A citizen of the world, I can lead any man through any journey. Currently flying paper plans in the South France. Let me take you on a culinary expedition of grass and twigs.",
+    role: "guide"
   }
 ]
 
@@ -606,6 +619,11 @@ Activity.create!(activities_attributes)
 
 # set invitation seed info
 invitations_attributes = [
+  {
+    group: tulane_chabad,
+    email: "sam@ea.com",
+    user_id: 1
+  },
   {
     group: young_repubs,
     email: "rabea@lewagon.org"

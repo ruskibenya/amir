@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :tours, dependent: :destroy
   has_many :invitations, dependent: :destroy
+  validates_inclusion_of :role, in: ["guide", "visitor"], presence: true
   validates :email, uniqueness: true, presence: true
 end
