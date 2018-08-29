@@ -10,6 +10,10 @@
     required: true,
     autofocus: false,
     :input_html => {value: ""}%>
+    <%= f.input :role, collection: ["guide", "visitor"],
+    label: "Role",
+    autofocus: false,
+    selected: "visitor"%>
     <%= f.input :email,
     required: true,
     autofocus: false ,

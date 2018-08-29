@@ -1,7 +1,7 @@
 <h2>Create a new tour</h2>
 <%= simple_form_for @tour do |f| %>
   <%= f.input :name, label: "Tour Name" %>
-  <%= f.input :category, label: "Tour Category", collection: ["School", "Family Reunion", "Religious", "Business", "Pub Crawl", "Nature", "Government", "Other"], label: "Select a tour category" %>
+  <%= f.input :category, collection: ["School", "Family Reunion", "Religious", "Business", "Pub Crawl", "Nature", "Government", "Other"], label: "Select a tour category" %>
   <!-- TODO: Decide if adding a group from beginning matters -->
   <%= f.input :group_id, collection: @groups, label: "Select a group" %>
   <%= f.input :start_date, as: :string, input_html: { class: "flatpickr-input"} %>
