@@ -26,14 +26,13 @@
       <%= link_to 'create a new tour', new_tour_path, class: 'amir-btn' %>
     </div>
     <h4 class="title-page">tours</h4>
-    <% current_user.tours.each do |tour| %>
-      <%= render "components/tour_card", tour: tour %>
-    <% end %>
-    <div id="no-tour-messge">
-      <% if current_user.tours.count == 0 %>
-        <%= "You have no tour. Create one and invite your clients." %>
+    <% if current_user.tours.empty? %>
+      You haven't created any tours yet!
+      <% else %>
+        <% current_user.tours.each do |tour| %>
+          <%= render "components/tour_card", tour: tour %>
+        <% end %>
       <% end %>
-    </div>
   </div>
 
 <% elsif current_user.role == "visitor" %>
@@ -41,16 +40,16 @@
     <h4 class="title-page">tours</h4>
 
     <% @invitations = current_user.invitations.all%>
-    <% @invitations.each do |invitation| %>
-      <% tours = Tour.where(group: invitation.group) %>
-        <% tours.each do |tour| %>
-          <%= render "components/visitor_tour_card", tour: tour, invitation: invitation %>
+      <% if @invitations.empty? %>
+        <h2>You haven't accepted any tour invitations yet!</h2>
+        <h4>Ask your tour guide to send you an invitation.</h4>
+      <% else %>
+        <% @invitations.each do |invitation| %>
+          <% tours = Tour.where(group: invitation.group) %>
+            <% tours.each do |tour| %>
+              <%= render "components/visitor_tour_card", tour: tour, invitation: invitation %>
+            <% end %>
         <% end %>
-    <% end %>
-    <div id="no-tour-messge">
-      <% if current_user.tours.count == 0 %>
-        <%= "You have no tour yet. After a guide invites you, you will see the tour plan and map on this page." %>
       <% end %>
-    </div>
   </div>
 <% end %>
