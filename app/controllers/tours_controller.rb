@@ -15,16 +15,20 @@
       }
     end
 
+    if @tour.group.nil?
+      @tour.group = Group.new(name: "default group")
+      @tour.group.save
+    end
     @tour.group.invitations.map do |invitation|
-        if ( !invitation.user.nil? && !invitation.user.latitude.nil? )
-          user_location_marker = {
-            lat: invitation.user.latitude,
-            lng: invitation.user.longitude,
-            infoWindow: { content: "#{invitation.user.name}" },
-            icon: ActionController::Base.helpers.asset_path('backpack_marker.png'),
-            label: { text: "#{invitation.user.name[0].capitalize}.", fontSize: "15px", fontWeight: "bold"}
-        }
-        @markers << user_location_marker
+      if ( !invitation.user.nil? && !invitation.user.latitude.nil? )
+        user_location_marker = {
+          lat: invitation.user.latitude,
+          lng: invitation.user.longitude,
+          infoWindow: { content: "#{invitation.user.name}" },
+          icon: ActionController::Base.helpers.asset_path('backpack_marker.png'),
+          label: { text: "#{invitation.user.name[0].capitalize}.", fontSize: "15px", fontWeight: "bold"}
+      }
+      @markers << user_location_marker
       end
     end
 

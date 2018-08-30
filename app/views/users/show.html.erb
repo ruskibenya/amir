@@ -29,6 +29,11 @@
     <% current_user.tours.each do |tour| %>
       <%= render "components/tour_card", tour: tour %>
     <% end %>
+    <div id="no-tour-messge">
+      <% if current_user.tours.count == 0 %>
+        <%= "You have no tour. Create one and invite your clients." %>
+      <% end %>
+    </div>
   </div>
 
 <% elsif current_user.role == "visitor" %>
@@ -42,5 +47,10 @@
           <%= render "components/visitor_tour_card", tour: tour, invitation: invitation %>
         <% end %>
     <% end %>
+    <div id="no-tour-messge">
+      <% if current_user.tours.count == 0 %>
+        <%= "You have no tour yet. After a guide invites you, you will see the tour plan and map on this page." %>
+      <% end %>
+    </div>
   </div>
 <% end %>
