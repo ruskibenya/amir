@@ -19,6 +19,14 @@ Invitation.destroy_all
 ## set user seed info
 users_attributes = [
     {
+    name: "Benjamin",
+    email: "ben@jamin.com",
+    password: "123456",
+    profile_picture: "ben.png",
+    bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!",
+    role: "guide"
+    },
+    {
     name: "Sam",
     email: "sam@ea.com",
     password: "123456",
@@ -96,6 +104,34 @@ ben = User.find_by(name: "Benjamin")
 # set tour seed info
 tours_attributes = [
   {
+    user: ben,
+    start_date: Date.today,
+    end_date: Date.today() + 2.days,
+    name: "Parisians in Tel-Aviv",
+    category: "School"
+  },
+  {
+    user: ben,
+    start_date: Date.today + 3.days,
+    end_date: Date.today() + 4.days,
+    name: "Working in Israel",
+    category: "Family Reunion"
+  },
+  {
+    user: ben,
+    start_date: Date.today + 5.days,
+    end_date: Date.today() + 6.days,
+    name: "Houmous from everywhere",
+    category: "Religious"
+  },
+    {
+    user: ben,
+    start_date: Date.today + 9.days,
+    end_date: Date.today() + 10.days,
+    name: "Dead sea visit",
+    category: "Nature"
+  },
+  {
     user: don,
     start_date: Date.today,
     end_date: Date.today() + 3.days,
@@ -169,7 +205,7 @@ tours_attributes = [
     user: ben,
     start_date: Date.today + 30.days,
     end_date: Date.today() + 31.days,
-    name: "Eating in Your Underwear",
+    name: "Eating in Your Car",
     category: "Other"
   }
 ]
@@ -188,11 +224,22 @@ ben_eats_jrslm = Tour.find_by(name: "Eating in Jerusalem")
 ben_eats_late = Tour.find_by(name: "Late Nite Eats")
 ben_eats_undrwr = Tour.find_by(name: "Eating in Your Underwear")
 
-
 # Group seeds
 
 # set group seed info
 groups_attributes = [
+  {
+    name: "Parisians #161",
+    tours: [] << ben_visits
+  },
+  {
+    name: "Fat Americans in Jerusalem",
+    tours: [] << ben_visits
+  },
+  {
+    name: "Le Wagon Followers",
+    tours: [] << ben_visits
+  },
   {
     name: "Young Republicans of Tel Aviv",
     tours: [] << don_swamp_drain
@@ -202,7 +249,7 @@ groups_attributes = [
     tours: [] << don_local_eats
   },
   {
-    name: "Le Wagon Followers",
+    name: "Le Wagon Alumnis",
     tours: [] << cyrille_eats
   },
   {
@@ -252,6 +299,7 @@ fat_america_rmtgn = Group.find_by(name: "Fat Americans in Ramat Gan")
 tulane_chabad_2 = Group.find_by(name: "Tulane Chabad Bus #162")
 fat_america_tlv_spr = Group.find_by(name: "Super Fat Americans in Tel Aviv")
 lewagon_tlv_1 = Group.find_by(name: "Le Wagon Batch #161.1")
+parisian_161 = Group.find_by(name: "Parisians #161")
 
 
 
@@ -265,6 +313,61 @@ lewagon_tlv_1 = Group.find_by(name: "Le Wagon Batch #161.1")
 #set activity seed info
 
 activities_attributes = [
+  {
+  name: "Breakfast on Rothschild",
+  address: "Herzl 8",
+  city: "Tel Aviv-Yafo",
+  meeting_point: true,
+  category: "Food & Drink",
+  tour_id: ben_visits.id,
+  starting_time: DateTime.now.beginning_of_day + 11.hours,
+  ending_time: DateTime.now.beginning_of_day + 13.hours,
+  order_number: "1",
+  },
+  {
+  name: "Independance Hall",
+  address: "Habima",
+  city: "Tel Aviv-Yafo",
+  meeting_point: false,
+  category: "Travel & Outdoor",
+  tour_id: ben_visits.id,
+  starting_time: DateTime.now.beginning_of_day + 14.hours,
+  ending_time: DateTime.now.beginning_of_day + 17.hours,
+  order_number: "2",
+  },
+  {
+  name: "Charles Clore Beach, Jaffa",
+  address: "49 Yehuda Hayamit",
+  city: "Tel Aviv-Yafo",
+  meeting_point: true,
+  category: "Travel & Outdoor",
+  tour_id: ben_visits.id,
+  starting_time: DateTime.now.beginning_of_day + 17.hours,
+  ending_time: DateTime.now.beginning_of_day + 19.hours,
+  order_number: "3",
+  },
+  {
+  name: "Eat like an israelian",
+  address: "HaCarmel St 11 Street",
+  city: "Tel Aviv-Yafo",
+  meeting_point: true,
+  category: "Food & Drink",
+  tour_id: ben_visits.id,
+  starting_time: DateTime.now.beginning_of_day + 11.hours,
+  ending_time: DateTime.now.beginning_of_day + 13.hours,
+  order_number: "1",
+  },
+  {
+  name: "Demo Day Le Wagon",
+  address: "Ben Yehuda 32",
+  city: "Tel Aviv-Yafo",
+  meeting_point: false,
+  category: "Lecture",
+  tour_id: ben_visits.id,
+  starting_time: DateTime.now.beginning_of_day + 14.hours,
+  ending_time: DateTime.now.beginning_of_day + 17.hours,
+  order_number: "2",
+  },
   {
   name: "Kick Obama Out of Office",
   address: "HaCarmel St 11 Street",
@@ -588,6 +691,22 @@ Activity.create!(activities_attributes)
 
 # set invitation seed info
 invitations_attributes = [
+  {
+    group: parisian_161,
+    email: "ephraim.immo2017@gmail.com"
+  },
+  {
+    group: parisian_161,
+    email: "benjamin@benyas.com"
+  },
+    {
+    group: parisian_161,
+    email: "rubencattan@gmail.com"
+  },
+    {
+    group: parisian_161,
+    email: "christophe.ridarch@gmail.com"
+  },
   {
     group: tulane_chabad,
     email: "sam@ea.com",
