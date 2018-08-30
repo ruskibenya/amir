@@ -198,18 +198,18 @@
 }
 
 
-a.home-button{
+a > img.home-button{
   z-index: 2;
   position: fixed;
-  bottom: 20%;
+  top: 7%;
   right: 7%;
   cursor: pointer;
-  line-height: 30px;
-  color: black;
-  opacity: 0.8;
-  opacity: 0.5;
-  font-size: 40px;
-  text-shadow: 2px 2px 2px $light-gray;
+  height: 50px;
+  // line-height: 30px;
+  // color: black;
+  // opacity: 0.8;
+  // font-size: 40px;
+  // text-shadow: 2px 2px 2px $light-gray;
 }
 
 a.home-button-write{

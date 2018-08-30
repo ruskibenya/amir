@@ -9,7 +9,10 @@
 <% end %>
 
 <!-- back to home button on side -->
-<%= link_to '<i class="fas fa-user-circle"></i>'.html_safe, user_path, class: 'home-button' %>
+<%= link_to user_path do %>
+  <%= image_tag "backpack.png", class: 'home-button', style: "height: 35px" %>
+<% end %>
+
 
 <!-- send email invitations for this tour -->
 <div class="sending">
