@@ -32,7 +32,7 @@ users_attributes = [
     name: "Benjamin",
     email: "benjamin@benyas.com",
     password: "123456",
-    profile_picture: "benjamin.jpeg",
+    profile_picture: "benjamin.jpg",
     bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!",
     role: "guide"
   },
@@ -56,7 +56,7 @@ users_attributes = [
     name: "Ephraim",
     email: "ephraim.bismuth@gmail.com",
     password: "123456",
-    profile_picture: "ephraim.jpeg",
+    profile_picture: "ephraim.jpg",
     bio: "Life is beautiful. Let it take you on its journey. Sit down, you are only a passenger. Smile, be happy.",
     role: "visitor",
     latitude: 32.066840,
