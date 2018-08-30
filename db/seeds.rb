@@ -74,7 +74,7 @@ users_attributes = [
   },
   {
     name: "Amir",
-    email: "ruskibear31@gmail.com",
+    email: "amir@gmail.com",
     password: "123456",
     profile_picture: "Amir.png",
     bio: "I am always lost. People keep on looking for me but hardly find me. Please find me and take me back with you.",
