@@ -590,7 +590,7 @@ Activity.create!(activities_attributes)
 invitations_attributes = [
   {
     group: tulane_chabad,
-    email: "sam@ea.com",
+    email: "ephraim.immo2017@gmail.com",
     user: User.find_by_name("Sam")
   },
   {
@@ -633,7 +633,7 @@ invitations_attributes = [
   },
   {
     group: tulane_chabad,
-    email: "amir@gmail.com",
+    email: "ruskibear31@gmail.com",
     user: User.find_by_name("Amir")
   },
   # {
