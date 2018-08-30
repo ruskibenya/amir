@@ -25,5 +25,6 @@ Rails.application.routes.draw do
   get "invitations/:invitation_id/accept", to: 'invitations#accept', as: :accept_invitation
   get "tours/:tour_id/:invitation_id/visitor_show", to: 'tours#visitor_show', as: :visitor_show
   get "tours/:id?status=active", to: 'tours#active_show', as: :active_tour
+  get "tours/:id/alerts", to: 'tours#alert_message', as: :visitor_alert
 
 end

@@ -87,6 +87,24 @@
     end
   end
 
+  def alert_message
+    lat = current_user.latitude
+    long = current_user.longitude
+    @tour = Tour.find(params[:id])
+    next_activity = @tour.next_activity
+    distance = Geocoder::Calculations.distance_between([lat, long], [next_activity.latitude, next_activity.longitude])
+    distance = distance * 1000
+
+    time_remaining = next_activity.starting_time -  DateTime.now
+    needed_speed = distance / time_remaining
+    if needed_speed > 1.4
+      alert_response = {message: true }
+    else
+      alert_response = {message: false}
+    end
+    render json: alert_response
+  end
+
   private
 
   def tours_params

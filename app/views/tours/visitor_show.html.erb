@@ -51,42 +51,48 @@
   <!-- map section -->
   <% content_for :below_container do %>
 
-  <div id="tour-map" class="hidden">
-    <h5 style="text-align: center;"><%= @tour.name %>'s map</h5>
-    <div
-    id="map"
-    data-markers="<%= @markers.to_json %>"
-    style="width: 100%;"
-    >
+    <div id="tour-map" class="hidden">
+      <h5 style="text-align: center;"><%= @tour.name %>'s map</h5>
+      <div
+      id="map"
+      data-markers="<%= @markers.to_json %>"
+      style="width: 100%;"
+      >
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
 
-<!-- script for geolocating the visitor location -->
-<script>
-  const userUpdateLocation = () => {
-    navigator.geolocation.getCurrentPosition(function(position) {
-  // JS query that triggers submit button of the form
-  // document.getElementById(positionForm).submit("latitude": position.coords.latitude, "longitude": position.coords.longitude);
 
-      fetch("<%= user_path(current_user) %>", {
-        method: 'put',
-        body: JSON.stringify({latitude: position.coords.latitude, longitude: position.coords.longitude}),
-        headers: {
-          'Content-Type': 'application/json',
-          'X-CSRF-Token': Rails.csrfToken()
-        },
-        credentials: 'same-origin'
-      })
-    });
-  }
 
-  setInterval(userUpdateLocation, 5000)
 
-</script>
+
+
 
 
 <% content_for :after_js do %>
+  <!-- script for geolocating the visitor location -->
+  <script>
+    const userUpdateLocation = () => {
+      navigator.geolocation.getCurrentPosition(function(position) {
+    // JS query that triggers submit button of the form
+    // document.getElementById(positionForm).submit("latitude": position.coords.latitude, "longitude": position.coords.longitude);
+
+        fetch("<%= user_path(current_user) %>", {
+          method: 'put',
+          body: JSON.stringify({latitude: position.coords.latitude, longitude: position.coords.longitude}),
+          headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-Token': Rails.csrfToken()
+          },
+          credentials: 'same-origin'
+        })
+      });
+    }
+
+    setInterval(userUpdateLocation, 5000)
+
+  </script>
+
   <!-- script for picking date from calendar -->
   <script type="text/javascript">
     document.querySelectorAll('.flatpickr-time').flatpickr({
@@ -118,4 +124,23 @@
       })
     })
   </script>
+
+<!-- script for geolocating the visitor location -->
+<script>
+
+  const userCheckForAlert = () => {
+  // JS query that triggers submit button of the form
+  // document.getElementById(positionForm).submit("latitude": position.coords.latitude, "longitude": position.coords.longitude);
+
+      fetch("<%= visitor_alert_path(params[:tour_id]) %>")
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data.message);
+        popAlert();
+      });
+  }
+  setInterval(userCheckForAlert, 6000)
+
+</script>
+
 <% end %>
