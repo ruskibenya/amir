@@ -27,13 +27,12 @@ users_attributes = [
     role: "visitor"
   },
   {
-    name: "Rabea",
-    email: "rab@ea.com",
+    name: "Benjamin",
+    email: "benjamin@benyas.com",
     password: "123456",
-    profile_picture: "rabea.jpg",
+    profile_picture: "benjamin.jpeg",
     bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!",
     role: "guide"
-
   },
   {
     name: "Donald Trump",
@@ -50,6 +49,30 @@ users_attributes = [
     profile_picture: "cyrille.png",
     bio: "A citizen of the world, I can lead any man through any journey. Currently flying paper plans in the South France. Let me take you on a culinary expedition of grass and twigs.",
     role: "guide"
+  },
+  {
+    name: "Ephraim",
+    email: "ephraim.bismuth@gmail.com",
+    password: "123456",
+    profile_picture: "ephraim.jpeg",
+    bio: "Life is beautiful. Let it take you on its journey. Sit down, you are only a passenger. Smile, be happy.",
+    role: "visitor"
+  },
+  {
+    name: "Ruben",
+    email: "rubencattan@gmail.com",
+    password: "123456",
+    profile_picture: "ruben.png",
+    bio: "Life is beautiful. Let it take you on its journey. Sit down, you are only a passenger. Smile, be happy.",
+    role: "visitor"
+  },
+  {
+    name: "Amir",
+    email: "ruskibear31@gmail.com",
+    password: "123456",
+    profile_picture: "Amir.png",
+    bio: "I am always lost. People keep on looking for me but hardly find me. Please find me and take me back with you.",
+    role: "visitor"
   }
 ]
 
@@ -57,7 +80,7 @@ users_attributes = [
 User.create!(users_attributes)
 cyrille = User.find_by(name: "Cyrille")
 don = User.find_by(name: "Donald Trump")
-rabea = User.find_by(name: "Rabea")
+ben = User.find_by(name: "Benjamin")
 
 
 # Tour seeds
@@ -86,56 +109,56 @@ tours_attributes = [
     category: "Family Reunion"
   },
   {
-    user: rabea,
+    user: ben,
     start_date: Date.today,
     end_date: Date.today() + 2.days,
     name: "Birthright-Taglit",
     category: "Government"
   },
   {
-    user: rabea,
+    user: ben,
     start_date: Date.today + 3.days,
     end_date: Date.today() + 4.days,
     name: "Negev Hike with Le Wagon",
     category: "Nature"
   },
   {
-    user: rabea,
+    user: ben,
     start_date: Date.today + 5.days,
     end_date: Date.today() + 6.days,
     name: "Druze Eating in Tel Aviv",
     category: "Family Reunion"
   },
   {
-    user: rabea,
+    user: ben,
     start_date: Date.today + 7.days,
     end_date: Date.today() + 8.days,
     name: "Eating in Berlin",
     category: "School"
   },
     {
-    user: rabea,
+    user: ben,
     start_date: Date.today + 9.days,
     end_date: Date.today() + 10.days,
     name: "Eating in Ramat Gan",
     category: "Business"
   },
     {
-    user: rabea,
+    user: ben,
     start_date: Date.today + 15.days,
     end_date: Date.today() + 16.days,
     name: "Eating in Jerusalem",
     category: "Religious"
   },
     {
-    user: rabea,
+    user: ben,
     start_date: Date.today + 20.days,
     end_date: Date.today() + 21.days,
     name: "Late Nite Eats",
     category: "Pub Crawl"
   },
     {
-    user: rabea,
+    user: ben,
     start_date: Date.today + 30.days,
     end_date: Date.today() + 31.days,
     name: "Eating in Your Underwear",
@@ -148,14 +171,14 @@ Tour.create!(tours_attributes)
 don_swamp_drain = Tour.find_by(name: "How to drain the Swamp")
 don_local_eats = Tour.find_by(name: "How to eat like a local in Tel Aviv")
 cyrille_eats = Tour.find_by(name: "Eating like Cyrille in Tel Aviv")
-rabea_birthright = Tour.find_by(name: "Birthright-Taglit")
-rabea_negev_lw = Tour.find_by(name: "Negev Hike with Le Wagon")
-rabea_eats_tlv = Tour.find_by(name: "Druze Eating in Tel Aviv")
-rabea_eats_brln = Tour.find_by(name: "Eating in Berlin")
-rabea_eats_rmtgn = Tour.find_by(name: "Eating in Ramat Gan")
-rabea_eats_jrslm = Tour.find_by(name: "Eating in Jerusalem")
-rabea_eats_late = Tour.find_by(name: "Late Nite Eats")
-rabea_eats_undrwr = Tour.find_by(name: "Eating in Your Underwear")
+ben_birthright = Tour.find_by(name: "Birthright-Taglit")
+ben_negev_lw = Tour.find_by(name: "Negev Hike with Le Wagon")
+ben_eats_tlv = Tour.find_by(name: "Druze Eating in Tel Aviv")
+ben_eats_brln = Tour.find_by(name: "Eating in Berlin")
+ben_eats_rmtgn = Tour.find_by(name: "Eating in Ramat Gan")
+ben_eats_jrslm = Tour.find_by(name: "Eating in Jerusalem")
+ben_eats_late = Tour.find_by(name: "Late Nite Eats")
+ben_eats_undrwr = Tour.find_by(name: "Eating in Your Underwear")
 
 
 # Group seeds
@@ -176,35 +199,35 @@ groups_attributes = [
   },
   {
     name: "Tulane Chabad Bus #161",
-    tours: [] << rabea_birthright
+    tours: [] << ben_birthright
   },
   {
     name: "Le Wagon Batch #161",
-    tours: [] << rabea_negev_lw
+    tours: [] << ben_negev_lw
   },
   {
     name: "Really Fat Americans in Tel Aviv",
-    tours: [] << rabea_eats_tlv
+    tours: [] << ben_eats_tlv
   },
   {
     name: "Fat Americans in Berlin",
-    tours: [] << rabea_eats_brln
+    tours: [] << ben_eats_brln
   },
     {
     name: "Fat Americans in Ramat Gan",
-    tours: [] << rabea_eats_rmtgn
+    tours: [] << ben_eats_rmtgn
   },
     {
     name: "Tulane Chabad Bus #162",
-    tours: [] << rabea_eats_jrslm
+    tours: [] << ben_eats_jrslm
   },
     {
     name: "Super Fat Americans in Tel Aviv",
-    tours: [] << rabea_eats_late
+    tours: [] << ben_eats_late
   },
   {
     name: "Le Wagon Batch #161.1",
-    tours: [] << rabea_eats_undrwr
+    tours: [] << ben_eats_undrwr
   },
 ]
 
@@ -215,7 +238,6 @@ fat_america = Group.find_by(name: "Fat Americans in Tel Aviv")
 lewagon_tlv_follow = Group.find_by(name: "Le Wagon Followers")
 tulane_chabad = Group.find_by(name: "Tulane Chabad Bus #161")
 lewagon_tlv = Group.find_by(name: "Le Wagon Batch #161")
-
 fat_america_tlv = Group.find_by(name: "Really Fat Americans in Tel Aviv")
 fat_america_brln = Group.find_by(name: "Fat Americans in Berlin")
 fat_america_rmtgn = Group.find_by(name: "Fat Americans in Ramat Gan")
@@ -342,7 +364,7 @@ activities_attributes = [
   # city: "Safed",
   # meeting_point: false,
   # category: "Religious",
-  # tour_id: rabea_birthright.id,
+  # tour_id: ben_birthright.id,
   # starting_time: DateTime.now.beginning_of_day + 7.hours,
   # ending_time: DateTime.now.beginning_of_day + 8.hours,
   # order_number: "1",
@@ -354,7 +376,7 @@ activities_attributes = [
   # city: "Tsfat",
   # meeting_point: true,
   # category: "Food & Drink",
-  # tour_id: rabea_birthright.id,
+  # tour_id: ben_birthright.id,
   # starting_time: DateTime.now.beginning_of_day + 8.hours,
   # ending_time: DateTime.now.beginning_of_day + 9.hours,
   # order_number: "2",
@@ -366,202 +388,142 @@ activities_attributes = [
   # city: "Migdal HaEmek",
   # meeting_point: false,
   # category: "Other",
-  # tour_id: rabea_birthright.id,
+  # tour_id: ben_birthright.id,
   # starting_time: DateTime.now.beginning_of_day + 9.hours,
   # ending_time: DateTime.now.beginning_of_day + 10.hours,
   # order_number: "3",
   # },
   {
-  name: "Breakfast at Nazareth",
+  name: "Breakfast at Carmel Market",
   description: "Leader of the Gadot Kibbutz, Ephraim Bismuth, will speak about growing up, living on, and maintaing a kibbutz in the 21st century. Short walking tour of the Kibbutz to follow.",
-  address: "HaGalil St 4, Nazareth",
-  city: "Nazareth",
+  address: "HaCarmel St 11 Street, Tel Aviv-Yafo",
+  city: "Tel Aviv-Yafo",
   meeting_point: false,
-  category: "Lecture",
-  tour_id: rabea_birthright.id,
+  category: "Food & Drink",
+  tour_id: ben_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 9.hours,
   ending_time: DateTime.now.beginning_of_day + 10.hours,
   order_number: "1",
   },
   {
-  name: "Ice Breakers & Leave for Jalaboun",
-  description: "Drivers Rabea and Joy will lead team ice breakers for everyone to meet one another. Then vroom vroom to our first trek!",
-  address: "Joshua Hankin St 14, Afula",
-  city: "Afula",
+  name: "Ice Breakers & Leave for Banana Beach",
+  description: "Rabea and Joy will lead team ice breakers for everyone to meet one another. Then vroom vroom to our first kiff!",
+  address: "Retsif Herbert Samuel Street 32, Tel Aviv-Yafo",
+  city: "Tel Aviv-Yafo",
   meeting_point: true,
   category: "Travel & Outdoor",
-  tour_id: rabea_birthright.id,
+  tour_id: ben_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 10.hours,
   ending_time: DateTime.now.beginning_of_day + 11.hours,
   order_number: "2",
   },
-  # {
-  # name: "Hiking Jalaboun Red Trail",
-  # description: "This longer trail continues from the Jilaboun pool towards the El Jalabina ruins and the officers’ pool, finally ending near the Pkak Bridge.",
-  # address: "HaAfarsek Street 36",
-  # city: "Rosh Pina",
-  # meeting_point: false,
-  # category: "Travel & Outdoor",
-  # tour_id: rabea_birthright.id,
-  # starting_time: DateTime.now.beginning_of_day + 11.hours,
-  # ending_time: DateTime.now.beginning_of_day + 16.hours,
-  # order_number: "6",
-  # },
-  # {
-  # name: "Hiking Jalaboun Blue Trail (Shorter Option)",
-  # description: "Chase waterfalls & take in the breathtaking scenery while hiking the Jilaboon, a bubbling stream in the Golan with great significance.",
-  # address: "Susita St 1, Qatsrin",
-  # city: "Qatsrin",
-  # meeting_point: false,
-  # category: "Travel & Outdoor",
-  # tour_id: rabea_birthright.id,
-  # starting_time: DateTime.now.beginning_of_day + 11.hours,
-  # ending_time: DateTime.now.beginning_of_day + 16.hours,
-  # order_number: "7",
-  # },
   {
-  name: "Swimming Jalaboun Waterfalls & Natural Pool",
+  name: "Surfing the Tel Aviv waves",
   description: "Continue on the trail down to the Jilaboun pool. Turn right off the path at the bottom; you may have to cross the stream in the water in order to reach the pool. You can swim in the pool and even have a seat on the rocks behind the waterfall; beware of the deep water. You may be able to see the rainbow in the waterfall from within the pool as well.",
-  address: "Tet Zayin St 16, Tsfat",
-  city: "Tsfat",
+  address: "Kaufmann Street, Tel Aviv-Yafo",
+  city: "Tel Aviv-Yafo",
   meeting_point: false,
   category: "Travel & Outdoor",
-  tour_id: rabea_birthright.id,
+  tour_id: ben_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 12.hours,
   ending_time: DateTime.now.beginning_of_day + 14.hours,
   order_number: "3",
   },
-  {
-  name: "Israeli Topography by Joy",
-  description: "Driver Joy explains the history of the varied Israeli terrain. From the mountain tops of the Golan to the salty waters of the Dead Sea, Joy knows it all!",
-  address: "Yesud HaMa'ala Israel",
-  city: "Yesud HaMa'ala",
-  meeting_point: false,
-  category: "Travel & Outdoor",
-  tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 14.hours,
-  ending_time: DateTime.now.beginning_of_day + 15.hours,
-  order_number: "4",
-  },
   # {
-  # name: "BBQ Lunch and Games",
-  # description: "Relax as Chef David fires up the grill and cooks a kosher feast. The menu includes kebabs, sausages, chicken hearts, and of course Israeli Salad+Hummus!! In the mean time play soccer, football, cards, horseshoes, or just learn more about your new friends! After lunch it's straight to Mount Bental for more picturesque views!",
-  # address: "Simtat Alkabetz street 17",
-  # city: "Safed",
-  # meeting_point: true,
-  # category: "Food & Drink",
-  # tour_id: rabea_birthright.id,
-  # starting_time: DateTime.now.beginning_of_day + 15.hours,
-  # ending_time: DateTime.now.beginning_of_day + 16.hours,
-  # order_number: "10",
+  # name: "Israeli Topography by Joy",
+  # description: "Driver Joy explains the history of the varied Israeli terrain. From the mountain tops of the Golan to the salty waters of the Dead Sea, Joy knows it all!",
+  # address: "Bat Ami St 7, Tel Aviv-Yaf",
+  # city: "Tel Aviv-Yafo",
+  # meeting_point: false,
+  # category: "Lecture",
+  # tour_id: ben_birthright.id,
+  # starting_time: DateTime.now.beginning_of_day + 14.hours,
+  # ending_time: DateTime.now.beginning_of_day + 15.hours,
+  # order_number: "4",
   # },
   {
-  name: "Mount Bental Vista Views",
-  description: "Gaze out over the borders of neighboring countries from an old IDF bunker on top of Mount Bental in the Golan Heights.",
-  address: "Merom Golan Hotel",
-  city: "Merom Golan",
+  name: "See Tel Aviv from Jaffa heights",
+  description: "Gaze out over Tel Aviv borders from the top of Jaffa.",
+  address: "Yefet St, Tel Aviv-Yafo",
+  city: "Tel Aviv-Yafo",
   meeting_point: false,
   category: "Travel & Outdoor",
-  tour_id: rabea_birthright.id,
+  tour_id: ben_birthright.id,
+  starting_time: DateTime.now.beginning_of_day + 17.hours,
+  ending_time: DateTime.now.beginning_of_day + 18.hours,
+  order_number: "4",
+  },
+  {
+  name: "Life as a real Tel Avivi by Yoav Rotstzein",
+  description: "Yoav Rotstzein gives the detailed account of what it means to live in Tel Aviv.",
+  address: "Sderot Rotschild, Tel Aviv-Yafo",
+  city: "Tel Aviv-Yafo",
+  meeting_point: false,
+  category: "Lecture",
+  tour_id: ben_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 17.hours,
   ending_time: DateTime.now.beginning_of_day + 18.hours,
   order_number: "5",
   },
-  # {
-  # name: "Yom Kippur War by Ariel Sharon",
-  # description: "Listen to the story of the Yom Kippur War in 1973 from it's biggest hero, Ariel Sharon. Ariel gives a rivetting first-person account of one of the largest tank battles ever that was miraculously won by the Israelis with their small force of 160 tanks.",
-  # address: "Pastoral Kfar Blum Hotel",
-  # city: "Kfar Blum",
-  # meeting_point: false,
-  # category: "Lecture",
-  # tour_id: rabea_birthright.id,
-  # starting_time: DateTime.now.beginning_of_day + 17.hours,
-  # ending_time: DateTime.now.beginning_of_day + 18.hours,
-  # order_number: "12",
-  # },
   {
-  name: "Life as a UN Observer by António Guterres",
-  description: "António Guterres gives the detailed account of what it means to be a peace-keeping soldier.",
-  address: "La pizzal'e Merom Golan",
-  city: "Merom Golan",
+  name: "Tel Aviv History",
+  description: "Museum with an international collection of modern & contemporary art, plus a sculpture garden..",
+  address: "Allenby St 110, Tel Aviv-Yafo",
+  city: "Tel Aviv-Yafo",
   meeting_point: false,
-  category: "Lecture",
-  tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 17.hours,
-  ending_time: DateTime.now.beginning_of_day + 18.hours,
+  category: "Cultural",
+  tour_id: ben_birthright.id,
+  starting_time: DateTime.now.beginning_of_day + 18.hours,
+  ending_time: DateTime.now.beginning_of_day + 19.hours,
   order_number: "6",
   },
   {
-  name: "Israeli doctors saving Syrians by Dr. Tal Solomon",
-  description: "Since 2013, Israel has been transporting severly injured Syrians to Israeli hospitals to give them free medical care. Hear how the Syrian Civil War is affecting Dr. Tal Solomon's vascular surgery unit, located an hour from the border.",
-  address: "Ein Zivan",
-  city: "Ein Zivan",
+  name: "Buy a snack or souvenir at Izraeli Center",
+  description: "Named after the first prime Minister of Israel, David Ben Gurion, You will learn about the life of this national hero.",
+  address: "Ben Yehuda St 100, Tel Aviv-Yafo",
+  city: "Tel Aviv-Yafo",
   meeting_point: false,
-  category: "Lecture",
-  tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 18.hours,
-  ending_time: DateTime.now.beginning_of_day + 19.hours,
+  category: "Cultural",
+  tour_id: ben_birthright.id,
+  starting_time: DateTime.now.beginning_of_day + 17.hours,
+  ending_time: DateTime.now.beginning_of_day + 18.hours,
   order_number: "7",
   },
   {
-  name: "Buy a snack or souvenir at Coffee Annan ",
-  description: "Named after the former secretary general of the UN, whose name sounds in Hebrew like coffee in the cloud.From Mount Bental you almost can see Damascus.",
-  address: "Kibuttz Gonen",
-  city: "Gonen",
-  meeting_point: false,
+  name: "Dinner @ Sarona Market",
+  description: "Sarona Market was established to be the heartbeat of Israeli culinary art. On an area of 8,700 square meters with 91 shops, stalls and restaurants of all origins are present.",
+  address: "Derech Menachem Begin 125, Tel Aviv-Yafo",
+  city: "Tel Aviv-Yafo",
+  meeting_point: true,
   category: "Food & Drink",
-  tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 17.hours,
-  ending_time: DateTime.now.beginning_of_day + 18.hours,
+  tour_id: ben_birthright.id,
+  starting_time: DateTime.now.beginning_of_day + 20.hours,
+  ending_time: DateTime.now.beginning_of_day + 21.hours,
   order_number: "8",
   },
   # {
-  # name: "Reflection: War, Civil War, Survival",
-  # description: "Let's recap everything we've seen and heard about Israel's Yom Kippur War, Syria's Civil War, and what war really looks and feels like. Then back on the bus and home to Gadot!",
-  # address: "Menachem Begin Blvd 129, Beit She'an",
-  # city: "Beit She'an",
-  # meeting_point: true,
-  # category: "Other",
-  # tour_id: rabea_birthright.id,
-  # starting_time: DateTime.now.beginning_of_day + 18.hours,
-  # ending_time: DateTime.now.beginning_of_day + 19.hours,
-  # order_number: "16",
+  # name: "Learn about the Israeli wildlife",
+  # description: "A great chance to hear from the Environment and Wildlife Minister, Loren Freslaud. She will speak about the Israeli wildlife diversity and challenges. This talk will be at the campfire site with marshmellows!",
+  # address: "Jerusalem Street, Tel Aviv-Yafo",
+  # city: "Tel Aviv-Yafo",
+  # meeting_point: false,
+  # category: "Lecture",
+  # tour_id: ben_birthright.id,
+  # starting_time: DateTime.now.beginning_of_day + 21.hours,
+  # ending_time: DateTime.now.beginning_of_day + 22.hours,
+  # order_number: "10",
   # },
   {
-  name: "Dinner @ Dining Hall",
-  description: "Enjoy a tasty, buffet-style dinner at the Kibbutz & get to know the other amazing people you’ll be traveling with on this unbelievable adventure.",
-  address: "Tchernikhovski Street 4, Kiryat Shmona",
-  city: "Kiryat Shmona",
-  meeting_point: true,
-  category: "Food & Drink",
-  tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 20.hours,
-  ending_time: DateTime.now.beginning_of_day + 21.hours,
-  order_number: "9",
-  },
-  {
-  name: "Learn about life at Nahariya from Ephraim Bismuth",
-  description: "Another chance to hear from leader of the Gadot Kibbutz, Ephraim Bismuth, will speak about growing up, living on, and maintaing a kibbutz in the 21st century. This talk will be at the campfire site with marshmellows!",
-  address: "Shim'on Reich St 3, Nahariya",
-  city: "Nahariya",
+  name: "Party @ Block",
+  description: "See another side of your group mates in this famour nightclub! Have fun with the local youth. Plenty of dancing, laughing, most importantly Tubi!",
+  address: "Shalma Road 157, Tel Aviv-Yafo",
+  city: "Tel Aviv-Yafo",
   meeting_point: false,
-  category: "Lecture",
-  tour_id: rabea_birthright.id,
-  starting_time: DateTime.now.beginning_of_day + 21.hours,
-  ending_time: DateTime.now.beginning_of_day + 22.hours,
-  order_number: "10",
-  },
-  {
-  name: "Party @ Karmiel",
-  description: "See another side of your group mates at Karmiel! Have fun with the local youth. Plenty of dancing, laughing, most importantly Tubi!",
-  address: "Snunit St 51, Karmiel",
-  city: "Karmiel",
-  meeting_point: false,
-  category: "Lecture",
-  tour_id: rabea_birthright.id,
+  category: "Other",
+  tour_id: ben_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 21.hours,
   ending_time: DateTime.now.next_day.beginning_of_day + 1.hours,
-  order_number: "11",
+  order_number: "9",
   },
   {
   name: "Breakfast at Beer Sheva",
@@ -570,7 +532,7 @@ activities_attributes = [
   city: "Beersheba",
   meeting_point: true,
   category: "Food & Drink",
-  tour_id: rabea_negev_lw.id,
+  tour_id: ben_negev_lw.id,
   starting_time: DateTime.now.beginning_of_day + 3.days + 9.hours,
   ending_time: DateTime.now.beginning_of_day + 3.days + 10.hours,
   order_number: "1",
@@ -582,7 +544,7 @@ activities_attributes = [
   city: "Sde Boker",
   meeting_point: false,
   category: "Food & Drink",
-  tour_id: rabea_negev_lw.id,
+  tour_id: ben_negev_lw.id,
   starting_time: DateTime.now.beginning_of_day + 3.days + 12.hours,
   ending_time: DateTime.now.beginning_of_day + 3.days + 13.hours,
   order_number: "2",
@@ -594,7 +556,7 @@ activities_attributes = [
   city: "Mitzpe Ramon",
   meeting_point: true,
   category: "Travel & Outdoor",
-  tour_id: rabea_negev_lw.id,
+  tour_id: ben_negev_lw.id,
   starting_time: DateTime.now.beginning_of_day + 3.days + 12.hours,
   ending_time: DateTime.now.beginning_of_day + 3.days + 16.hours,
   order_number: "3",
@@ -606,7 +568,7 @@ activities_attributes = [
   city: "Eilat",
   meeting_point: true,
   category: "Food & Drink",
-  tour_id: rabea_negev_lw.id,
+  tour_id: ben_negev_lw.id,
   starting_time: DateTime.now.beginning_of_day + 3.days + 18.hours,
   ending_time: DateTime.now.beginning_of_day + 3.days + 19.hours,
   order_number: "4",
@@ -620,7 +582,8 @@ Activity.create!(activities_attributes)
 invitations_attributes = [
   {
     group: tulane_chabad,
-    email: "sam@ea.com"
+    email: "sam@ea.com",
+    user: User.find_by_name("Sam")
   },
   {
     group: young_repubs,
@@ -652,19 +615,18 @@ invitations_attributes = [
   # },
   {
     group: tulane_chabad,
-    email: "ephraim_bismuth@hotmail.fr"
+    email: "ephraim.bismuth@gmail.com",
+    user: User.find_by_name("Ephraim")
   },
   {
     group: tulane_chabad,
-    email: "ephraim.immo2017@gmail.com"
+    email: "rubencattan@gmail.com",
+    user: User.find_by_name("Ruben")
   },
   {
     group: tulane_chabad,
-    email: "rubencattan@gmail.com"
-  },
-  {
-    group: tulane_chabad,
-    email: "benjamin@benyas.com"
+    email: "amir@gmail.com",
+    user: User.find_by_name("Amir")
   },
   # {
   #   group: tulane_chabad,
