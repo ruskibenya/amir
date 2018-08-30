@@ -20,7 +20,7 @@ Invitation.destroy_all
 users_attributes = [
     {
     name: "Sam",
-    email: "sam@ea.com",
+    email: "ephraim.immo2017@gmail.com@ea.com",
     password: "123456",
     profile_picture: "rabea.jpg",
     bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!",
@@ -74,7 +74,7 @@ users_attributes = [
   },
   {
     name: "Amir",
-    email: "amir@gmail.com",
+    email: "ruskibear31@gmail.com",
     password: "123456",
     profile_picture: "Amir.png",
     bio: "I am always lost. People keep on looking for me but hardly find me. Please find me and take me back with you.",
