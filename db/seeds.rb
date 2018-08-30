@@ -24,7 +24,9 @@ users_attributes = [
     password: "123456",
     profile_picture: "rabea.jpg",
     bio: "You must go forth into the world, with passion, courage in your conviction, and most importantly be true to yourself. I did it!",
-    role: "visitor"
+    role: "visitor",
+    latitude: 32.060478,
+    longitude: 34.764400
   },
   {
     name: "Benjamin",
@@ -56,7 +58,9 @@ users_attributes = [
     password: "123456",
     profile_picture: "ephraim.jpeg",
     bio: "Life is beautiful. Let it take you on its journey. Sit down, you are only a passenger. Smile, be happy.",
-    role: "visitor"
+    role: "visitor",
+    latitude: 32.066840,
+    longitude: 34.771370
   },
   {
     name: "Ruben",
@@ -64,7 +68,9 @@ users_attributes = [
     password: "123456",
     profile_picture: "ruben.png",
     bio: "Life is beautiful. Let it take you on its journey. Sit down, you are only a passenger. Smile, be happy.",
-    role: "visitor"
+    role: "visitor",
+    latitude: 32.065547,
+    longitude: 34.765057
   },
   {
     name: "Amir",
@@ -72,7 +78,9 @@ users_attributes = [
     password: "123456",
     profile_picture: "Amir.png",
     bio: "I am always lost. People keep on looking for me but hardly find me. Please find me and take me back with you.",
-    role: "visitor"
+    role: "visitor",
+    latitude: 32.070800,
+    longitude: 34.799210
   }
 ]
 
@@ -523,7 +531,7 @@ activities_attributes = [
   tour_id: ben_birthright.id,
   starting_time: DateTime.now.beginning_of_day + 21.hours,
   ending_time: DateTime.now.next_day.beginning_of_day + 1.hours,
-  order_number: "9",
+  order_number: "19",
   },
   {
   name: "Breakfast at Beer Sheva",
